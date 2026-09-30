@@ -28,6 +28,40 @@ if (figureDialog && typeof figureDialog.showModal === 'function') {
   figureDialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 }
 
+// Load each original presentation video only when it nears the viewport.
+const videos = [...document.querySelectorAll('.video-frame video')];
+const loadVideo = (video) => {
+  if (video.dataset.loaded === 'true') return;
+  video.querySelectorAll('source[data-src]').forEach((source) => {
+    source.src = source.dataset.src;
+    delete source.dataset.src;
+  });
+  video.dataset.loaded = 'true';
+  video.preload = 'metadata';
+  video.load();
+};
+
+if ('IntersectionObserver' in window) {
+  const videoObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      loadVideo(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '400px 0px' });
+  videos.forEach((video) => videoObserver.observe(video));
+} else {
+  videos.forEach(loadVideo);
+}
+
+videos.forEach((video) => {
+  video.addEventListener('play', () => {
+    videos.forEach((otherVideo) => {
+      if (otherVideo !== video && !otherVideo.paused) otherVideo.pause();
+    });
+  });
+});
+
 const copyButton = document.querySelector('#copy-citation');
 const copyStatus = document.querySelector('#copy-status');
 if (copyButton && navigator.clipboard && window.isSecureContext) {

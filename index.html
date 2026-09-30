@@ -15,7 +15,7 @@
   <header class="site-header">
     <nav class="navigation page-width" aria-label="Main navigation">
       <a class="wordmark" href="#top" aria-label="DexHOT home">Dex<span>HOT</span><span class="brand-dot" aria-hidden="true"></span></a>
-      <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#benchmark">Benchmark</a><a href="#BibTeX">Citation</a></div>
+      <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#benchmark">Benchmark</a><a href="#videos">Videos</a><a href="#BibTeX">Citation</a></div>
     </nav>
   </header>
   <main id="main">
@@ -27,7 +27,7 @@
       <p class="author-note"><sup>*</sup> Equal contribution &nbsp;·&nbsp; <sup>†</sup> Project Lead</p>
       <div class="publication-links" aria-label="Project resources">
         <span class="resource-coming-soon">Paper &amp; arXiv coming soon</span>
-        <a class="resource-button resource-primary" href="https://github.com/ZheweiGui/dexhot" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+        <span class="resource-coming-soon">Code coming soon</span>
       </div>
     </section>
     <section class="page-width overview-section" id="overview" aria-labelledby="overview-title">
@@ -90,25 +90,74 @@
       </div>
     </section>
     <section class="page-width section-content" id="benchmark" aria-labelledby="benchmark-title">
-      <div class="section-heading"><div><p class="eyebrow">03 / Benchmark</p><h2 id="benchmark-title">DexHOTBench</h2></div><p>120 objects. Three evaluation splits.<br>A controlled test of configuration-transfer generalization.</p></div>
-      <figure class="research-figure">
-        <a class="figure-image" href="./static/images/objects.jpg" data-figure="Figure 3 · DexHOTBench" aria-label="Enlarge Figure 3: DexHOTBench">
-          <img src="./static/images/objects.jpg" width="1801" height="1312" loading="lazy" decoding="async" alt="DexHOTBench panels: A, grasp pose diversity; B, seen objects; C, unseen instances of seen categories; D, unseen categories.">
-          <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
-        </a>
-        <figcaption>
-          <div class="caption-heading"><span class="figure-number">Figure 03</span><h3>Diverse grasps, objects, and generalization settings.</h3></div>
-          <p>DexHOTBench evaluates configuration transfer across 120 objects, with 40 objects in each split.</p>
-          <div class="panel-key" aria-label="Figure panel descriptions"><p><span class="panel-letter">A</span><span>Grasp pose diversity</span></p><p><span class="panel-letter">B</span><span>Seen objects</span></p><p><span class="panel-letter">C</span><span>Unseen instances of seen categories</span></p><p><span class="panel-letter">D</span><span>Unseen categories</span></p></div>
-          <div class="density-legend">
-            <p><strong>Panel A.</strong> The Mollweide map shows object z-axis directions relative to the hand across all configuration pools; rotation about the object z-axis is omitted. Colors encode density percentile: pale yellow-green indicates less densely sampled directions, while dark green indicates more densely sampled directions.</p>
-            <div class="density-scale" aria-hidden="true"><span>Lower density percentile</span><span class="density-gradient"></span><span>Higher density percentile</span></div>
+      <div class="section-heading"><div><p class="eyebrow">03 / Benchmark</p><h2 id="benchmark-title">DexHOTBench</h2></div><p>Reconstructed from the presentation layout using its original high-resolution assets.</p></div>
+      <figure class="benchmark-figure">
+        <div class="benchmark-slide">
+          <h3>DexHOTBench</h3>
+          <div class="benchmark-hero-row">
+            <div class="benchmark-stat"><strong>120</strong><span>Objects</span></div>
+            <img class="benchmark-diversity" src="./static/ppt-media/benchmark-diversity.png" width="4239" height="2850" decoding="async" alt="Mollweide density map of object z-axis directions surrounded by diverse hand–object configurations.">
+            <div class="benchmark-stat"><strong>1.2M</strong><span>Configurations</span></div>
           </div>
+          <div class="benchmark-splits">
+            <article><img src="./static/ppt-media/image66.png" width="385" height="240" decoding="async" alt="The 40 training objects."><h4>Training objects</h4><p>40 objects from 40 categories</p></article>
+            <article><img src="./static/ppt-media/image63.png" width="768" height="480" decoding="async" alt="The 40 unseen instances from training categories."><h4>Unseen instances</h4><p>40 held-out objects from training categories</p></article>
+            <article><img src="./static/ppt-media/image65.png" width="385" height="240" decoding="async" alt="The 40 objects from unseen categories."><h4>Unseen categories</h4><p>40 objects from 40 held-out categories</p></article>
+          </div>
+        </div>
+        <figcaption>
+          <div class="caption-heading"><span class="figure-number">DexHOTBench</span><h3>Diverse configurations across three object splits.</h3></div>
+          <p>The central Mollweide map shows object z-axis directions relative to the hand across all configuration pools; rotation about the object z-axis is omitted. Colors encode density percentile.</p>
+          <div class="density-scale" aria-label="Density percentile color scale"><span>Lower density percentile</span><span class="density-gradient"></span><span>Higher density percentile</span></div>
         </figcaption>
       </figure>
     </section>
+
+    <section class="section-tinted video-section" id="videos" aria-labelledby="videos-title">
+      <div class="page-width section-content">
+        <div class="section-heading"><div><p class="eyebrow">04 / Videos</p><h2 id="videos-title">Experiments in motion</h2></div><p>All 30 videos are embedded directly from the presentation at their original quality and loaded only as they approach the viewport.</p></div>
+
+        <section class="video-group" aria-labelledby="video-overview-title">
+          <div class="video-group-heading"><div><span>01</span><h3 id="video-overview-title">Why configuration, not pose alone</h3></div><p>Start with the failure case, then introduce the transfer primitive and the broader DexHOT system.</p></div>
+          <div class="video-split">
+            <header><h4>Object pose alone vs. hand–object configuration</h4><span>Same barcode-scanning objective</span></header>
+            <div class="video-grid video-comparison-grid">
+              <article class="video-card comparison-before"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image2.png" aria-label="Object-pose goal only barcode scanning attempt"><source data-src="./static/ppt-media/media2.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Object-pose goal only</h4><p>The target pose can leave the scanner occluded or place the hand at risk of collision.</p></div></article>
+              <article class="video-card comparison-after"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image5.png" aria-label="Successful barcode scanning with a specified hand-object configuration"><source data-src="./static/ppt-media/media3.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Configuration-aware execution</h4><p>The desired hand–object relation keeps the barcode visible and reachable.</p></div></article>
+            </div>
+          </div>
+          <div class="video-split">
+            <header><h4>From a local transfer primitive to complete behaviors</h4><span>Concept → system → capabilities</span></header>
+            <div class="video-grid">
+              <article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image18.png" aria-label="Hand-object configuration transfer example"><source data-src="./static/ppt-media/media4.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>The transfer primitive</h4><p>Move from an initial configuration to a target configuration.</p></div></article>
+              <article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image1.png" aria-label="DexHOT project overview"><source data-src="./static/ppt-media/media1.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>DexHOT system overview</h4><p>Learn local transfers and compose them into long-horizon manipulation.</p></div></article>
+              <article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image95.png" aria-label="DexHOT capabilities montage"><source data-src="./static/ppt-media/media30.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Capabilities montage</h4><p>A compact preview of transfers and complete task executions.</p></div></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-group" aria-labelledby="video-simulation-title">
+          <div class="video-group-heading"><div><span>02</span><h3 id="video-simulation-title">Simulation configuration transfer</h3></div><p>80.5% on seen objects, 74.4% on unseen instances, and 64.4% on unseen categories.</p></div>
+          <div class="video-split"><header><h4>Seen objects</h4><strong>80.5%</strong></header><div class="video-grid"><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image73.png" aria-label="Seen object simulation example 1"><source data-src="./static/ppt-media/media10.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Seen object · 01</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image69.png" aria-label="Seen object simulation example 2"><source data-src="./static/ppt-media/media6.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Seen object · 02</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image70.png" aria-label="Seen object simulation example 3"><source data-src="./static/ppt-media/media7.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Seen object · 03</h4></div></article></div></div>
+          <div class="video-split"><header><h4>Unseen instances</h4><strong>74.4%</strong></header><div class="video-grid"><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image68.png" aria-label="Unseen instance simulation example 1"><source data-src="./static/ppt-media/media5.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Unseen instance · 01</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image71.png" aria-label="Unseen instance simulation example 2"><source data-src="./static/ppt-media/media8.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Unseen instance · 02</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image76.png" aria-label="Unseen instance simulation example 3"><source data-src="./static/ppt-media/media13.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Unseen instance · 03</h4></div></article></div></div>
+          <div class="video-split"><header><h4>Unseen categories</h4><strong>64.4%</strong></header><div class="video-grid"><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image74.png" aria-label="Unseen category simulation example 1"><source data-src="./static/ppt-media/media11.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Unseen category · 01</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image72.png" aria-label="Unseen category simulation example 2"><source data-src="./static/ppt-media/media9.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Unseen category · 02</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image75.png" aria-label="Unseen category simulation example 3"><source data-src="./static/ppt-media/media12.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Unseen category · 03</h4></div></article></div></div>
+        </section>
+
+        <section class="video-group" aria-labelledby="video-real-transfer-title">
+          <div class="video-group-heading"><div><span>03</span><h3 id="video-real-transfer-title">Real-world configuration transfer</h3></div><p>61.5% success and 73.5% transfer progress across 200 transfers on ten objects.</p></div>
+          <div class="object-video-set"><header><h4>Seen objects</h4><span>63% success</span></header><div class="video-grid video-grid-five"><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image83.png" aria-label="Banana transfer"><source data-src="./static/ppt-media/media20.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Banana</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image82.png" aria-label="Hammer transfer"><source data-src="./static/ppt-media/media19.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Hammer</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image79.png" aria-label="Shampoo bottle transfer"><source data-src="./static/ppt-media/media16.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Shampoo bottle</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image80.png" aria-label="Tape measure transfer"><source data-src="./static/ppt-media/media17.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Tape measure</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image81.png" aria-label="Medicine bottle transfer"><source data-src="./static/ppt-media/media18.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Medicine bottle</h4></div></article></div></div>
+          <div class="object-video-set"><header><h4>Unseen objects</h4><span>60% success</span></header><div class="video-grid video-grid-five"><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image86.png" aria-label="Mouse transfer"><source data-src="./static/ppt-media/media23.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Mouse</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image85.png" aria-label="Tennis ball transfer"><source data-src="./static/ppt-media/media22.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Tennis ball</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image77.png" aria-label="Flashlight transfer"><source data-src="./static/ppt-media/media14.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Flashlight</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image84.png" aria-label="Facial cream transfer"><source data-src="./static/ppt-media/media21.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Facial cream</h4></div></article><article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image78.png" aria-label="Screwdriver transfer"><source data-src="./static/ppt-media/media15.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Screwdriver</h4></div></article></div></div>
+        </section>
+
+        <section class="video-group" aria-labelledby="video-tasks-title">
+          <div class="video-group-heading"><div><span>04</span><h3 id="video-tasks-title">Complete demonstration-guided tasks</h3></div><p>End with the strongest evidence: 90% task-state success and 96% stage progress across six long-horizon tasks.</p></div>
+          <!-- Future task-specific baseline videos can be paired with these results when supplied. -->
+          <div class="video-grid video-grid-tasks"><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image92.png" aria-label="Barcode scanning task"><source data-src="./static/ppt-media/media27.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Barcode scanning</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image91.png" aria-label="Shelf placement task"><source data-src="./static/ppt-media/media26.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Shelf placement</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image94.png" aria-label="Block assembly task"><source data-src="./static/ppt-media/media29.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Block assembly</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image89.png" aria-label="Salt shaking task"><source data-src="./static/ppt-media/media24.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Salt shaking</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image93.png" aria-label="Water pouring task"><source data-src="./static/ppt-media/media28.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Water pouring</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image90.png" aria-label="Screw driving task"><source data-src="./static/ppt-media/media25.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Screw driving</h4></div></article></div>
+        </section>
+      </div>
+    </section>
     <section class="page-width citation-section" id="BibTeX" aria-labelledby="citation-title">
-      <div class="section-heading"><div><p class="eyebrow">04 / Citation</p><h2 id="citation-title">BibTeX</h2></div><button class="copy-button" id="copy-citation" type="button" hidden>Copy citation <span aria-hidden="true">↗</span></button></div>
+      <div class="section-heading"><div><p class="eyebrow">05 / Citation</p><h2 id="citation-title">BibTeX</h2></div><button class="copy-button" id="copy-citation" type="button" hidden>Copy citation <span aria-hidden="true">↗</span></button></div>
       <div class="citation-box"><pre tabindex="0" aria-label="BibTeX citation"><code id="citation-code">@article{gui2026dexhot,
   author    = {Gui, Zhewei and Bolton, Anthony and Zhang, Jiyao and Chen, Zeyuan
                and Yan, Qiyang and Wang, Tianyu and Dong, Hao},
