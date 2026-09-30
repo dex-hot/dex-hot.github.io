@@ -1,78 +1,43 @@
-window.HELP_IMPROVE_VIDEOJS = false;
+'use strict';
 
-var INTERP_BASE = "./static/interpolation/stacked";
-var NUM_INTERP_FRAMES = 240;
+// Figure links also work without JavaScript.
+const figureDialog = document.querySelector('#figure-dialog');
+const dialogImage = document.querySelector('#dialog-image');
+const dialogTitle = document.querySelector('#dialog-title');
 
-var interp_images = [];
-function preloadInterpolationImages() {
-  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = INTERP_BASE + '/' + String(i).padStart(6, '0') + '.jpg';
-    interp_images[i] = new Image();
-    interp_images[i].src = path;
-  }
+if (figureDialog && typeof figureDialog.showModal === 'function') {
+  document.querySelectorAll('[data-figure]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      dialogImage.src = link.href;
+      dialogImage.alt = link.querySelector('img').alt;
+      dialogTitle.textContent = link.dataset.figure;
+      figureDialog.showModal();
+      document.body.classList.add('dialog-open');
+      document.querySelector('.dialog-image-area').scrollTo(0, 0);
+    });
+  });
+  document.querySelector('#close-figure').addEventListener('click', () => figureDialog.close());
+  figureDialog.addEventListener('click', (event) => {
+    if (event.target !== figureDialog) return;
+    const bounds = figureDialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom) figureDialog.close();
+  });
+  figureDialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 }
 
-function setInterpolationImage(i) {
-  var image = interp_images[i];
-  image.ondragstart = function() { return false; };
-  image.oncontextmenu = function() { return false; };
-  $('#interpolation-image-wrapper').empty().append(image);
+const copyButton = document.querySelector('#copy-citation');
+const copyStatus = document.querySelector('#copy-status');
+if (copyButton && navigator.clipboard && window.isSecureContext) {
+  copyButton.hidden = false;
+  copyButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(document.querySelector('#citation-code').textContent);
+      copyStatus.textContent = 'Citation copied to clipboard.';
+    } catch {
+      copyStatus.textContent = 'Could not copy automatically. Please select and copy the citation above.';
+    }
+  });
 }
-
-
-$(document).ready(function() {
-    // Check for click events on the navbar burger icon
-    $(".navbar-burger").click(function() {
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      $(".navbar-burger").toggleClass("is-active");
-      $(".navbar-menu").toggleClass("is-active");
-
-    });
-
-    var options = {
-			slidesToScroll: 1,
-			slidesToShow: 3,
-			loop: true,
-			infinite: true,
-			autoplay: false,
-			autoplaySpeed: 3000,
-    }
-
-		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-
-    // Loop on each carousel initialized
-    for(var i = 0; i < carousels.length; i++) {
-    	// Add listener to  event
-    	carousels[i].on('before:show', state => {
-    		console.log(state);
-    	});
-    }
-
-    // Access to bulmaCarousel instance of an element
-    var element = document.querySelector('#my-element');
-    if (element && element.bulmaCarousel) {
-    	// bulmaCarousel instance is available as element.bulmaCarousel
-    	element.bulmaCarousel.on('before-show', function(state) {
-    		console.log(state);
-    	});
-    }
-
-    /*var player = document.getElementById('interpolation-video');
-    player.addEventListener('loadedmetadata', function() {
-      $('#interpolation-slider').on('input', function(event) {
-        console.log(this.value, player.duration);
-        player.currentTime = player.duration / 100 * this.value;
-      })
-    }, false);*/
-    preloadInterpolationImages();
-
-    $('#interpolation-slider').on('input', function(event) {
-      setInterpolationImage(this.value);
-    });
-    setInterpolationImage(0);
-    $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
-
-    bulmaSlider.attach();
-
-})

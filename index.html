@@ -1,226 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="DexHOT formulates dexterous manipulation as hand-object configuration transfer: a single relation-conditioned policy moves between feasible hand-object configurations and composes long-horizon behaviors by chaining closed-loop subgoals.">
+  <meta name="description" content="DexHOT learns hand–object configuration transfer with a single policy and composes long-horizon dexterous manipulation through closed-loop subgoals.">
   <meta name="keywords" content="DexHOT, Dexterous Manipulation, Hand-Object Configuration, Sim-to-Real, Reinforcement Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DexHOT: Learning Hand&ndash;Object Configuration Transfer for Dexterous Manipulation</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <meta name="theme-color" content="#f8faf9">
+  <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
   <link rel="stylesheet" href="./static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script defer src="./static/js/index.js"></script>
 </head>
 <body>
-
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DexHOT: Learning Hand&ndash;Object Configuration Transfer for Dexterous Manipulation</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="#">Zhewei Gui</a><sup>*</sup>,</span>
-            <span class="author-block">
-              <a href="#">Anthony Bolton</a><sup>*</sup>,</span>
-            <span class="author-block">
-              <a href="#">Jiyao Zhang</a>,</span>
-            <span class="author-block">
-              <a href="#">Zeyuan Chen</a>,</span>
-            <span class="author-block">
-              <a href="#">Qiyang Yan</a>,</span>
-            <span class="author-block">
-              <a href="#">Tianyu Wang</a>,</span>
-            <span class="author-block">
-              <a href="#">Hao Dong</a></span>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navigation page-width" aria-label="Main navigation">
+      <a class="wordmark" href="#top" aria-label="DexHOT home">Dex<span>HOT</span><span class="brand-dot" aria-hidden="true"></span></a>
+      <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#benchmark">Benchmark</a><a href="#BibTeX">Citation</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero page-width" id="top" aria-labelledby="publication-title">
+      <p class="eyebrow">Dexterous manipulation · Hand–object learning</p>
+      <h1 id="publication-title"><span class="hero-name">Dex<span>HOT</span></span><span class="hero-title">Learning Hand–Object Configuration<br class="desktop-break"> Transfer for Dexterous Manipulation</span></h1>
+      <p class="hero-summary">One policy. Diverse configurations. Long-horizon manipulation.</p>
+      <div class="publication-authors" aria-label="Authors"><span>Zhewei Gui<sup>*</sup></span><span>Anthony Bolton<sup>*</sup></span><span>Jiyao Zhang<sup title="Project Lead">†</sup></span><span>Zeyuan Chen</span><span>Qiyang Yan</span><span>Tianyu Wang</span><span>Hao Dong</span></div>
+      <p class="author-note"><sup>*</sup> Equal contribution &nbsp;·&nbsp; <sup>†</sup> Project Lead</p>
+      <div class="publication-links" aria-label="Project resources">
+        <span class="resource-coming-soon">Paper &amp; arXiv coming soon</span>
+        <a class="resource-button resource-primary" href="https://github.com/ZheweiGui/dexhot" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="page-width overview-section" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading compact-heading"><h2 id="overview-title">A shared interface for dexterous behavior</h2><span class="section-tag">At a glance</span></div>
+      <figure class="research-figure">
+        <a class="figure-image" href="./static/images/teaser.jpg" data-figure="Figure 1 · Configuration transfer" aria-label="Enlarge Figure 1: Configuration transfer">
+          <img src="./static/images/teaser.jpg" width="1800" height="1012" fetchpriority="high" alt="A single DexHOT policy transfers between hand–object configurations, with planned transfers on the left and long-horizon robot tasks on the right.">
+          <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
+        </a>
+        <figcaption>
+          <div class="caption-heading"><span class="figure-number">Figure 01</span><h3>One policy, many hand–object configurations.</h3></div>
+          <p>DexHOT transfers between configurations that jointly specify hand articulation and object pose relative to the wrist.</p>
+          <div class="caption-panels"><p><span class="panel-label">Left · Planned transfer</span>A greedy planner selects subgoals from a synthetic configuration pool to reach a distant target.</p><p><span class="panel-label">Right · Long-horizon tasks</span>Human demonstrations provide subgoals, including previously unseen hand–object configurations.</p></div>
+        </figcaption>
+      </figure>
+      <dl class="results-strip" aria-label="Reported success rates">
+        <div><dt>Seen-object transfer</dt><dd>80.5<span>%</span><small>Simulation · DexHOTBench</small></dd></div>
+        <div><dt>Unseen-object transfer</dt><dd>69.4<span>%</span><small>Simulation · DexHOTBench</small></dd></div>
+        <div><dt>Real-robot transfer</dt><dd>61.5<span>%</span><small>200 real-robot transfers</small></dd></div>
+        <div><dt>Demonstration-guided tasks</dt><dd>90<span>%</span><small>Six long-horizon tasks</small></dd></div>
+      </dl>
+    </section>
+    <section class="page-width text-section" id="abstract" aria-labelledby="abstract-title">
+      <div class="section-intro"><p class="eyebrow">01 / The idea</p><h2 id="abstract-title">Beyond object poses.</h2><p>Make the hand–object relationship an explicit goal.</p></div>
+      <div class="abstract-copy"><h3>Abstract</h3>
+        <p>Dexterous manipulation involves not only moving objects, but also arranging the hand around them to maintain useful contacts and enable subsequent actions. Yet many learning-based systems specify goals primarily through object poses or trajectories, leaving hand–object configurations to emerge implicitly.</p>
+        <p>We introduce <strong>DexHOT</strong>, which formulates dexterous manipulation as <em>hand–object configuration transfer</em>: moving between feasible configurations that jointly specify hand articulation and object pose relative to the wrist. DexHOT learns a reusable relation-conditioned transfer primitive from synthetic feasible configuration pairs and composes long-horizon behaviors through hierarchical chaining of closed-loop configuration subgoals.</p>
+        <p>On DexHOTBench with 120 objects, a single policy achieves 80.5% transfer success on seen objects and 69.4% on unseen objects; on a real dexterous hand, it achieves 61.5% success over 200 real-robot transfers and 90% task success on six demonstration-guided tasks. These results show that explicit hand–object goals provide an expressive and composable interface for dexterous manipulation.</p>
+      </div>
+    </section>
+    <section class="section-tinted" id="method" aria-labelledby="method-title">
+      <div class="page-width section-content">
+        <div class="section-heading"><div><p class="eyebrow">02 / Method</p><h2 id="method-title">Learn locally.<br>Transfer globally.</h2></div><p>A single policy learns local configuration transfers and reaches more distant goals through hierarchical chaining.</p></div>
+        <ol class="method-steps">
+          <li><span class="step-number">01</span><h3>Synthesize</h3><p>Build feasible hand–object configurations across diverse objects.</p></li>
+          <li><span class="step-number">02</span><h3>Learn to transfer</h3><p>Train a shared policy with synthetic local-goal configuration pairs.</p></li>
+          <li><span class="step-number">03</span><h3>Chain subgoals</h3><p>Compose long-horizon behavior using a planner or demonstrations.</p></li>
+        </ol>
+        <figure class="research-figure">
+          <a class="figure-image" href="./static/images/pipeline.jpg" data-figure="Figure 2 · Learning and deployment pipeline" aria-label="Enlarge Figure 2: Learning and deployment pipeline">
+            <img src="./static/images/pipeline.jpg" width="1800" height="1012" loading="lazy" decoding="async" alt="DexHOT pipeline: grasp synthesis and local-goal transfer training above; demonstration- or planner-guided hierarchical chaining below.">
+            <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
+          </a>
+          <figcaption><div class="caption-heading"><span class="figure-number">Figure 02</span><h3>From synthetic configurations to long-horizon control.</h3></div><p>One reusable hand policy follows configuration subgoals in closed loop, without task-specific policy training.</p><div class="caption-panels"><p><span class="panel-label">Top · Training</span>Grasp synthesis and local-goal sampling supply configuration pairs for relation-conditioned policy learning.</p><p><span class="panel-label">Bottom · Deployment</span>A greedy planner or human demonstration supplies subgoals to the frozen hand policy.</p></div></figcaption>
+        </figure>
+        <div class="task-grid" aria-label="Two tasks using the same hand policy">
+          <article class="task-card" id="task-transfer" aria-labelledby="task-transfer-title">
+            <p class="eyebrow">Task 1 / Configuration transfer</p>
+            <h3 id="task-transfer-title">Reach a target configuration.</h3>
+            <p>A greedy planner selects intermediate configurations from an object-specific, physically validated pool. The hand policy tracks each subgoal at 30 Hz, with replanning at 1 Hz. In real-robot transfer trials, the arm stays fixed in a palm-down pose, so the fingers drive the configuration change.</p>
+            <p><strong>Evaluation.</strong> Simulation success averages close and far Any2Any transfers with greedy subgoal planning: 80.5% on 40 seen objects and 69.4% on 80 held-out objects. On hardware, DexHOT achieves 61.5% success over 200 transfers across five seen and five unseen objects.</p>
+          </article>
+          <article class="task-card" id="task-demonstration" aria-labelledby="task-demonstration-title">
+            <p class="eyebrow">Task 2 / Demonstration-guided manipulation</p>
+            <h3 id="task-demonstration-title">Follow a sequence of configurations.</h3>
+            <p>One retargeted human demonstration provides configuration subgoals and a wrist trajectory for each task. <strong>The policy controls only the hand</strong>, tracking subgoals in closed loop at 30 Hz with 1 Hz subgoal updates. A separate arm controller follows the demonstrated wrist trajectory; the hand policy is reused without fine-tuning.</p>
+            <p><strong>Evaluation.</strong> Across six tasks, with five trials per task from a fixed initial layout, DexHOT achieves 90% task-state success (27/30 trials). Success requires all three stages: picking up the object, satisfying the task-specific object-level constraint, and attaining the required hand–object configuration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="page-width section-content" id="benchmark" aria-labelledby="benchmark-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / Benchmark</p><h2 id="benchmark-title">DexHOTBench</h2></div><p>120 objects. Three evaluation splits.<br>A controlled test of configuration-transfer generalization.</p></div>
+      <figure class="research-figure">
+        <a class="figure-image" href="./static/images/objects.jpg" data-figure="Figure 3 · DexHOTBench" aria-label="Enlarge Figure 3: DexHOTBench">
+          <img src="./static/images/objects.jpg" width="1801" height="1312" loading="lazy" decoding="async" alt="DexHOTBench panels: A, grasp pose diversity; B, seen objects; C, unseen instances of seen categories; D, unseen categories.">
+          <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
+        </a>
+        <figcaption>
+          <div class="caption-heading"><span class="figure-number">Figure 03</span><h3>Diverse grasps, objects, and generalization settings.</h3></div>
+          <p>DexHOTBench evaluates configuration transfer across 120 objects, with 40 objects in each split.</p>
+          <div class="panel-key" aria-label="Figure panel descriptions"><p><span class="panel-letter">A</span><span>Grasp pose diversity</span></p><p><span class="panel-letter">B</span><span>Seen objects</span></p><p><span class="panel-letter">C</span><span>Unseen instances of seen categories</span></p><p><span class="panel-letter">D</span><span>Unseen categories</span></p></div>
+          <div class="density-legend">
+            <p><strong>Panel A.</strong> The Mollweide map shows object z-axis directions relative to the hand across all configuration pools; rotation about the object z-axis is omitted. Colors encode density percentile: pale yellow-green indicates less densely sampled directions, while dark green indicates more densely sampled directions.</p>
+            <div class="density-scale" aria-hidden="true"><span>Lower density percentile</span><span class="density-gradient"></span><span>Higher density percentile</span></div>
           </div>
-
-          <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>*</sup>Equal contribution</span>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- arXiv Link. -->
-              <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/ZheweiGui"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="./static/images/teaser.jpg" alt="DexHOT teaser"
-           style="width: 100%; height: auto;">
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">DexHOT</span> learns a single policy across multiple objects to transfer
-        between configurations that jointly specify hand articulation and object pose relative to the wrist.
-        <b>Left:</b> a greedy planner guides transfer to a distant target through subgoals selected from a
-        synthetic configuration pool. <b>Right:</b> human demonstrations provide subgoals for long-horizon
-        tasks involving previously unseen hand&ndash;object configurations.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Dexterous manipulation involves not only moving objects, but also arranging the hand around
-            them to maintain useful contacts and enable subsequent actions. Yet many learning-based
-            systems specify goals primarily through object poses or trajectories, leaving
-            hand&ndash;object configurations to emerge implicitly. We introduce <b>DexHOT</b>, which
-            formulates dexterous manipulation as <i>hand&ndash;object configuration transfer</i>: moving
-            between feasible configurations that jointly specify hand articulation and object pose
-            relative to the wrist. DexHOT learns a reusable relation-conditioned transfer primitive from
-            synthetic feasible configuration pairs and composes long-horizon behaviors through
-            hierarchical chaining of closed-loop configuration subgoals. On DexHOTBench with 120 objects,
-            a single policy achieves 80.5% transfer success on seen objects and 69.4% on unseen objects;
-            on a real dexterous hand, it achieves 61.5% success over 200 real-robot transfers and 90%
-            task success on six demonstration-guided tasks. These results show that explicit
-            hand&ndash;object goals provide an expressive and composable interface for dexterous
-            manipulation.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">Method</h2>
-        <img src="./static/images/pipeline.jpg" alt="DexHOT training pipeline"
-             style="width: 100%; height: auto;">
-        <div class="content has-text-justified" style="margin-top: 1rem;">
-          <p>
-            DexHOT learns a relation-conditioned transfer primitive from synthetic pairs of feasible
-            hand&ndash;object configurations, and composes long-horizon behaviors by hierarchically
-            chaining closed-loop configuration subgoals rather than replaying actions or training
-            task-specific policies.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">DexHOTBench</h2>
-        <img src="./static/images/objects.jpg" alt="DexHOTBench objects"
-             style="width: 100%; height: auto;">
-        <div class="content has-text-justified" style="margin-top: 1rem;">
-          <p>
-            DexHOTBench spans 120 objects, split into seen objects, unseen instances of seen categories,
-            and unseen categories, enabling a controlled evaluation of how well a single policy
-            generalizes across hand&ndash;object configuration transfers.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{gui2026dexhot,
+        </figcaption>
+      </figure>
+    </section>
+    <section class="page-width citation-section" id="BibTeX" aria-labelledby="citation-title">
+      <div class="section-heading"><div><p class="eyebrow">04 / Citation</p><h2 id="citation-title">BibTeX</h2></div><button class="copy-button" id="copy-citation" type="button" hidden>Copy citation <span aria-hidden="true">↗</span></button></div>
+      <div class="citation-box"><pre tabindex="0" aria-label="BibTeX citation"><code id="citation-code">@article{gui2026dexhot,
   author    = {Gui, Zhewei and Bolton, Anthony and Zhang, Jiyao and Chen, Zeyuan
                and Yan, Qiyang and Wang, Tianyu and Dong, Hao},
   title     = {DexHOT: Learning Hand--Object Configuration Transfer for Dexterous Manipulation},
   journal   = {arXiv preprint},
   year      = {2026},
-}</code></pre>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This page was built using the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
-            project page template.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
+}</code></pre></div>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="site-footer page-width"><a class="wordmark" href="#top">Dex<span>HOT</span></a><p>Licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br>Adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page template.</p><a class="back-to-top" href="#top">Back to top ↑</a></footer>
+  <dialog class="figure-dialog" id="figure-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><h2 id="dialog-title">Figure</h2><button id="close-figure" type="button" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button></div><div class="dialog-image-area"><img id="dialog-image" alt=""></div></dialog>
 </body>
 </html>
