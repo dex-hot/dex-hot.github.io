@@ -28,7 +28,7 @@ if (figureDialog && typeof figureDialog.showModal === 'function') {
   figureDialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 }
 
-// Load each original presentation video only when it nears the viewport.
+// Load experiment videos near the viewport; the hero has its own playback controls.
 const videos = [...document.querySelectorAll('.video-frame video')];
 const loadVideo = (video) => {
   if (video.dataset.loaded === 'true') return;
@@ -39,6 +39,10 @@ const loadVideo = (video) => {
   video.dataset.loaded = 'true';
   video.preload = 'metadata';
   video.load();
+  if (video.dataset.rate) {
+    video.defaultPlaybackRate = Number(video.dataset.rate);
+    video.playbackRate = Number(video.dataset.rate);
+  }
 };
 
 if ('IntersectionObserver' in window) {
@@ -56,11 +60,87 @@ if ('IntersectionObserver' in window) {
 
 videos.forEach((video) => {
   video.addEventListener('play', () => {
+    document.querySelectorAll('.hero-tile video').forEach((background) => background.pause());
     videos.forEach((otherVideo) => {
       if (otherVideo !== video && !otherVideo.paused) otherVideo.pause();
     });
   });
 });
+
+const heroVideos = [...document.querySelectorAll('.hero-tile video')];
+const heroToggle = document.querySelector('#hero-toggle');
+if (heroVideos.length && heroToggle) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let wantsPlayback = !reducedMotion.matches && !navigator.connection?.saveData;
+  const isHeroVisible = () => {
+    const bounds = document.querySelector('.hero-mosaic').getBoundingClientRect();
+    return bounds.bottom > 0 && bounds.top < window.innerHeight;
+  };
+  const updateToggle = () => {
+    const playing = heroVideos.some((video) => !video.paused);
+    heroToggle.querySelector('span').textContent = playing ? 'Ⅱ' : '▶';
+    heroToggle.querySelector('.hero-toggle-label').textContent = `${playing ? 'Pause' : 'Play'} videos`;
+    heroToggle.setAttribute('aria-label', `${playing ? 'Pause' : 'Play'} featured videos`);
+  };
+  const pauseHero = () => heroVideos.forEach((video) => video.pause());
+  const playHero = () => {
+    if (!wantsPlayback || !isHeroVisible() || document.hidden) return;
+    heroVideos.forEach((video) => {
+      loadVideo(video);
+      video.play().catch(updateToggle);
+    });
+  };
+  heroToggle.hidden = false;
+  heroVideos.forEach((video) => {
+    video.addEventListener('play', updateToggle);
+    video.addEventListener('pause', updateToggle);
+    video.addEventListener('error', updateToggle);
+    const tile = video.parentElement;
+    const crop = (tile.dataset.crop || '0,0,1,1').split(',').map(Number);
+    const poster = new Image();
+    // Each crop is a 4:3 action window checked across the source's motion.
+    // Fill equal-sized frames without stretching; original media are unchanged.
+    const fit = () => {
+      const width = video.videoWidth || poster.naturalWidth;
+      const height = video.videoHeight || poster.naturalHeight;
+      if (!width || !height) return;
+      const [x, y, w, h] = crop;
+      const scale = Math.max(tile.clientWidth / (width * w), tile.clientHeight / (height * h));
+      Object.assign(video.style, {
+        width: `${width * scale}px`, height: `${height * scale}px`,
+        left: `${(tile.clientWidth - width * w * scale) / 2 - width * x * scale}px`,
+        top: `${(tile.clientHeight - height * h * scale) / 2 - height * y * scale}px`,
+      });
+    };
+    poster.onload = fit;
+    poster.src = video.poster;
+    video.addEventListener('loadedmetadata', fit);
+    if ('ResizeObserver' in window) new ResizeObserver(fit).observe(tile);
+    else window.addEventListener('resize', fit);
+  });
+  heroToggle.addEventListener('click', () => {
+    wantsPlayback = !heroVideos.some((video) => !video.paused);
+    if (wantsPlayback) playHero();
+    else pauseHero();
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(() => {
+      if (isHeroVisible()) playHero();
+      else pauseHero();
+    }, {threshold: 0.1}).observe(document.querySelector('.hero-mosaic'));
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) pauseHero();
+    else playHero();
+  });
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) {
+      wantsPlayback = false;
+      pauseHero();
+    }
+  });
+  playHero();
+}
 
 const copyButton = document.querySelector('#copy-citation');
 const copyStatus = document.querySelector('#copy-status');

@@ -20,14 +20,37 @@
   </header>
   <main id="main">
     <section class="hero page-width" id="top" aria-labelledby="publication-title">
-      <p class="eyebrow">Dexterous manipulation · Hand–object learning</p>
-      <h1 id="publication-title"><span class="hero-name">Dex<span>HOT</span></span><span class="hero-title">Learning Hand–Object Configuration<br class="desktop-break"> Transfer for Dexterous Manipulation</span></h1>
-      <p class="hero-summary">One policy. Diverse configurations. Long-horizon manipulation.</p>
-      <div class="publication-authors" aria-label="Authors"><span>Zhewei Gui<sup>*</sup></span><span>Anthony Bolton<sup>*</sup></span><span>Jiyao Zhang<sup title="Project Lead">†</sup></span><span>Zeyuan Chen</span><span>Qiyang Yan</span><span>Tianyu Wang</span><span>Hao Dong</span></div>
-      <p class="author-note"><sup>*</sup> Equal contribution &nbsp;·&nbsp; <sup>†</sup> Project Lead</p>
-      <div class="publication-links" aria-label="Project resources">
-        <span class="resource-coming-soon">Paper &amp; arXiv coming soon</span>
-        <span class="resource-coming-soon">Code coming soon</span>
+      <div class="publication-heading">
+        <h1 id="publication-title"><span class="publication-name">Dex<span>HOT</span></span><span class="publication-title">Learning Hand–Object Configuration Transfer<br class="desktop-break"> for Dexterous Manipulation</span></h1>
+        <div class="publication-authors" aria-label="Authors in publication order"><span>Zhewei Gui<sup>1,3,*</sup></span><span>Anthony Bolton<sup>1,3,*</sup></span><span>Jiyao Zhang<sup>1,2,3,‡</sup></span><span>Zeyuan Chen<sup>1,4</sup></span><span>Qiyang Yan<sup>1</sup></span><span>Tianyu Wang<sup>1,4</sup></span><span>Hao Dong<sup>1,2,3,†</sup></span></div>
+        <div class="publication-affiliations" aria-label="Author affiliations">
+          <p><sup>1</sup> CFCS, School of CS, PKU, China</p>
+          <p><sup>2</sup> National Key Laboratory for Multimedia Information Processing, School of CS, PKU, China</p>
+          <p><sup>3</sup> PrimeBot</p>
+          <p><sup>4</sup> State Key Laboratory of General Artificial Intelligence, BIGAI</p>
+        </div>
+        <p class="author-note"><span><sup>*</sup> Equal contribution</span><span><sup>†</sup> Corresponding author</span><span><sup>‡</sup> Project Lead</span></p>
+      </div>
+      <div class="hero-exhibit">
+        <div class="hero-toolbar"><p class="eyebrow">DexHOT in the real world</p><button id="hero-toggle" type="button" aria-label="Play featured videos" hidden><span aria-hidden="true">▶</span><span class="hero-toggle-label">Play videos</span></button></div>
+        <div class="hero-mosaic">
+          <section class="hero-group hero-task-group" aria-labelledby="featured-tasks-title">
+            <div class="hero-group-heading"><h2 id="featured-tasks-title">Demonstration-guided tasks</h2><span>01–04</span></div>
+            <div class="hero-group-grid">
+              <figure class="hero-card"><div class="hero-tile" data-crop="0.197,0.16,0.606,0.808"><video muted loop playsinline preload="none" data-rate="0.5" poster="./static/ppt-media/image93.png" aria-label="Water pouring at 2 times real-time speed"><source data-src="./static/ppt-media/media28.mp4" type="video/mp4"></video></div><figcaption><span class="demo-number">01</span><h3>Water pouring</h3><span class="demo-speed">2×</span></figcaption></figure>
+              <figure class="hero-card"><div class="hero-tile" data-crop="0.02,0,0.75,1"><video muted loop playsinline preload="none" data-rate="0.5" poster="./static/ppt-media/image90.png" aria-label="Drill task at 2 times real-time speed"><source data-src="./static/ppt-media/media25.mp4" type="video/mp4"></video></div><figcaption><span class="demo-number">02</span><h3>Screw driving <span>(drill)</span></h3><span class="demo-speed">2×</span></figcaption></figure>
+              <figure class="hero-card"><div class="hero-tile" data-crop="0,0.05,1,0.9052"><video muted loop playsinline preload="none" data-rate="0.5" poster="./static/ppt-media/image92.png" aria-label="Barcode scanning at 2 times real-time speed"><source data-src="./static/ppt-media/media27.mp4" type="video/mp4"></video></div><figcaption><span class="demo-number">03</span><h3>Barcode scanning</h3><span class="demo-speed">2×</span></figcaption></figure>
+              <figure class="hero-card"><div class="hero-tile" data-crop="0.04,0.085,0.7531,0.83"><video muted loop playsinline preload="none" data-rate="0.5" poster="./static/ppt-media/image89.png" aria-label="Salt shaking at 2 times real-time speed"><source data-src="./static/ppt-media/media24.mp4" type="video/mp4"></video></div><figcaption><span class="demo-number">04</span><h3>Salt shaking</h3><span class="demo-speed">2×</span></figcaption></figure>
+            </div>
+          </section>
+          <section class="hero-group hero-transfer-group" aria-labelledby="featured-transfer-title">
+            <div class="hero-group-heading"><h2 id="featured-transfer-title">Configuration transfer</h2><span>05–06</span></div>
+            <div class="hero-group-grid">
+              <figure class="hero-card"><div class="hero-tile" data-crop="0.125,0,0.75,1"><video muted loop playsinline preload="none" data-rate="1" poster="./static/ppt-media/image77.png" aria-label="Flashlight configuration transfer at original speed"><source data-src="./static/ppt-media/media14.mp4" type="video/mp4"></video></div><figcaption><span class="demo-number">05</span><h3>Flashlight</h3><span class="demo-speed">1×</span></figcaption></figure>
+              <figure class="hero-card"><div class="hero-tile" data-crop="0.125,0,0.75,1"><video muted loop playsinline preload="none" data-rate="1" poster="./static/ppt-media/image82.png" aria-label="Hammer configuration transfer at original speed"><source data-src="./static/ppt-media/media19.mp4" type="video/mp4"></video></div><figcaption><span class="demo-number">06</span><h3>Hammer</h3><span class="demo-speed">1×</span></figcaption></figure>
+            </div>
+          </section>
+        </div>
       </div>
     </section>
     <section class="page-width overview-section" id="overview" aria-labelledby="overview-title">
@@ -90,7 +113,7 @@
       </div>
     </section>
     <section class="page-width section-content" id="benchmark" aria-labelledby="benchmark-title">
-      <div class="section-heading"><div><p class="eyebrow">03 / Benchmark</p><h2 id="benchmark-title">DexHOTBench</h2></div><p>Reconstructed from the presentation layout using its original high-resolution assets.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">03 / Benchmark</p><h2 id="benchmark-title">DexHOTBench</h2></div><p>120 objects. 1.2 million feasible configurations. A benchmark for hand–object configuration transfer.</p></div>
       <figure class="benchmark-figure">
         <div class="benchmark-slide">
           <h3>DexHOTBench</h3>
@@ -115,23 +138,15 @@
 
     <section class="section-tinted video-section" id="videos" aria-labelledby="videos-title">
       <div class="page-width section-content">
-        <div class="section-heading"><div><p class="eyebrow">04 / Videos</p><h2 id="videos-title">Experiments in motion</h2></div><p>All 30 videos are embedded directly from the presentation at their original quality and loaded only as they approach the viewport.</p></div>
+        <div class="section-heading"><div><p class="eyebrow">04 / Experiments</p><h2 id="videos-title">From transfer to task.</h2></div><p>A shared hand policy transfers across objects and follows configuration subgoals through long-horizon tasks.</p></div>
 
         <section class="video-group" aria-labelledby="video-overview-title">
-          <div class="video-group-heading"><div><span>01</span><h3 id="video-overview-title">Why configuration, not pose alone</h3></div><p>Start with the failure case, then introduce the transfer primitive and the broader DexHOT system.</p></div>
+          <div class="video-group-heading"><div><span>01</span><h3 id="video-overview-title">Beyond object-pose goals</h3></div><p>A useful object pose also requires a compatible hand configuration.</p></div>
           <div class="video-split">
             <header><h4>Object pose alone vs. hand–object configuration</h4><span>Same barcode-scanning objective</span></header>
             <div class="video-grid video-comparison-grid">
               <article class="video-card comparison-before"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image2.png" aria-label="Object-pose goal only barcode scanning attempt"><source data-src="./static/ppt-media/media2.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Object-pose goal only</h4><p>The target pose can leave the scanner occluded or place the hand at risk of collision.</p></div></article>
               <article class="video-card comparison-after"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image5.png" aria-label="Successful barcode scanning with a specified hand-object configuration"><source data-src="./static/ppt-media/media3.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Configuration-aware execution</h4><p>The desired hand–object relation keeps the barcode visible and reachable.</p></div></article>
-            </div>
-          </div>
-          <div class="video-split">
-            <header><h4>From a local transfer primitive to complete behaviors</h4><span>Concept → system → capabilities</span></header>
-            <div class="video-grid">
-              <article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image18.png" aria-label="Hand-object configuration transfer example"><source data-src="./static/ppt-media/media4.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>The transfer primitive</h4><p>Move from an initial configuration to a target configuration.</p></div></article>
-              <article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image1.png" aria-label="DexHOT project overview"><source data-src="./static/ppt-media/media1.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>DexHOT system overview</h4><p>Learn local transfers and compose them into long-horizon manipulation.</p></div></article>
-              <article class="video-card"><div class="video-frame"><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image95.png" aria-label="DexHOT capabilities montage"><source data-src="./static/ppt-media/media30.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Capabilities montage</h4><p>A compact preview of transfers and complete task executions.</p></div></article>
             </div>
           </div>
         </section>
@@ -150,8 +165,7 @@
         </section>
 
         <section class="video-group" aria-labelledby="video-tasks-title">
-          <div class="video-group-heading"><div><span>04</span><h3 id="video-tasks-title">Complete demonstration-guided tasks</h3></div><p>End with the strongest evidence: 90% task-state success and 96% stage progress across six long-horizon tasks.</p></div>
-          <!-- Future task-specific baseline videos can be paired with these results when supplied. -->
+          <div class="video-group-heading"><div><span>04</span><h3 id="video-tasks-title">Complete demonstration-guided tasks</h3></div><p>90% task-state success and 96% stage progress across six long-horizon tasks.</p></div>
           <div class="video-grid video-grid-tasks"><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image92.png" aria-label="Barcode scanning task"><source data-src="./static/ppt-media/media27.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Barcode scanning</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image91.png" aria-label="Shelf placement task"><source data-src="./static/ppt-media/media26.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Shelf placement</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image94.png" aria-label="Block assembly task"><source data-src="./static/ppt-media/media29.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Block assembly</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image89.png" aria-label="Salt shaking task"><source data-src="./static/ppt-media/media24.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Salt shaking</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image93.png" aria-label="Water pouring task"><source data-src="./static/ppt-media/media28.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Water pouring</h4></div></article><article class="video-card"><div class="video-frame"><span class="speed-badge">4× speed</span><video controls muted loop playsinline preload="none" poster="./static/ppt-media/image90.png" aria-label="Screw driving task"><source data-src="./static/ppt-media/media25.mp4" type="video/mp4"></video></div><div class="video-meta"><h4>Screw driving</h4></div></article></div>
         </section>
       </div>
@@ -166,6 +180,10 @@
   year      = {2026},
 }</code></pre></div>
       <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+    </section>
+    <section class="page-width acknowledgements-section" id="acknowledgements" aria-labelledby="acknowledgements-title">
+      <h2 id="acknowledgements-title">Acknowledgements</h2>
+      <p>We thank Hangqi Zhou, Junhan Wang, Zimu Han, and Zihao Zhao for their support.</p>
     </section>
   </main>
   <footer class="site-footer page-width"><a class="wordmark" href="#top">Dex<span>HOT</span></a><p>Licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br>Adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page template.</p><a class="back-to-top" href="#top">Back to top ↑</a></footer>
