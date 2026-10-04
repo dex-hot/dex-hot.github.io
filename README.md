@@ -33,7 +33,7 @@ All asset paths are relative, so the project sub-path works without a custom dom
 
 ## Featured salt-shaking video
 
-The updated demonstration uses source seconds 30–116, cropped to a 480 × 360 action window (4:3, origin x=220/y=180 in the original 960 × 544 source). This brings the hand and object 1.5× closer than the previous crop while retaining the grasp, lift, shaking over the plate, and return trajectory. The published file is 43 seconds long, encoded at 2× real time, and has no audio track. Both page placements play this file at the browser's normal playback rate to avoid applying the speed-up twice.
+The updated demonstration uses source seconds 30–106, cropped to a 480 × 360 action window (4:3, origin x=220/y=180 in the original 960 × 544 source). This brings the hand and object 1.5× closer than the previous crop while retaining the grasp, lift, and shaking over the plate. The final five seconds of the previous edit, showing the return to the table, have been removed. The published file is 38 seconds long, encoded at 2× real time, and has no audio track. Both page placements play this file at the browser's normal playback rate to avoid applying the speed-up twice.
 
 All published videos use H.264 with yuv420p pixels in MP4 containers. The simulation clips retain their original 1920 × 1080 resolution, frame rate, and duration; their original MPEG-4 Part 2 encoding was incompatible with browser playback. MP4 metadata is placed first for progressive loading.
 
