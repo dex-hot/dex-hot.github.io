@@ -1,35 +1,38 @@
-# DexHOT project page
+# DexHOT project website
 
-Project website for **DexHOT: Learning Hand--Object Configuration Transfer for Dexterous Manipulation**.
+Academic project page for **DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation**.
 
-Served via GitHub Pages at **https://zheweigui.github.io/dexhot/** — a project Pages site, so the
-repository must be named `dexhot` (not `dexhot.github.io`) under the `ZheweiGui` account, and Pages
-must be enabled in Settings → Pages with source `main` / `/ (root)`.
+Intended website address: https://zheweigui.github.io/dexhot/
 
-All asset paths in `index.html` are relative (`./static/...`), so the sub-path URL works unchanged.
+## Website and research code
 
-Built on the [Nerfies](https://github.com/nerfies/nerfies.github.io) project page template
-(CC BY-SA 4.0).
+This repository contains only the static project website and presentation assets. It does not contain the training environment, evaluation implementation, model checkpoints, or research datasets. Research code is **coming soon** and will be linked separately when released.
 
-## Layout
+The public page presents the authors and affiliations, real-world demonstrations, overview, method, DexHOTBench, experiments, citation, and acknowledgements. The Code notice is deliberately not a hyperlink while the implementation is unreleased.
 
+## Structure
+
+```text
+index.html          Project page
+static/css/         Styles
+static/js/          Playback and page interactions
+static/images/      Research figures
+static/ppt-media/   Benchmark figures, video posters, and silent demonstrations
+.nojekyll           Serve as a plain static website on GitHub Pages
 ```
-index.html              # the whole page (title, authors, teaser, abstract, method, benchmark, bibtex)
-static/css, static/js   # Bulma + FontAwesome assets from the template
-static/images/*.jpg     # figures exported from the paper (teaser, pipeline, object benchmark)
-```
 
-## TODO before going public
+## Publishing
 
-- Fill in author homepage links and affiliations in `index.html` (currently `#` placeholders).
-- Replace the `#` hrefs of the Paper / arXiv / Video buttons.
-- Add result videos (`static/videos/`) — real-robot rollouts and long-horizon tasks.
-- Update the BibTeX entry once the paper has a venue / arXiv id.
+In this repository's **Settings → Pages**, select **Deploy from a branch**, then **main** and **/ (root)**. After a successful Pages deployment, visitors should use the website address above, not the repository URL. Pushing commits alone does not enable Pages.
 
-## Regenerating the figures
+GitHub Free requires a public repository for Pages. If the website repository must stay private, use a plan supporting Pages from private repositories or a separate static hosting service. Regardless of repository visibility, any HTML, scripts, images, and videos served on a public website are accessible to visitors; do not put confidential assets in the published directory.
 
-```bash
-FIG=../6a0d7e74a29a0a17858192bc/Figures
-pdftocairo -png -r 160 -singlefile $FIG/teaser.pdf static/images/teaser
-# then downscale to width 1800 and save as .jpg
-```
+All asset paths are relative, so the project sub-path works without a custom domain or build step.
+
+## Featured salt-shaking video
+
+The updated demonstration uses source seconds 30–116, cropped to a 720 × 540 action window (4:3). The published file is 43 seconds long, encoded at 2× real time, and has no audio track. Both page placements play this file at the browser's normal playback rate to avoid applying the speed-up twice.
+
+## Credits
+
+Adapted from the [Nerfies](https://github.com/nerfies/nerfies.github.io) project page template (CC BY-SA 4.0).
