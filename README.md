@@ -2,13 +2,15 @@
 
 Academic project page for **DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation**.
 
-Intended website address: https://zheweigui.github.io/dexhot/
+Intended organization website repository: `dex-hot/dex-hot.github.io`.
+
+Intended website address: https://dex-hot.github.io/
 
 ## Website and research code
 
-This repository contains only the static project website and presentation assets. It does not contain the training environment, evaluation implementation, model checkpoints, or research datasets. Research code is **coming soon** and will be linked separately when released.
+This repository contains only the static project website and presentation assets. It does not contain the training environment, evaluation implementation, model checkpoints, or research datasets. The separate [DexHOT-Code](https://github.com/dex-hot/DexHOT-Code) repository is reserved for the official implementation and initially contains only a README announcing that code is coming soon.
 
-The public page presents the authors and affiliations, real-world demonstrations, overview, method, DexHOTBench, experiments, citation, and acknowledgements. The Code notice is deliberately not a hyperlink while the implementation is unreleased.
+The public page presents the authors and affiliations, real-world demonstrations, overview, method, DexHOTBench, experiments, citation, and acknowledgements. The Code button links to the separate implementation repository, not this website's source repository.
 
 ## Structure
 
