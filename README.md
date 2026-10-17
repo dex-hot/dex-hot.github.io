@@ -37,6 +37,8 @@ The updated demonstration uses source seconds 30–106, cropped to a 480 × 360 
 
 All published videos use H.264 with yuv420p pixels in MP4 containers. The simulation clips retain their original 1920 × 1080 resolution, frame rate, and duration; their original MPEG-4 Part 2 encoding was incompatible with browser playback. MP4 metadata is placed first for progressive loading.
 
+The 17 real-world clips are published as a single web-optimized version: a maximum 1920 × 1080 frame, 30 fps, H.264 High Profile at approximately 4 Mbps, yuv420p pixels, no audio, and fast-start MP4 metadata. Non-16:9 sources preserve their original aspect ratio within the 1080p bounds. The already-efficient simulation and salt-shaking clips remain at their validated settings.
+
 ## Credits
 
 Adapted from the [Nerfies](https://github.com/nerfies/nerfies.github.io) project page template (CC BY-SA 4.0).
