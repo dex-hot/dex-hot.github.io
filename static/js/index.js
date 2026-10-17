@@ -87,7 +87,12 @@ if (heroVideos.length && heroToggle) {
     if (!wantsPlayback || !isHeroVisible() || document.hidden) return;
     heroVideos.forEach((video) => {
       loadVideo(video);
-      video.play().catch(updateToggle);
+      const startVideo = () => {
+        if (!wantsPlayback || !isHeroVisible() || document.hidden) return;
+        video.play().catch(updateToggle);
+      };
+      if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) startVideo();
+      else video.addEventListener('canplay', startVideo, {once: true});
     });
   };
   heroToggle.hidden = false;
