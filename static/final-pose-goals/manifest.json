@@ -1,0 +1,11 @@
+{
+  "description": "Styled final hand-object pose goals rendered in the demonstration camera frame, with camera-aligned wrist orientation and a target-style gradient background.",
+  "tasks": [
+    {"task": "Barcode scanning", "scene": "scene1_yoga_can_111_1-2-3-4-5", "frame": 1885, "image": "barcode-scanning.png"},
+    {"task": "Shelf placement", "scene": "scene2_gum_can_81_1-2-3-4-5", "frame": 840, "image": "shelf-placement.png"},
+    {"task": "Block assembly", "scene": "scene3_half_cylinder_149_1-2-3-4-5", "frame": 920, "image": "block-assembly.png"},
+    {"task": "Salt shaking", "scene": "scene4_salt_shaking_9_1-2-3-4-5", "frame": 1700, "image": "salt-shaking.png"},
+    {"task": "Water pouring", "scene": "scene5_cup_cube_240_1-2-3-4-5", "frame": 1280, "image": "water-pouring.png"},
+    {"task": "Screw driving", "scene": "scene6_drill_big_fri_42_1-2-3-4-5", "frame": 1205, "image": "screw-driving.png"}
+  ]
+}
