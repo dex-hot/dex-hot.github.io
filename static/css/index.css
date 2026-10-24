@@ -127,9 +127,7 @@ strong { color: var(--ink); }
 .deck-stage.is-switching { animation: deck-reveal .28s ease; }
 .video-frame { position: relative; aspect-ratio: 4 / 3; background: #d9ded9; overflow: hidden; }
 .video-frame video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; background: #d9ded9; transform: scale(var(--media-scale, 1)); transform-origin: center; transition: opacity .18s ease, transform .24s ease; }
-.video-deck[data-deck="comparison"] .deck-stage.is-failure .video-frame video { transform: scale(1.08); }
-.video-deck[data-deck="comparison"] .deck-stage.is-failure.is-wide-letterboxed .video-frame video { transform: scale(1.38); }
-.video-deck[data-deck="comparison"] .video-frame video { transition: opacity .18s ease; }
+.video-deck[data-deck="comparison"] .video-frame video { transform: none; }
 .stage-goal-ghost { position: absolute; inset: 0; z-index: 3; margin: 0; overflow: hidden; border: 0; opacity: 0; pointer-events: none; transition: opacity .18s ease; }
 .stage-goal-ghost.is-visible { opacity: 1; }
 .stage-goal-ghost > img { position: absolute; left: var(--goal-x, 50%); top: var(--goal-y, 50%); width: var(--goal-width, 74%); max-width: none; height: auto; opacity: .60; filter: saturate(1.08) contrast(1.05) drop-shadow(0 0 5px rgb(69 255 190 / 84%)) drop-shadow(0 0 15px rgb(27 221 164 / 34%)) drop-shadow(0 5px 16px rgb(0 20 17 / 32%)); transform: translate(-50%, -50%) rotate(var(--goal-rotation, 0deg)) scale(var(--media-scale, 1)); transform-origin: center; transition: left .26s ease, top .26s ease, width .26s ease, transform .26s ease; }

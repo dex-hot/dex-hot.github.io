@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8faf9">
   <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
-  <link rel="stylesheet" href="./static/css/index.css?v=comparison-crop-3">
-  <script defer src="./static/js/index.js?v=comparison-crop-3"></script>
+  <link rel="stylesheet" href="./static/css/index.css?v=failure-single-shot-1">
+  <script defer src="./static/js/index.js?v=failure-single-shot-1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -120,18 +120,18 @@
     <section class="section-tinted video-section" id="videos" aria-labelledby="videos-title">
       <div class="page-width section-content">
         <div class="section-heading"><div><p class="eyebrow">04 / Experiments</p><h2 id="videos-title">From transfer to task.</h2></div><p>One frozen hand policy serves two levels of behavior: local hand–object configuration transfer and long-horizon task execution.</p></div>
-        <p class="section-lead">Each gallery uses a single 4:3 player. Clips advance automatically, or select an example below the player. Aggregate bars summarize the complete evaluation rather than only the displayed qualitative examples.</p>
+        <p class="section-lead">Each gallery uses a single 4:3 player. The comparison clips stay selected; other galleries advance automatically, or you can choose an example below the player. Aggregate bars summarize the complete evaluation rather than only the displayed qualitative examples.</p>
 
         <section class="video-group" aria-labelledby="video-overview-title">
           <div class="video-group-heading"><div><span>01</span><h3 id="video-overview-title">Why object pose is not enough</h3></div><p>The same scanner pose can be unusable when the hand blocks the sensing region or approaches an incompatible grasp.</p></div>
           <p class="video-group-copy">Switch between the two executions to isolate the effect of specifying the hand–object relationship. The successful rollout preserves a task-compatible grasp while bringing the barcode into the scanner field.</p>
           <div class="video-deck" data-deck="comparison">
             <div class="deck-stage is-failure">
-              <div class="video-frame"><span class="deck-status is-failure">✕ Failure</span><video controls muted autoplay playsinline preload="metadata" poster="./static/video-posters/media2.jpg" aria-label="Object-pose goal only"><source type="video/mp4"></video></div>
+              <div class="video-frame"><span class="deck-status is-failure">✕ Failure</span><video controls muted autoplay playsinline preload="metadata" poster="./static/video-posters/object-pose-failure-single-shot.jpg" aria-label="Object-pose goal only"><source type="video/mp4"></video></div>
               <div class="deck-caption"><div><span class="deck-kicker">Object-pose baseline</span><h4>Object-pose goal only</h4></div><p>The object reaches a plausible pose, but the hand–object relation leaves the scanner occluded or collision-prone.</p></div>
             </div>
             <div class="deck-tabs" role="group" aria-label="Object-pose comparison examples">
-              <button class="is-active" type="button" aria-pressed="true" data-source="./static/ppt-media/media2.mp4?v=trim-1" data-poster="./static/video-posters/media2.jpg" data-title="Object-pose goal only" data-kicker="Object-pose baseline" data-description="The object reaches a plausible pose, but the hand–object relation leaves the scanner occluded or collision-prone." data-status="✕ Failure" data-tone="failure">Object pose only</button>
+              <button class="is-active" type="button" aria-pressed="true" data-source="./static/ppt-media/object-pose-failure-single-shot.mp4" data-poster="./static/video-posters/object-pose-failure-single-shot.jpg" data-title="Object-pose goal only" data-kicker="Object-pose baseline" data-description="The object reaches a plausible pose, but the hand–object relation leaves the scanner occluded or collision-prone." data-status="✕ Failure" data-tone="failure">Object pose only</button>
               <button type="button" aria-pressed="false" data-source="./static/ppt-media/media3.mp4?v=trim-1" data-poster="./static/video-posters/media3.jpg" data-title="Configuration-aware execution" data-kicker="DexHOT" data-description="The specified hand–object configuration keeps the barcode visible and produces a task-compatible final grasp." data-status="Success" data-tone="success">Hand–object goal</button>
             </div>
           </div>

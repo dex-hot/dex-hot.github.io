@@ -168,13 +168,6 @@ const animateGoalStream = (deck) => {
   step();
 };
 
-const updateComparisonCrop = (deck) => {
-  if (deck.dataset.deck !== 'comparison') return;
-  const video = deck.querySelector('video');
-  const isNarrowShot = deck.dataset.activeIndex === '0' && video.currentTime < 4.36;
-  deck.querySelector('.deck-stage').classList.toggle('is-wide-letterboxed', isNarrowShot);
-};
-
 const selectDeckItem = (deck, index, shouldPlay = true) => {
   const buttons = [...deck.querySelectorAll('.deck-tabs button')];
   const button = buttons[index];
@@ -213,7 +206,6 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
   status.textContent = button.dataset.status;
   status.className = `deck-status is-${button.dataset.tone || 'neutral'}`;
   stage.classList.toggle('is-failure', button.dataset.tone === 'failure');
-  updateComparisonCrop(deck);
   kicker.textContent = button.dataset.kicker;
   title.textContent = button.dataset.title;
   description.textContent = button.dataset.description;
@@ -281,22 +273,19 @@ decks.forEach((deck) => {
     updateGoalStream(deck, true);
   });
   video.addEventListener('loadedmetadata', () => {
-    updateComparisonCrop(deck);
     buildGoalStream(deck);
     updateGoalForTime(deck);
   });
   video.addEventListener('timeupdate', () => {
-    updateComparisonCrop(deck);
     updateGoalForTime(deck);
     updateGoalStream(deck);
   });
   video.addEventListener('seeked', () => {
-    updateComparisonCrop(deck);
     updateGoalForTime(deck);
     updateGoalStream(deck, true);
   });
   video.addEventListener('ended', () => {
-    if (activeDeck !== deck || reducedMotion.matches) return;
+    if (deck.dataset.deck === 'comparison' || activeDeck !== deck || reducedMotion.matches) return;
     const next = (Number(deck.dataset.activeIndex || 0) + 1) % buttons.length;
     selectDeckItem(deck, next, true);
   });
