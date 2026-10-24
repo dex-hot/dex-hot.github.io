@@ -128,6 +128,7 @@ strong { color: var(--ink); }
 .video-frame { position: relative; aspect-ratio: 4 / 3; background: #d9ded9; overflow: hidden; }
 .video-frame video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; background: #d9ded9; transform: scale(var(--media-scale, 1)); transform-origin: center; transition: opacity .18s ease, transform .24s ease; }
 .video-deck[data-deck="comparison"] .deck-stage.is-failure .video-frame video { transform: scale(1.08); }
+.video-deck[data-deck="comparison"] .deck-stage.is-failure.is-wide-letterboxed .video-frame video { transform: scale(1.38); }
 .video-deck[data-deck="comparison"] .video-frame video { transition: opacity .18s ease; }
 .stage-goal-ghost { position: absolute; inset: 0; z-index: 3; margin: 0; overflow: hidden; border: 0; opacity: 0; pointer-events: none; transition: opacity .18s ease; }
 .stage-goal-ghost.is-visible { opacity: 1; }
