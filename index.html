@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8faf9">
   <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
-  <link rel="stylesheet" href="./static/css/index.css?v=task-evaluation-1">
+  <link rel="stylesheet" href="./static/css/index.css?v=content-width-1">
   <script defer src="./static/js/index.js?v=object-success-1"></script>
 </head>
 <body>
@@ -141,22 +141,12 @@
             <div><dt>Long-horizon task execution</dt><dd><span class="result-value">90<em>%</em></span><small><strong>27 / 30 successful trials</strong></small></dd></div>
           </dl>
           <p class="video-group-copy">The hand policy follows demonstration-provided configuration targets; a separate arm controller tracks the wrist trajectory.</p>
-          <section class="task-evaluation" aria-labelledby="task-evaluation-title">
-            <h4 id="task-evaluation-title">Evaluation metrics</h4>
-            <p>We evaluate three equally weighted task stages:</p>
-            <ol>
-              <li><strong>Picking up the object.</strong></li>
-              <li><strong>Satisfying the task-specific object-level constraint,</strong> such as directing the barcode toward the scanner, the cup opening upward, or the drill bit downward.</li>
-              <li><strong>Attaining the required hand–object configuration,</strong> including the task-specific hand arrangement.</li>
-            </ol>
-            <p class="task-success-requirement">Task success requires completing all three stages.</p>
-          </section>
           <figure class="research-figure task-description-figure">
             <a class="figure-image" href="./static/images/task-description.svg?v=final-1" data-figure="Demonstration-guided tasks" aria-label="Enlarge: Demonstration-guided tasks">
               <img src="./static/images/task-description.svg?v=final-1" width="5876" height="1595" loading="lazy" decoding="async" alt="Six demonstration-guided robot tasks shown as four chronological frames and a final close-up of the Sharpa hand–object relationship.">
               <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
             </a>
-            <figcaption><div class="caption-heading"><h3>Six tasks, one reusable hand policy.</h3></div><p>Frames progress from left to right. Cyan callouts enlarge the final visible Sharpa hand–object relationship for barcode scanning, shelf placement, block assembly, salt shaking, water pouring, and screw driving.</p></figcaption>
+            <figcaption><div class="caption-heading"><h3>Six tasks, one hand policy.</h3></div><p>Frames progress from left to right. Cyan callouts enlarge the final visible Sharpa hand–object relationship for barcode scanning, shelf placement, block assembly, salt shaking, water pouring, and screw driving.</p></figcaption>
           </figure>
           <div class="video-deck" data-deck="tasks">
             <div class="deck-stage">
@@ -174,7 +164,6 @@
               <button type="button" aria-pressed="false" data-source="./static/ppt-media/media25-2x-30fps-source.mp4?v=source-rebuild-20261025" data-poster="./static/video-posters/media25.jpg?v=full-hand-20261025" data-title="Screw driving" data-kicker="Demonstration-guided task" data-description="A tool-compatible hand configuration is maintained throughout the demonstrated screw-driving motion." data-status="2× speed" data-tone="neutral" data-goal-prefix="./static/stage-goals/screw-driving" data-goal-speed="2" data-goal-times="6.333334,12.6,18.933334,25.2" data-goal-labels="20%|40%|60%|80%" data-goal-frames="576,767,941,1191" data-goal-layouts="84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0" data-goal-fractions="0.2,0.4,0.6,0.8" data-goal-inset="true" data-policy-start-frame="0" data-policy-start-time="0">Screw driving</button>
             </div>
           </div>
-          <p class="video-group-copy video-group-copy--after">Four representative targets show the configuration goals sent at 1 Hz. Each inset uses the scanned object and Sharpa hand geometry.</p>
         </section>
       </div>
     </section>
