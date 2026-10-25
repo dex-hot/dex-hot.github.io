@@ -235,7 +235,7 @@
       "traj": 11,
       "target_row": 14289,
       "asset": "tape-measure-s1.png",
-      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "render": "Sharpa URDF + user-supplied USDZ native scan with original UV/diffuse texture",
       "wrist_orientation": "fixed palm-down in the real robot wrist frame",
       "camera_semantics": "exact native Open3D camera shared across all ten targets",
       "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
@@ -295,7 +295,27 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "material_source": {
+        "asset_root": "work",
+        "source_kind": "user-supplied USDZ visualization replacement",
+        "source_archive": "user-assets/tape-measure-20261025/source.usdz",
+        "source_filename": "tape_measure.usdz",
+        "source_sha256": "97e43816a340830d7db765af3758d45edf3456151f73bc22e34b6877ee43d569",
+        "mesh": "user-assets/tape-measure-20261025/aligned_scan.obj",
+        "mtl": "user-assets/tape-measure-20261025/aligned_scan.mtl",
+        "texture": "user-assets/tape-measure-20261025/baked_mesh_6514e4b7_tex0.png",
+        "mesh_sha256": "1607871cac1aa02860ee015a427894050f0a8475a9130a2bc39abbd52a787a47",
+        "mtl_sha256": "2371cbaec9b520bb0ee802e92e8fd3d14ba2d8b9dc681777f7ac77f1d0f48891",
+        "texture_sha256": "02fb5a07eed6ceef6096d38b2c0094cba9b3b245406209f822c16349a229543b",
+        "texture_mapping": "Original USDZ face-varying UVs and byte-identical diffuse PNG; no texture rebaking",
+        "alignment_report": "user-assets/tape-measure-20261025/alignment.json",
+        "alignment": "Proper rigid PCA + ICP registration to original pose-frame mesh; scale 1.0",
+        "alignment_rmse_mm": 2.309363523325045,
+        "scale": 1,
+        "renderer_material": "Original diffuse map; normal/AO maps archived but not used by legacy Open3D",
+        "version_scope": "User-selected visualization asset, not asserted to be the historical experiment asset; saved target/camera unchanged"
+      }
     },
     {
       "object": "medicine_bottle_034",
