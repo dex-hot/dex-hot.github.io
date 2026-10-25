@@ -465,7 +465,7 @@ pre { font-size: 13px; }
   --type-label: 14px;
 }
 .section-heading h2, .abstract-section h2, .acknowledgements-section h2 {
-  font-size: var(--type-section); line-height: 1.25; letter-spacing: -.6px;
+  font-size: var(--type-section); font-weight: 650; line-height: 1.25; letter-spacing: -.6px;
 }
 .section-heading .eyebrow {
   font-size: var(--type-card); text-transform: none; letter-spacing: .2px;
@@ -487,12 +487,14 @@ pre { font-size: 13px; }
 .deck-caption .object-rate-note { font-size: var(--type-label); }
 .object-success-rate { font-size: var(--type-support); }
 .results-strip dt { min-height: 0; }
-.experiment-results:is(.results-strip--two, .results-strip--transfer) dt { font-size: var(--type-body); font-weight: 700; color: var(--ink); }
-.experiment-results:is(.results-strip--two, .results-strip--transfer) small { font-size: var(--type-support); font-weight: 400; color: var(--muted); }
+.experiment-results dt { font-size: var(--type-body); font-weight: 700; color: var(--ink); }
+.experiment-results small { font-size: var(--type-support); font-weight: 400; color: var(--muted); }
 .deck-tabs button { white-space: normal; text-overflow: clip; overflow-wrap: normal; text-wrap: pretty; }
 .method-steps p { max-width: none; }
 .publication-affiliations { font-size: var(--type-support); }
 .publication-heading .author-note { font-size: var(--type-label); }
+.figure-number, .expand-hint, .copy-button, .copy-status,
+.back-to-top, .site-footer p { font-size: var(--type-label); }
 .task-stages { flex-wrap: wrap; }
 @media (max-width: 640px) {
   :root {
@@ -503,12 +505,16 @@ pre { font-size: 13px; }
     --type-support: 15px;
     --type-label: 13px;
   }
-  .nav-links { gap: 6px 12px; }
+  .nav-links { gap: 6px 8px; }
   .nav-links a { font-size: 13px; }
   .video-group-heading > div { align-items: baseline; gap: 10px; }
   .deck-caption-heading { flex-wrap: wrap; }
   .deck-caption-heading .deck-title { flex-basis: 100%; }
   .experiment-results > div { grid-template-columns: 90px minmax(0, 1fr); gap: 6px 12px; }
+}
+@media (max-width: 380px) {
+  .nav-links a { flex: 0 0 calc((100% - 28px) / 3); text-align: center; }
+  .nav-links { gap: 6px 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
