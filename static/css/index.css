@@ -48,7 +48,7 @@ sup { font-size: 10px; }
 .paper-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 12px; background: #102320; box-shadow: 0 12px 32px #173a2d14; }
 .paper-video video:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .abstract-section { max-width: 820px; padding-bottom: 64px; }
-.abstract-section h2 { margin: 0 0 24px; text-align: center; font-size: clamp(27px, 3vw, 34px); font-weight: 650; letter-spacing: -.7px; }
+.abstract-section h2 { margin: 0 0 24px; text-align: left; font-size: clamp(27px, 3vw, 34px); font-weight: 650; letter-spacing: -.7px; }
 .abstract-copy { color: var(--ink); font-size: 18px; line-height: 1.8; text-align: left; }
 .abstract-copy p { margin: 0; }
 .abstract-copy p + p { margin-top: 18px; }
