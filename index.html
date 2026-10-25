@@ -111,13 +111,13 @@
         <section class="video-group" aria-labelledby="video-real-transfer-title">
           <div class="video-group-heading"><div><span>02</span><h3 id="video-real-transfer-title">Real-world ANY2ANY configuration transfer</h3></div></div>
           <dl class="results-strip experiment-results results-strip--single" aria-label="Real-robot Any2Any result">
-            <div><dt>Real-robot Any2Any</dt><dd><span class="result-value">61.5<em>%</em></span><small><strong>200 uniformly sampled transfers</strong><br>10 objects · 20 arbitrary source→target grasp pairs per object</small></dd></div>
+            <div><dt>Real-robot Any2Any</dt><dd><span class="result-value">61.5<em>%</em></span><small>10 objects · 20 <strong>uniformly sampled transfers</strong> per object</small></dd></div>
           </dl>
           <p class="video-group-copy">Source and target grasps are uniformly sampled from each object’s validated pool, excluding near-duplicate pairs. The fingers drive the transfer with a <strong>fixed, palm-down wrist.</strong></p>
           <div class="video-deck" data-deck="real-transfer">
             <div class="deck-stage">
               <div class="video-frame"><span class="deck-status">Seen object</span><figure class="stage-goal-ghost any2any-goal-ghost" aria-label="Timestamp-matched palm-down final grasp target inset in the shared ANY2ANY camera"><img src="./static/any2any-final-grasps/banana-s1.png?v=native-any2any-camera-1" alt="Palm-down Sharpa target grasp and scanned banana in the shared ANY2ANY camera"><figcaption><span>TARGET</span><strong>Palm down · fingers forward</strong><small>Shared camera · Sharpa + scan · traj17</small></figcaption></figure><video controls muted autoplay playsinline preload="metadata" poster="./static/video-posters/media20.jpg?v=uniform-2" aria-label="Banana configuration transfer"><source type="video/mp4"></video></div>
-              <div class="deck-caption deck-caption--compact"><div class="deck-caption-heading"><div class="deck-title"><h4>Banana</h4><span class="deck-kicker">Seen object</span><span class="object-success-rate">Success rate: 80% (16/20)</span></div></div><p class="object-rate-note">All 20 trials per object, including initialization failures.</p></div>
+              <div class="deck-caption deck-caption--compact"><div class="deck-caption-heading"><div class="deck-title"><h4>Banana</h4><span class="deck-kicker">Seen object</span><span class="object-success-rate">Success rate: 80% (16/20)</span></div></div></div>
             </div>
             <div class="deck-tabs deck-tabs-dense" role="group" aria-label="Real-world transfer examples">
               <p class="deck-selector-label">Objects</p>
@@ -138,7 +138,7 @@
         <section class="video-group" aria-labelledby="video-tasks-title">
           <div class="video-group-heading"><div><span>03</span><h3 id="video-tasks-title">Complete demonstration-guided tasks</h3></div></div>
           <dl class="results-strip experiment-results results-strip--single" aria-label="Long-horizon task result">
-            <div><dt>Long-horizon task execution</dt><dd><span class="result-value">90<em>%</em></span><small><strong>27 / 30 successful trials</strong><br>Six tasks · demonstration-guided configuration goals updated at 1 Hz</small></dd></div>
+            <div><dt>Long-horizon task execution</dt><dd><span class="result-value">90<em>%</em></span><small><strong>27 / 30 successful trials</strong></small></dd></div>
           </dl>
           <p class="video-group-copy">The hand policy follows demonstration-provided configuration targets; a separate arm controller tracks the wrist trajectory.</p>
           <section class="task-evaluation" aria-labelledby="task-evaluation-title">
