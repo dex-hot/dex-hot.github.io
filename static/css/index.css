@@ -92,7 +92,9 @@ figcaption { border-top: 1px solid var(--line); padding: 23px 28px 25px; color: 
 .results-strip small { display: block; min-height: 75px; margin-top: 12px; color: var(--muted); font-size: 10px; font-weight: 400; line-height: 1.55; letter-spacing: 0; }
 .results-strip small strong { color: var(--ink); font-weight: 700; }
 .experiment-heading { margin-bottom: 0; }
-.experiment-heading h2 span { color: var(--accent); font-weight: 500; }
+.configuration-transfer-title { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 16px; width: 100%; }
+.configuration-transfer-title .transfer-arrow { color: var(--accent); font-weight: 500; }
+.configuration-transfer-title .configuration-term { white-space: nowrap; }
 .video-section .transfer-promise { grid-template-columns: 1fr; margin: 24px 0 64px; }
 .video-section .transfer-promise-heading > span { margin-bottom: 0; }
 .experiment-results { margin: -4px 0 24px; }
@@ -314,6 +316,8 @@ pre { font-size: 13px; }
 .site-footer p { font-size: 12px; }
 .dialog-toolbar h2 { font-size: 16px; }
 @media (max-width: 900px) {
+  .configuration-transfer-title { grid-template-columns: 1fr; gap: 8px; }
+  .configuration-transfer-title .transfer-arrow { justify-self: start; transform: rotate(90deg); }
   .page-width { width: calc(100% - 48px); }
   .results-strip > div { padding-inline: 15px; }
   .results-strip dt { font-size: 11px; }

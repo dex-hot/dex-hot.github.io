@@ -89,7 +89,7 @@ const showGoalStage = (deck, stageIndex, force = false) => {
   image.style.setProperty('--goal-width', `${width}%`);
   image.style.setProperty('--goal-rotation', `${rotation}deg`);
   const goalKind = deck.goalPersistent
-    ? 'Final grasp target'
+    ? 'Final hand–object configuration target'
     : (deck.goalKind || 'Policy target');
   goal.querySelector('figcaption span').textContent = deck.goalPersistent
     ? 'TARGET'
@@ -220,7 +220,7 @@ const updateSimulationTimeline = (deck) => {
   const status = deck.querySelector('.deck-status');
   const label = `Target ${String(state.targetIndex + 1).padStart(2, '0')} / ${String(timeline.starts.length).padStart(2, '0')}`;
   note.textContent = state.resetting ? 'Next target…' : label;
-  note.setAttribute('aria-label', state.resetting ? 'Resetting before the next target' : `${label}, reference grasp on the left`);
+  note.setAttribute('aria-label', state.resetting ? 'Resetting before the next target' : `${label}, reference hand–object configuration on the left`);
   status.textContent = state.reached ? '✓ Target reached' : state.resetting ? 'Resetting' : 'Policy execution';
   status.className = `deck-status is-${state.reached ? 'success' : 'neutral'}`;
   deck.querySelector('.deck-stage').classList.toggle('is-success', state.reached);
