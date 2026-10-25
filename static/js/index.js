@@ -172,6 +172,116 @@ const buildGoalStream = (deck) => {
   updateGoalStream(deck, true);
 };
 
+// Frame annotations for the published 30 fps simulation clips, not uniform bins.
+// Left/reference changes were checked against adjacent video frames. Between
+// success and the next target, the scene briefly displays its reset grasp.
+// Green intervals reproduce the ORIGINAL right-hand success color; no success
+// is inferred for the fifth transfer, which has no visible green marker here.
+const simulationTimelines = {
+  camera_003: {starts: [0,181,383,443,512], resets: [[163,181],[371,383],[433,443],[502,512]], successes: [[148,163],[356,371],[418,433],[487,502]]},
+  clock_016: {starts: [0,233,607,733,807], resets: [[223,233],[597,607],[723,733],[794,807]], successes: [[208,223],[582,597],[708,723],[779,794]]},
+  book_022: {starts: [0,204,301,671,736], resets: [[194,204],[287,301],[661,671],[726,736]], successes: [[179,194],[272,287],[646,661],[711,726]]},
+  tape_measure_009: {starts: [0,82,186,317,412], resets: [[72,82],[176,186],[307,317],[402,412]], successes: [[57,72],[161,176],[292,307],[387,402]]},
+  spanner_000: {starts: [0,72,164,334,455], resets: [[62,72],[154,164],[311,334],[445,455]], successes: [[47,62],[139,154],[296,311],[430,445]]},
+  shampoo_037: {starts: [0,89,151,315,434], resets: [[79,89],[141,151],[305,315],[424,434]], successes: [[64,79],[126,141],[290,305],[409,424]]},
+  screwdriver: {starts: [0,52,126,230,324], resets: [[42,52],[116,126],[220,230],[294,324]], successes: [[27,42],[101,116],[205,220],[279,294]]},
+  hammer_002: {starts: [0,95,202,292,387], resets: [[80,95],[180,202],[276,292],[377,387]], successes: [[65,80],[165,180],[261,276],[362,377]]},
+  flashlight: {starts: [0,312,399,590,737], resets: [[302,312],[389,399],[580,590],[727,737]], successes: [[287,302],[374,389],[565,580],[712,727]]},
+};
+
+const getSimulationState = (timeline, seconds) => {
+  const frame = Math.max(0, Math.floor(seconds * 30 + 0.0001));
+  const targetIndex = Math.max(0, timeline.starts.filter((start) => start <= frame).length - 1);
+  const inInterval = ([start, end]) => frame >= start && frame < end;
+  return {
+    frame,
+    targetIndex,
+    resetting: timeline.resets.some(inInterval),
+    reached: timeline.successes.some(inInterval),
+  };
+};
+
+const updateSimulationTimeline = (deck) => {
+  const timeline = deck.simulationTimeline;
+  if (!timeline) return;
+  const state = getSimulationState(timeline, deck.querySelector('video').currentTime);
+  const key = `${state.targetIndex}-${state.resetting}-${state.reached}`;
+  if (deck.simulationStateKey === key) return;
+  deck.simulationStateKey = key;
+  const note = deck.querySelector('.simulation-target-note');
+  const status = deck.querySelector('.deck-status');
+  const label = `Target ${String(state.targetIndex + 1).padStart(2, '0')} / ${String(timeline.starts.length).padStart(2, '0')}`;
+  note.textContent = state.resetting ? 'Next target…' : label;
+  note.setAttribute('aria-label', state.resetting ? 'Resetting before the next target' : `${label}, reference grasp on the left`);
+  status.textContent = state.reached ? '✓ Target reached' : state.resetting ? 'Resetting' : 'Policy execution';
+  status.className = `deck-status is-${state.reached ? 'success' : 'neutral'}`;
+  deck.querySelector('.deck-stage').classList.toggle('is-success', state.reached);
+  deck.querySelectorAll('.simulation-target-buttons button').forEach((button, index) => {
+    const current = index === state.targetIndex && !state.resetting;
+    button.classList.toggle('is-active', current);
+    button.classList.toggle('is-complete', Boolean(timeline.successes[index] && state.frame >= timeline.successes[index][0]));
+    button.setAttribute('aria-pressed', String(current));
+  });
+};
+
+const configureSimulationTimeline = (deck, button) => {
+  if (deck.dataset.deck !== 'simulation') return;
+  const timeline = simulationTimelines[button.dataset.objectId];
+  if (deck.simulationTimeline === timeline) {
+    // selectDeckItem also refreshes generic status text during scroll activation.
+    deck.simulationStateKey = null;
+    updateSimulationTimeline(deck);
+    return;
+  }
+  deck.simulationTimeline = timeline;
+  deck.simulationStateKey = null;
+  const navigation = deck.querySelector('.simulation-target-navigation');
+  const buttons = navigation.querySelector('.simulation-target-buttons');
+  buttons.replaceChildren();
+  navigation.hidden = !timeline;
+  if (!timeline) return;
+  timeline.starts.forEach((frame, index) => {
+    const marker = document.createElement('button');
+    marker.type = 'button';
+    marker.textContent = String(index + 1).padStart(2, '0');
+    marker.title = `Target ${index + 1} · ${(frame / 30).toFixed(2)} s`;
+    marker.setAttribute('aria-label', `Inspect target ${index + 1} of ${timeline.starts.length}`);
+    marker.addEventListener('click', () => {
+      const video = deck.querySelector('video');
+      activeDeck = deck;
+      deck.dataset.inspectingGoal = 'true';
+      pauseOtherDecks(video);
+      video.pause();
+      video.currentTime = frame / 30;
+      updateSimulationTimeline(deck);
+    });
+    buttons.append(marker);
+  });
+  updateSimulationTimeline(deck);
+};
+
+// Showcase success is a closing cue, not a label for the whole execution.
+// Use playback time (not a timer) so scrubbing and replay restore the right state.
+const isFinalSecond = (duration, currentTime) => (
+  Number.isFinite(duration) && duration > 0 && Number.isFinite(currentTime) &&
+  currentTime >= Math.max(0, duration - 1) && currentTime <= duration
+);
+
+const updateCompletionState = (deck) => {
+  if (!['real-transfer', 'tasks'].includes(deck.dataset.deck)) return;
+  const video = deck.querySelector('video');
+  const button = deck.querySelectorAll('.deck-tabs button')[Number(deck.dataset.activeIndex || 0)];
+  if (!button) return;
+  const complete = video.readyState >= 1 && isFinalSecond(video.duration, video.currentTime);
+  const key = `${deck.dataset.activeIndex}-${complete}`;
+  if (deck.completionStateKey === key) return;
+  deck.completionStateKey = key;
+  const status = deck.querySelector('.deck-status');
+  status.textContent = complete ? '✓ Success' : button.dataset.status;
+  status.className = `deck-status is-${complete ? 'success' : 'neutral'}`;
+  deck.querySelector('.deck-stage').classList.toggle('is-success', complete);
+};
+
 const stopGoalAnimation = (deck) => {
   if (!deck.goalAnimationFrame) return;
   cancelAnimationFrame(deck.goalAnimationFrame);
@@ -182,6 +292,8 @@ const animateGoalStream = (deck) => {
   stopGoalAnimation(deck);
   const video = deck.querySelector('video');
   const step = () => {
+    updateSimulationTimeline(deck);
+    updateCompletionState(deck);
     updateGoalForTime(deck);
     updateGoalStream(deck);
     if (!video.paused && !document.hidden) deck.goalAnimationFrame = requestAnimationFrame(step);
@@ -232,17 +344,25 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
     item.setAttribute('aria-pressed', String(selected));
   });
   deck.dataset.activeIndex = String(index);
+  deck.completionStateKey = null;
+  const successful = button.dataset.tone === 'success';
   status.textContent = button.dataset.status;
-  status.className = `deck-status is-${button.dataset.tone || 'neutral'}`;
+  status.className = `deck-status is-${successful ? 'success' : button.dataset.tone || 'neutral'}`;
+  stage.classList.toggle('is-success', successful);
   stage.classList.toggle('is-failure', button.dataset.tone === 'failure');
-  kicker.textContent = button.dataset.kicker;
+  kicker.textContent = deck.dataset.deck === 'tasks' ? button.dataset.status : button.dataset.kicker;
   title.textContent = button.dataset.title;
+  const position = deck.querySelector('.deck-position');
+  position.textContent = `${String(index + 1).padStart(2, '0')} / ${String(buttons.length).padStart(2, '0')}`;
+  position.setAttribute('aria-label', `Example ${index + 1} of ${buttons.length}`);
   if (description) description.textContent = button.dataset.description || '';
   video.setAttribute('aria-label', button.dataset.title);
   deck.style.setProperty('--media-scale', button.dataset.mediaScale || '1');
 
   const alreadyLoaded = source.src === new URL(button.dataset.source, document.baseURI).href;
   if (alreadyLoaded) {
+    configureSimulationTimeline(deck, button);
+    updateCompletionState(deck);
     buildGoalStream(deck);
     updateGoalForTime(deck);
     if (shouldPlay && !document.hidden) video.play().catch(() => {});
@@ -254,12 +374,15 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
   source.src = button.dataset.source;
   video.poster = button.dataset.poster;
   video.load();
+  configureSimulationTimeline(deck, button);
+  updateCompletionState(deck);
 
   const revealAndPlay = () => {
     stage.classList.remove('is-loading');
+    updateCompletionState(deck);
     buildGoalStream(deck);
     updateGoalForTime(deck);
-    if (shouldPlay && activeDeck === deck && !document.hidden) {
+    if (shouldPlay && activeDeck === deck && !document.hidden && deck.dataset.inspectingGoal !== 'true') {
       video.play().catch(() => {});
     }
   };
@@ -282,6 +405,28 @@ decks.forEach((deck) => {
   deck.dataset.activeIndex = '0';
   deck.querySelector('.deck-caption').setAttribute('aria-live', 'polite');
 
+  const navigation = document.createElement('div');
+  navigation.className = 'deck-navigation';
+  const position = document.createElement('span');
+  position.className = 'deck-position';
+  position.textContent = `01 / ${String(buttons.length).padStart(2, '0')}`;
+  position.setAttribute('aria-label', `Example 1 of ${buttons.length}`);
+  navigation.append(position);
+  for (const [step, label, arrow] of [[-1, 'Previous example', '←'], [1, 'Next example', '→']]) {
+    const control = document.createElement('button');
+    control.type = 'button';
+    control.className = 'deck-step';
+    control.setAttribute('aria-label', label);
+    control.title = label;
+    control.textContent = arrow;
+    control.addEventListener('click', () => {
+      const index = (Number(deck.dataset.activeIndex || 0) + step + buttons.length) % buttons.length;
+      buttons[index].click();
+    });
+    navigation.append(control);
+  }
+  deck.querySelector('.deck-caption-heading').append(navigation);
+
   buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
       activeDeck = deck;
@@ -296,20 +441,27 @@ decks.forEach((deck) => {
     pauseOtherDecks(video);
     animateGoalStream(deck);
   });
+  ['loadedmetadata', 'durationchange', 'timeupdate', 'seeking', 'seeked', 'emptied', 'pause'].forEach((event) => {
+    video.addEventListener(event, () => updateCompletionState(deck));
+  });
   video.addEventListener('pause', () => {
     stopGoalAnimation(deck);
+    updateSimulationTimeline(deck);
     updateGoalForTime(deck);
     updateGoalStream(deck, true);
   });
   video.addEventListener('loadedmetadata', () => {
+    updateSimulationTimeline(deck);
     buildGoalStream(deck);
     updateGoalForTime(deck);
   });
   video.addEventListener('timeupdate', () => {
+    updateSimulationTimeline(deck);
     updateGoalForTime(deck);
     updateGoalStream(deck);
   });
   video.addEventListener('seeked', () => {
+    updateSimulationTimeline(deck);
     updateGoalForTime(deck);
     updateGoalStream(deck, true);
   });
