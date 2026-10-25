@@ -68,7 +68,7 @@
         <div class="section-heading experiment-heading"><h2 id="videos-title">ANY GRASP <span aria-hidden="true">→</span> ANY GRASP</h2></div>
         <div class="transfer-promise" aria-labelledby="videos-title">
           <div class="transfer-promise-heading"><span>Core capability</span></div>
-          <p>One frozen policy transfers from any feasible grasp to another, jointly controlling finger articulation and object pose relative to the wrist.</p>
+          <p>One shared policy transfers from any feasible grasp to another, jointly controlling finger articulation and object pose relative to the wrist.</p>
           <dl class="transfer-promise-details" aria-label="What Any-Grasp-to-Any-Grasp means">
             <div><dt>Any feasible source</dt><dd>Begin from a validated, stable hand–object configuration.</dd></div>
             <div><dt>Any feasible target</dt><dd>Choose another grasp from the object’s full validated pool.</dd></div>
@@ -140,7 +140,7 @@
           <dl class="results-strip experiment-results results-strip--single" aria-label="Long-horizon task result">
             <div><dt>Long-horizon task execution</dt><dd><span class="result-value">90<em>%</em></span><small><strong>27 / 30 successful trials</strong><br>Six tasks · demonstration-guided configuration goals updated at 1 Hz</small></dd></div>
           </dl>
-          <p class="video-group-copy">The frozen hand policy follows demonstration-provided configuration targets; a separate arm controller tracks the wrist trajectory.</p>
+          <p class="video-group-copy">The hand policy follows demonstration-provided configuration targets; a separate arm controller tracks the wrist trajectory.</p>
           <div class="task-stages" aria-label="Task success stages"><span>01 · Pick up</span><i aria-hidden="true">→</i><span>02 · Satisfy task constraint</span><i aria-hidden="true">→</i><span>03 · Reach goal configuration</span></div>
           <figure class="research-figure task-description-figure">
             <a class="figure-image" href="./static/images/task-description.svg?v=final-1" data-figure="Figure 3 · Demonstration-guided tasks" aria-label="Enlarge Figure 3: Demonstration-guided tasks">
@@ -196,7 +196,7 @@
             <img src="./static/images/pipeline.jpg" width="1800" height="1012" loading="lazy" decoding="async" alt="DexHOT pipeline: grasp synthesis and local-goal transfer training above; demonstration- or planner-guided hierarchical chaining below.">
             <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
           </a>
-          <figcaption><div class="caption-heading"><span class="figure-number">Figure 02</span><h3>From synthetic configurations to long-horizon control.</h3></div><p>One reusable hand policy follows configuration subgoals in closed loop, without task-specific policy training.</p><div class="caption-panels"><p><span class="panel-label">Top · Training</span>Grasp synthesis and local-goal sampling supply configuration pairs for relation-conditioned policy learning.</p><p><span class="panel-label">Bottom · Deployment</span>A greedy planner or human demonstration supplies subgoals to the frozen hand policy.</p></div></figcaption>
+          <figcaption><div class="caption-heading"><span class="figure-number">Figure 02</span><h3>From synthetic configurations to long-horizon control.</h3></div><p>One reusable hand policy follows configuration subgoals in closed loop, without task-specific policy training.</p><div class="caption-panels"><p><span class="panel-label">Top · Training</span>Grasp synthesis and local-goal sampling supply configuration pairs for relation-conditioned policy learning.</p><p><span class="panel-label">Bottom · Deployment</span>A greedy planner or human demonstration supplies subgoals to the hand policy.</p></div></figcaption>
         </figure>
       </div>
     </section>
