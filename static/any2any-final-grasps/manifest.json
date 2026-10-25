@@ -328,7 +328,7 @@
       "traj": 19,
       "target_row": 17141,
       "asset": "medicine-bottle-s1.png",
-      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "render": "Sharpa URDF triangle mesh + original run-path OBJ/MTL UV texture (no vertex-colour approximation)",
       "wrist_orientation": "fixed palm-down in the real robot wrist frame",
       "camera_semantics": "exact native Open3D camera shared across all ten targets",
       "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
@@ -388,7 +388,18 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "material_source": {
+        "run_log": "exp_result-from-archive/exp_result/medicine_bottle_034/traj19/run_params/traj19_20260912_183858.txt",
+        "mesh": "CoRL/corl_realworld/obj/medicine_bottle_034/textured.obj",
+        "mtl": "CoRL/corl_realworld/obj/medicine_bottle_034/textured.mtl",
+        "texture": "CoRL/corl_realworld/obj/medicine_bottle_034/textured_tex.png",
+        "mesh_sha256": "ca488c7f2b749dc66d656ed03987c2e859328c0874cb43ab6d89c4c7c194ae6b",
+        "mtl_sha256": "5bcb728e0090a29119bac7f2317223a62b880a49de8bbf17898d5ed3d869a85d",
+        "texture_sha256": "8a9e47a570a8825c3dcf51b2f3d61ac5b5eb7ffd3d6d9d967d461cad07d966b7",
+        "texture_mapping": "Original OBJ per-triangle UV and full-resolution MTL atlas",
+        "version_scope": "Current repository contents at the FP_MESH path recorded by this run; historical texture bytes are not archived in the run log."
+      }
     },
     {
       "object": "mouse",
@@ -693,7 +704,7 @@
       "traj": 7,
       "target_row": 102,
       "asset": "screwdriver-s1.png",
-      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "render": "Sharpa URDF triangle mesh + original run-path OBJ/MTL UV texture (no vertex-colour approximation)",
       "wrist_orientation": "fixed palm-down in the real robot wrist frame",
       "camera_semantics": "exact native Open3D camera shared across all ten targets",
       "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
@@ -753,7 +764,18 @@
           0.0,
           1.0
         ]
-      ]
+      ],
+      "material_source": {
+        "run_log": "exp_result-from-archive/exp_result/screwdriver/traj7/run_params/traj7_20260907_002638.txt",
+        "mesh": "CoRL/corl_realworld/obj/screwdriver/textured.obj",
+        "mtl": "CoRL/corl_realworld/obj/screwdriver/textured.mtl",
+        "texture": "CoRL/corl_realworld/obj/screwdriver/textured_tex.png",
+        "mesh_sha256": "04fbbbb3f1cc26a63e834899a8d17cdce8d7d1e67cda477d801b39e6cdc88615",
+        "mtl_sha256": "5bcb728e0090a29119bac7f2317223a62b880a49de8bbf17898d5ed3d869a85d",
+        "texture_sha256": "e66395e83f4988b2fa3b87dc846bd58559ddd7203c14b737ce7c27ce93945ce9",
+        "texture_mapping": "Original OBJ per-triangle UV and full-resolution MTL atlas",
+        "version_scope": "Current repository contents at the FP_MESH path recorded by this run; historical texture bytes are not archived in the run log."
+      }
     }
   ]
 }

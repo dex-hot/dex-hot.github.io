@@ -44,6 +44,19 @@ sup { font-size: 10px; }
 .resource-coming-soon { display: inline-flex; align-items: center; min-height: 42px; padding-inline: 6px; color: var(--muted); font-size: 12px; }
 .resource-primary { background: var(--accent); border-color: var(--accent); color: white; }
 .resource-primary:hover { background: #0f5747; text-decoration: none; }
+.paper-video { max-width: 960px; margin: 12px auto 0; }
+.paper-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 12px; background: #102320; box-shadow: 0 12px 32px #173a2d14; }
+.paper-video video:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.abstract-section { max-width: 820px; padding-bottom: 64px; }
+.abstract-section h2 { margin: 0 0 24px; text-align: center; font-size: clamp(27px, 3vw, 34px); font-weight: 650; letter-spacing: -.7px; }
+.abstract-copy { color: var(--ink); font-size: 18px; line-height: 1.8; text-align: left; }
+.abstract-copy p { margin: 0; }
+.abstract-copy p + p { margin-top: 18px; }
+@media (max-width: 640px) {
+  .abstract-section { padding-bottom: 44px; }
+  .abstract-section h2 { margin-bottom: 18px; }
+  .abstract-copy { font-size: 16px; line-height: 1.75; }
+}
 .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; margin-bottom: 28px; }
 .section-heading h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 650; letter-spacing: -1px; text-wrap: balance; }
 .section-heading .eyebrow { margin-bottom: 12px; }
@@ -203,6 +216,12 @@ strong { color: var(--ink); }
 .deck-title { display: flex; flex: 1; align-items: center; flex-wrap: wrap; gap: 6px 12px; min-width: 0; }
 .deck-kicker { display: inline-flex; padding: 3px 7px; border: 1px solid #dce9e2; border-radius: 5px; background: #f0f6f2; color: var(--accent); font-size: 9px; font-weight: 650; letter-spacing: .25px; white-space: nowrap; }
 .video-deck[data-deck="simulation"] .deck-kicker { display: none; }
+.object-success-rate { color: var(--ink); font-size: 14px; font-weight: 600; white-space: nowrap; }
+.deck-caption .object-rate-note { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+@media (max-width: 640px) {
+  .object-success-rate { font-size: 12px; }
+  .object-rate-note { font-size: 12px; }
+}
 .deck-navigation { display: flex; flex: 0 0 auto; align-items: center; gap: 5px; }
 .deck-position { margin-right: 6px; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; letter-spacing: .6px; white-space: nowrap; }
 .deck-step { display: inline-grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 1px solid #d2dfd7; border-radius: 7px; background: #f8faf9; color: var(--accent); font-size: 18px; line-height: 1; cursor: pointer; transition: background .16s, border-color .16s; }

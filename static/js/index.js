@@ -32,15 +32,23 @@ if (figureDialog && typeof figureDialog.showModal === 'function') {
 // player so the page never presents a wall of simultaneously moving videos.
 const decks = [...document.querySelectorAll('.video-deck')];
 const deckVideos = decks.map((deck) => deck.querySelector('video'));
+const paperVideo = document.querySelector('#paper-video-player');
 const deckVisibility = new Map(decks.map((deck) => [deck, 0]));
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let activeDeck = null;
 
 const pauseOtherDecks = (currentVideo) => {
+  if (paperVideo && paperVideo !== currentVideo && !paperVideo.paused) paperVideo.pause();
   deckVideos.forEach((video) => {
     if (video !== currentVideo && !video.paused) video.pause();
   });
 };
+
+// The full paper video is user-controlled and takes priority over gallery autoplay.
+paperVideo?.addEventListener('play', () => {
+  activeDeck = null;
+  pauseOtherDecks(paperVideo);
+});
 
 const targetAssetRevision = Date.now();
 const parseGoalStages = (button) => {
@@ -312,7 +320,7 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
   const status = deck.querySelector('.deck-status');
   const kicker = deck.querySelector('.deck-kicker');
   const title = deck.querySelector('.deck-caption h4');
-  const description = deck.querySelector('.deck-caption p');
+  const description = deck.querySelector('.deck-caption p:not(.object-rate-note)');
   const goal = deck.querySelector('.stage-goal-ghost');
 
   if (goal) {
@@ -351,6 +359,14 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
   stage.classList.toggle('is-success', successful);
   stage.classList.toggle('is-failure', button.dataset.tone === 'failure');
   kicker.textContent = deck.dataset.deck === 'tasks' ? button.dataset.status : button.dataset.kicker;
+  const objectRate = deck.querySelector('.object-success-rate');
+  if (objectRate) {
+    const successes = Number(button.dataset.successCount);
+    const trials = Number(button.dataset.trialCount);
+    const valid = Number.isInteger(successes) && Number.isInteger(trials) && trials > 0 && successes >= 0 && successes <= trials;
+    objectRate.hidden = !valid;
+    objectRate.textContent = valid ? `Success rate: ${Math.round(100 * successes / trials)}% (${successes}/${trials})` : '';
+  }
   title.textContent = button.dataset.title;
   const position = deck.querySelector('.deck-position');
   position.textContent = `${String(index + 1).padStart(2, '0')} / ${String(buttons.length).padStart(2, '0')}`;
@@ -365,7 +381,7 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
     updateCompletionState(deck);
     buildGoalStream(deck);
     updateGoalForTime(deck);
-    if (shouldPlay && !document.hidden) video.play().catch(() => {});
+    if (shouldPlay && !document.hidden && (!paperVideo || paperVideo.paused)) video.play().catch(() => {});
     return;
   }
 
@@ -382,7 +398,7 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
     updateCompletionState(deck);
     buildGoalStream(deck);
     updateGoalForTime(deck);
-    if (shouldPlay && activeDeck === deck && !document.hidden && deck.dataset.inspectingGoal !== 'true') {
+    if (shouldPlay && activeDeck === deck && !document.hidden && (!paperVideo || paperVideo.paused) && deck.dataset.inspectingGoal !== 'true') {
       video.play().catch(() => {});
     }
   };
@@ -391,7 +407,7 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
 };
 
 const activateDeck = (deck) => {
-  if (!deck || document.hidden) return;
+  if (!deck || document.hidden || (paperVideo && !paperVideo.paused)) return;
   activeDeck = deck;
   const index = Number(deck.dataset.activeIndex || 0);
   pauseOtherDecks(deck.querySelector('video'));
