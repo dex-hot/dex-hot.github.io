@@ -93,6 +93,8 @@ figcaption { border-top: 1px solid var(--line); padding: 23px 28px 25px; color: 
 .results-strip small strong { color: var(--ink); font-weight: 700; }
 .experiment-heading { margin-bottom: 0; }
 .configuration-transfer-title { display: grid; grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr); align-items: center; gap: 20px; width: 100%; }
+.configuration-transfer-title > span:first-child { text-align: right; }
+.configuration-transfer-title > span:last-child { text-align: left; }
 .configuration-transfer-title .transfer-arrow { display: flex; align-items: center; justify-content: center; color: var(--accent); }
 .transfer-arrow svg { display: block; width: 64px; height: 28px; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .configuration-transfer-title .configuration-term { white-space: nowrap; }
