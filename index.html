@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8faf9">
   <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
-  <link rel="stylesheet" href="./static/css/index.css?v=abstract-left-1">
+  <link rel="stylesheet" href="./static/css/index.css?v=task-evaluation-1">
   <script defer src="./static/js/index.js?v=object-success-1"></script>
 </head>
 <body>
@@ -50,14 +50,14 @@
       </div>
     </section>
     <section class="page-width overview-section" id="overview-figure" aria-labelledby="overview-title">
-      <div class="section-heading compact-heading"><h2 id="overview-title">A shared interface for dexterous behavior</h2><span class="section-tag">At a glance</span></div>
+      <div class="section-heading compact-heading"><h2 id="overview-title">A shared interface for dexterous behavior</h2></div>
       <figure class="research-figure">
-        <a class="figure-image" href="./static/images/teaser.jpg" data-figure="Figure 1 · Configuration transfer" aria-label="Enlarge Figure 1: Configuration transfer">
+        <a class="figure-image" href="./static/images/teaser.jpg" data-figure="Configuration transfer" aria-label="Enlarge: Configuration transfer">
           <img src="./static/images/teaser.jpg" width="1800" height="1012" fetchpriority="high" alt="A single DexHOT policy transfers between hand–object configurations, with planned transfers on the left and long-horizon robot tasks on the right.">
           <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
         </a>
         <figcaption>
-          <div class="caption-heading"><span class="figure-number">Figure 01</span><h3>One policy, many hand–object configurations.</h3></div>
+          <div class="caption-heading"><h3>One policy, many hand–object configurations.</h3></div>
           <p>DexHOT transfers between configurations that jointly specify hand articulation and object pose relative to the wrist.</p>
           <div class="caption-panels"><p><span class="panel-label">Left · Planned transfer</span>A greedy planner selects subgoals from a synthetic configuration pool to reach a distant target.</p><p><span class="panel-label">Right · Long-horizon tasks</span>Human demonstrations provide subgoals, including previously unseen hand–object configurations.</p></div>
         </figcaption>
@@ -65,7 +65,7 @@
     </section>
     <section class="section-tinted video-section" id="videos" aria-labelledby="videos-title">
       <div class="page-width section-content">
-        <div class="section-heading experiment-heading"><h2 id="videos-title">ANY GRASP <span aria-hidden="true">→</span> ANY GRASP</h2></div>
+        <div class="section-heading experiment-heading"><h2 id="videos-title">Any grasp <span aria-hidden="true">→</span> Any grasp</h2></div>
         <div class="transfer-promise" aria-labelledby="videos-title">
           <div class="transfer-promise-heading"><span>Core capability</span></div>
           <p>One shared policy transfers from any feasible grasp to another, jointly controlling finger articulation and object pose relative to the wrist.</p>
@@ -80,8 +80,8 @@
         <section class="video-group" aria-labelledby="video-simulation-title">
           <div class="video-group-heading"><div><span>01</span><h3 id="video-simulation-title">Simulation Any2Any transfer</h3></div></div>
           <dl class="results-strip experiment-results results-strip--two" aria-label="Simulation Any2Any results">
-            <div><dt>Seen-object Any2Any</dt><dd><span class="result-value">80.5<em>%</em></span><small><strong>40 training objects</strong><br>Close and far configuration transfers with greedy subgoal planning</small></dd></div>
-            <div><dt>Zero-shot unseen-object Any2Any</dt><dd><span class="result-value">69.4<em>%</em></span><small><strong>80 held-out objects</strong><br>Unseen instances and entirely unseen object categories</small></dd></div>
+            <div><dt>Seen-object Any2Any</dt><dd><span class="result-value">80.5<em>%</em></span><small><strong>40 training objects</strong></small></dd></div>
+            <div><dt>Zero-shot unseen-object Any2Any</dt><dd><span class="result-value">69.4<em>%</em></span><small><strong>80 held-out objects</strong></small></dd></div>
           </dl>
           <!-- Target numbering follows visible reference changes in the original 30 fps clips. -->
           <div class="video-deck" data-deck="simulation">
@@ -141,13 +141,22 @@
             <div><dt>Long-horizon task execution</dt><dd><span class="result-value">90<em>%</em></span><small><strong>27 / 30 successful trials</strong><br>Six tasks · demonstration-guided configuration goals updated at 1 Hz</small></dd></div>
           </dl>
           <p class="video-group-copy">The hand policy follows demonstration-provided configuration targets; a separate arm controller tracks the wrist trajectory.</p>
-          <div class="task-stages" aria-label="Task success stages"><span>01 · Pick up</span><i aria-hidden="true">→</i><span>02 · Satisfy task constraint</span><i aria-hidden="true">→</i><span>03 · Reach goal configuration</span></div>
+          <section class="task-evaluation" aria-labelledby="task-evaluation-title">
+            <h4 id="task-evaluation-title">Evaluation metrics</h4>
+            <p>We evaluate three equally weighted task stages:</p>
+            <ol>
+              <li><strong>Picking up the object.</strong></li>
+              <li><strong>Satisfying the task-specific object-level constraint,</strong> such as directing the barcode toward the scanner, the cup opening upward, or the drill bit downward.</li>
+              <li><strong>Attaining the required hand–object configuration,</strong> including the task-specific hand arrangement.</li>
+            </ol>
+            <p class="task-success-requirement">Task success requires completing all three stages.</p>
+          </section>
           <figure class="research-figure task-description-figure">
-            <a class="figure-image" href="./static/images/task-description.svg?v=final-1" data-figure="Figure 3 · Demonstration-guided tasks" aria-label="Enlarge Figure 3: Demonstration-guided tasks">
+            <a class="figure-image" href="./static/images/task-description.svg?v=final-1" data-figure="Demonstration-guided tasks" aria-label="Enlarge: Demonstration-guided tasks">
               <img src="./static/images/task-description.svg?v=final-1" width="5876" height="1595" loading="lazy" decoding="async" alt="Six demonstration-guided robot tasks shown as four chronological frames and a final close-up of the Sharpa hand–object relationship.">
               <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
             </a>
-            <figcaption><div class="caption-heading"><span class="figure-number">Figure 03</span><h3>Six tasks, one reusable hand policy.</h3></div><p>Frames progress from left to right. Cyan callouts enlarge the final visible Sharpa hand–object relationship for barcode scanning, shelf placement, block assembly, salt shaking, water pouring, and screw driving.</p></figcaption>
+            <figcaption><div class="caption-heading"><h3>Six tasks, one reusable hand policy.</h3></div><p>Frames progress from left to right. Cyan callouts enlarge the final visible Sharpa hand–object relationship for barcode scanning, shelf placement, block assembly, salt shaking, water pouring, and screw driving.</p></figcaption>
           </figure>
           <div class="video-deck" data-deck="tasks">
             <div class="deck-stage">
@@ -192,11 +201,11 @@
           <li><span class="step-number">03</span><h3>Chain subgoals</h3><p>Compose long-horizon behavior using a planner or demonstrations.</p></li>
         </ol>
         <figure class="research-figure">
-          <a class="figure-image" href="./static/images/pipeline.jpg" data-figure="Figure 2 · Learning and deployment pipeline" aria-label="Enlarge Figure 2: Learning and deployment pipeline">
+          <a class="figure-image" href="./static/images/pipeline.jpg" data-figure="Learning and deployment pipeline" aria-label="Enlarge: Learning and deployment pipeline">
             <img src="./static/images/pipeline.jpg" width="1800" height="1012" loading="lazy" decoding="async" alt="DexHOT pipeline: grasp synthesis and local-goal transfer training above; demonstration- or planner-guided hierarchical chaining below.">
             <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
           </a>
-          <figcaption><div class="caption-heading"><span class="figure-number">Figure 02</span><h3>From synthetic configurations to long-horizon control.</h3></div><p>One reusable hand policy follows configuration subgoals in closed loop, without task-specific policy training.</p><div class="caption-panels"><p><span class="panel-label">Top · Training</span>Grasp synthesis and local-goal sampling supply configuration pairs for relation-conditioned policy learning.</p><p><span class="panel-label">Bottom · Deployment</span>A greedy planner or human demonstration supplies subgoals to the hand policy.</p></div></figcaption>
+          <figcaption><div class="caption-heading"><h3>From synthetic configurations to long-horizon control.</h3></div><p>One reusable hand policy follows configuration subgoals in closed loop, without task-specific policy training.</p><div class="caption-panels"><p><span class="panel-label">Top · Training</span>Grasp synthesis and local-goal sampling supply configuration pairs for relation-conditioned policy learning.</p><p><span class="panel-label">Bottom · Deployment</span>A greedy planner or human demonstration supplies subgoals to the hand policy.</p></div></figcaption>
         </figure>
       </div>
     </section>

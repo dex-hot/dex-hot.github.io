@@ -47,7 +47,7 @@ sup { font-size: 10px; }
 .paper-video { max-width: 960px; margin: 12px auto 0; }
 .paper-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 12px; background: #102320; box-shadow: 0 12px 32px #173a2d14; }
 .paper-video video:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-.abstract-section { max-width: 820px; padding-bottom: 64px; }
+.abstract-section { padding-bottom: 64px; }
 .abstract-section h2 { margin: 0 0 24px; text-align: left; font-size: clamp(27px, 3vw, 34px); font-weight: 650; letter-spacing: -.7px; }
 .abstract-copy { color: var(--ink); font-size: 18px; line-height: 1.8; text-align: left; }
 .abstract-copy p { margin: 0; }
@@ -455,6 +455,68 @@ pre { font-size: 13px; }
   .copy-button { font-size: 12px; }
   pre { font-size: 12px; }
   .dialog-toolbar h2 { font-size: 14px; }
+}
+/* Shared presentation typography. Keep player overlays at their existing sizes. */
+:root {
+  --type-section: 32px;
+  --type-subsection: 28px;
+  --type-card: 20px;
+  --type-body: 18px;
+  --type-support: 16px;
+  --type-label: 14px;
+}
+.section-heading h2, .abstract-section h2, .acknowledgements-section h2 {
+  font-size: var(--type-section); line-height: 1.25; letter-spacing: -.6px;
+}
+.section-heading .eyebrow {
+  font-size: var(--type-card); text-transform: none; letter-spacing: .2px;
+}
+.video-group-heading h3, .benchmark-slide > h3 { font-size: var(--type-subsection); }
+.video-group-heading span, .step-number { font-size: var(--type-card); font-weight: 650; flex-shrink: 0; }
+.caption-heading h3, .method-steps h3, .deck-caption h4, .benchmark-splits h4 { font-size: var(--type-card); }
+.nav-links a { font-size: var(--type-support); }
+.abstract-copy, .section-heading > p, .transfer-promise > p,
+.video-group-copy, .section-lead, .acknowledgements-section p { font-size: var(--type-body); }
+.research-figure > figcaption, .caption-panels, .method-steps p,
+.transfer-promise-details dt, .transfer-promise-details dd,
+.results-strip dt, .results-strip small, .deck-caption p,
+.benchmark-splits p, .panel-key p, .density-legend,
+.deck-tabs button, .task-stages { font-size: var(--type-support); }
+.transfer-promise-heading > span, .deck-selector-label, .deck-kicker,
+.deck-position, .simulation-legend, .simulation-target-navigation > span,
+.simulation-target-buttons button, .benchmark-stat span, .density-scale,
+.deck-caption .object-rate-note { font-size: var(--type-label); }
+.object-success-rate { font-size: var(--type-support); }
+.results-strip dt { min-height: 0; }
+.deck-tabs button { white-space: normal; text-overflow: clip; overflow-wrap: normal; text-wrap: pretty; }
+.method-steps p { max-width: none; }
+.transfer-promise > p { max-width: 660px; }
+.publication-affiliations { font-size: var(--type-support); }
+.publication-heading .author-note { font-size: var(--type-label); }
+.task-stages { flex-wrap: wrap; }
+.task-evaluation { margin: 0 0 24px; padding: 22px 24px; border: 1px solid #cad8d0; border-radius: 9px; background: rgb(255 255 255 / 65%); font-size: var(--type-support); color: var(--muted); }
+.task-evaluation h4 { margin: 0 0 8px; font-size: var(--type-card); color: var(--ink); }
+.task-evaluation ol { margin: 12px 0; padding-left: 24px; }
+.task-evaluation li { padding-left: 4px; }
+.task-evaluation li + li { margin-top: 8px; }
+.task-evaluation li::marker { color: var(--accent); font-weight: 700; }
+.task-evaluation strong { color: var(--ink); font-weight: 600; }
+.task-success-requirement { padding-top: 12px; border-top: 1px solid var(--line); color: var(--accent); font-weight: 700; }
+@media (max-width: 640px) {
+  :root {
+    --type-section: 26px;
+    --type-subsection: 23px;
+    --type-card: 18px;
+    --type-body: 16px;
+    --type-support: 15px;
+    --type-label: 13px;
+  }
+  .nav-links { gap: 6px 12px; }
+  .nav-links a { font-size: 13px; }
+  .video-group-heading > div { align-items: baseline; gap: 10px; }
+  .deck-caption-heading { flex-wrap: wrap; }
+  .deck-caption-heading .deck-title { flex-basis: 100%; }
+  .experiment-results > div { grid-template-columns: 90px minmax(0, 1fr); gap: 6px 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
