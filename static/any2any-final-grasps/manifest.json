@@ -1,0 +1,737 @@
+{
+  "source_archive": "exp_result.tar.xz",
+  "timezone": "Asia/Shanghai",
+  "selection_rule": "nearest init-state timestamp within 90 seconds of phone capture",
+  "goals": [
+    {
+      "object": "banana_011",
+      "display_name": "Banana",
+      "slug": "banana",
+      "phone_capture": "2026-09-21 22:44:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/banana_011/traj17/init_state/banana_011_traj17_2026-09-21_22-44-43.json",
+      "matched_timestamp": "2026-09-21 22:44:43",
+      "delta_seconds": 43.0,
+      "traj": 17,
+      "target_row": 5607,
+      "asset": "banana-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "hammer_002",
+      "display_name": "Hammer",
+      "slug": "hammer",
+      "phone_capture": "2026-09-13 01:27:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/hammer_002/traj2/init_state/hammer_002_traj2_2026-09-13_01-27-27.json",
+      "matched_timestamp": "2026-09-13 01:27:27",
+      "delta_seconds": 27.0,
+      "traj": 2,
+      "target_row": 7484,
+      "asset": "hammer-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "shampoo_037",
+      "display_name": "Shampoo bottle",
+      "slug": "shampoo-bottle",
+      "phone_capture": "2026-09-12 20:44:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/shampoo_037/traj11/init_state/shampoo_037_traj11_2026-09-12_20-44-48.json",
+      "matched_timestamp": "2026-09-12 20:44:48",
+      "delta_seconds": 48.0,
+      "traj": 11,
+      "target_row": 3089,
+      "asset": "shampoo-bottle-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "tape_measure_009",
+      "display_name": "Tape measure",
+      "slug": "tape-measure",
+      "phone_capture": "2026-09-12 15:38:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/tape_measure_009/traj11/init_state/tape_measure_009_traj11_2026-09-12_15-39-02.json",
+      "matched_timestamp": "2026-09-12 15:39:02",
+      "delta_seconds": 62.0,
+      "traj": 11,
+      "target_row": 14289,
+      "asset": "tape-measure-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "medicine_bottle_034",
+      "display_name": "Medicine bottle",
+      "slug": "medicine-bottle",
+      "phone_capture": "2026-09-12 18:38:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/medicine_bottle_034/traj19/init_state/medicine_bottle_034_traj19_2026-09-12_18-39-00.json",
+      "matched_timestamp": "2026-09-12 18:39:00",
+      "delta_seconds": 60.0,
+      "traj": 19,
+      "target_row": 17141,
+      "asset": "medicine-bottle-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "mouse",
+      "display_name": "Mouse",
+      "slug": "mouse",
+      "phone_capture": "2026-09-11 21:08:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/mouse/traj17/init_state/mouse_traj17_2026-09-11_21-08-26.json",
+      "matched_timestamp": "2026-09-11 21:08:26",
+      "delta_seconds": 26.0,
+      "traj": 17,
+      "target_row": 1441,
+      "asset": "mouse-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "tennis_ball",
+      "display_name": "Tennis ball",
+      "slug": "tennis-ball",
+      "phone_capture": "2026-09-21 22:08:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/tennis_ball/traj17/init_state/tennis_ball_traj17_2026-09-21_22-08-23.json",
+      "matched_timestamp": "2026-09-21 22:08:23",
+      "delta_seconds": 23.0,
+      "traj": 17,
+      "target_row": 3790,
+      "asset": "tennis-ball-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "flashlight",
+      "display_name": "Flashlight",
+      "slug": "flashlight",
+      "phone_capture": "2026-09-11 23:09:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/flashlight/traj13/init_state/flashlight_traj13_2026-09-11_23-09-04.json",
+      "matched_timestamp": "2026-09-11 23:09:04",
+      "delta_seconds": 4.0,
+      "traj": 13,
+      "target_row": 5642,
+      "asset": "flashlight-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "facial_cream_000",
+      "display_name": "Facial cream",
+      "slug": "facial-cream",
+      "phone_capture": "2026-09-21 23:35:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/facial_cream_000/traj17/init_state/facial_cream_000_traj17_2026-09-21_23-35-53.json",
+      "matched_timestamp": "2026-09-21 23:35:53",
+      "delta_seconds": 53.0,
+      "traj": 17,
+      "target_row": 280,
+      "asset": "facial-cream-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "screwdriver",
+      "display_name": "Screwdriver",
+      "slug": "screwdriver",
+      "phone_capture": "2026-09-07 00:26:00",
+      "matched_init_state": "exp_result-from-archive/exp_result/screwdriver/traj7/init_state/screwdriver_traj7_2026-09-07_00-26-41.json",
+      "matched_timestamp": "2026-09-07 00:26:41",
+      "delta_seconds": 41.0,
+      "traj": 7,
+      "target_row": 102,
+      "asset": "screwdriver-s1.png",
+      "render": "Sharpa URDF triangle mesh + scanned object OBJ texture colours",
+      "wrist_orientation": "fixed palm-down in the real robot wrist frame",
+      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
+      "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
+      "camera_from_center": [
+        0.5803192628358375,
+        0.36019816313948533,
+        0.730401830810623
+      ],
+      "camera_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "camera_zoom": 0.72,
+      "camera_width": 960,
+      "camera_height": 720,
+      "camera_intrinsic_matrix": [
+        [
+          623.5382907247958,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          623.5382907247958,
+          359.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "camera_extrinsic": [
+        [
+          -0.8602920682917727,
+          0.49024658254780773,
+          -0.13984221656731372,
+          0.06517094877254755
+        ],
+        [
+          0.25375526833369044,
+          0.17387591302449212,
+          -0.9515121810375293,
+          -0.048391151409568706
+        ],
+        [
+          -0.4421604019212493,
+          -0.8540640814190086,
+          -0.2739867219460544,
+          0.249187299158937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ]
+}

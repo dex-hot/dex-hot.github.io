@@ -42,10 +42,13 @@ const pauseOtherDecks = (currentVideo) => {
   });
 };
 
+const targetAssetRevision = Date.now();
 const parseGoalStages = (button) => {
   if (!button.dataset.goalPrefix) return [];
   const times = button.dataset.goalTimes.split(',').map(Number);
   const labels = button.dataset.goalLabels.split('|');
+  const fractions = button.dataset.goalFractions?.split(',').map(Number) || [];
+  const metas = button.dataset.goalMetas?.split('|') || [];
   const frames = button.dataset.goalFrames.split('|').length > 1
     ? button.dataset.goalFrames.split('|')
     : button.dataset.goalFrames.split(',');
@@ -53,9 +56,11 @@ const parseGoalStages = (button) => {
   return times.map((time, index) => ({
     time,
     label: labels[index],
+    fraction: fractions[index],
     frame: frames[index],
+    meta: metas[index],
     layout: layouts[index],
-    src: `${button.dataset.goalPrefix}-s${index + 1}.png?v=goal-stream-14`,
+    src: `${button.dataset.goalPrefix}-s${index + 1}.png?v=${targetAssetRevision}`,
   }));
 };
 
@@ -68,14 +73,25 @@ const showGoalStage = (deck, stageIndex, force = false) => {
   const [x, y, width, rotation] = stage.layout;
   const image = goal.querySelector('img');
   image.src = stage.src;
-  image.alt = `${stage.label} hand-object target, aligned in video pixels for ${deck.goalTaskTitle}`;
+  image.alt = deck.goalPersistent
+    ? `Palm-down ${stage.label} in the shared ANY2ANY target camera view for ${deck.goalTaskTitle}`
+    : `${stage.label} hand-object target inset for ${deck.goalTaskTitle}`;
   image.style.setProperty('--goal-x', `${x}%`);
   image.style.setProperty('--goal-y', `${y}%`);
   image.style.setProperty('--goal-width', `${width}%`);
   image.style.setProperty('--goal-rotation', `${rotation}deg`);
-  goal.querySelector('figcaption span').textContent = `Representative goal ${String(stageIndex + 1).padStart(2, '0')} / 04`;
-  goal.querySelector('figcaption strong').textContent = stage.label;
-  goal.querySelector('figcaption small').textContent = `3D goal · pixel-aligned · F${stage.frame}`;
+  const goalKind = deck.goalPersistent
+    ? 'Final grasp target'
+    : (deck.goalKind || 'Policy target');
+  goal.querySelector('figcaption span').textContent = deck.goalPersistent
+    ? 'TARGET'
+    : `${goalKind} ${String(stageIndex + 1).padStart(2, '0')} / ${String(stages.length).padStart(2, '0')}`;
+  goal.querySelector('figcaption strong').textContent = deck.goalPersistent
+    ? 'Palm down · fingers forward'
+    : stage.label;
+  goal.querySelector('figcaption small').textContent = deck.goalPersistent
+    ? `Shared camera · ${stage.meta || `F${stage.frame}`}`
+    : (stage.meta || `3D target inset · F${stage.frame}`);
   goal.classList.remove('is-changing');
   void goal.offsetWidth;
   goal.classList.add('is-changing');
@@ -92,8 +108,8 @@ const updateGoalForTime = (deck) => {
   ), 0);
   const closest = deck.goalStages[closestIndex];
   const isMatchedMoment = currentTime >= closest.time - 0.32 && currentTime <= closest.time + 0.46;
-  if (isMatchedMoment) showGoalStage(deck, closestIndex);
-  goal.classList.toggle('is-visible', isMatchedMoment);
+  if (deck.goalPersistent || isMatchedMoment) showGoalStage(deck, closestIndex);
+  goal.classList.toggle('is-visible', deck.goalPersistent || isMatchedMoment);
 };
 
 const updateGoalStream = (deck, force = false) => {
@@ -101,7 +117,8 @@ const updateGoalStream = (deck, force = false) => {
   const video = deck.querySelector('video');
   if (!stream || !deck.goalStages?.length || !Number.isFinite(video.duration)) return;
   const speed = deck.goalSpeed || 1;
-  const goalIndex = Math.max(0, Math.floor(video.currentTime * speed));
+  const policyTime = Math.max(0, video.currentTime - (deck.goalPolicyStartTime || 0));
+  const goalIndex = Math.max(0, Math.floor(policyTime * speed));
   const progress = Math.min(100, Math.max(0, video.currentTime / video.duration * 100));
   stream.querySelector('.goal-stream-index').textContent = `g_${String(goalIndex).padStart(3, '0')}`;
   stream.querySelector('.goal-stream-fill').style.width = `${progress}%`;
@@ -124,14 +141,19 @@ const buildGoalStream = (deck) => {
   const video = deck.querySelector('video');
   if (!stream || !deck.goalStages?.length || !Number.isFinite(video.duration)) return;
   const speed = deck.goalSpeed || 1;
-  const updateCount = Math.max(1, Math.floor(video.duration * speed));
+  const policyDuration = Math.max(0, video.duration - (deck.goalPolicyStartTime || 0));
+  const updateCount = Math.max(1, Math.floor(policyDuration * speed));
   stream.style.setProperty('--goal-tick-spacing', `${100 / updateCount}%`);
   const markers = stream.querySelector('.goal-stream-markers');
   markers.replaceChildren();
   deck.goalStages.forEach((stage, index) => {
     const marker = document.createElement('button');
     marker.type = 'button';
-    marker.style.left = `${Math.min(100, stage.time / video.duration * 100)}%`;
+    const policyStart = deck.goalPolicyStartTime || 0;
+    const markerTime = Number.isFinite(stage.fraction)
+      ? policyStart + (video.duration - policyStart) * stage.fraction
+      : stage.time;
+    marker.style.left = `${Math.min(100, markerTime / video.duration * 100)}%`;
     marker.setAttribute('aria-label', `Inspect representative goal ${index + 1}: ${stage.label}`);
     marker.title = `Goal ${index + 1} · ${stage.label} · ${stage.time.toFixed(2)} s`;
     marker.addEventListener('click', (event) => {
@@ -184,10 +206,17 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
   if (goal) {
     deck.goalStages = parseGoalStages(button);
     deck.goalSpeed = Number(button.dataset.goalSpeed || 1);
+    deck.goalPersistent = button.dataset.goalPersistent === 'true';
+    deck.goalInset = button.dataset.goalInset === 'true' || (
+      deck.dataset.deck === 'tasks' && !deck.goalPersistent
+    );
+    deck.goalPolicyStartTime = Number(button.dataset.policyStartTime || 0);
+    deck.goalKind = button.dataset.goalKind || '';
     deck.goalTaskTitle = button.dataset.title || 'this task';
     deck.goalStageIndex = -1;
     deck.goalStreamIndex = -1;
     goal.hidden = deck.goalStages.length === 0;
+    goal.classList.toggle('demo-goal-inset', deck.goalInset);
     goal.classList.remove('is-visible');
     deck.goalPreloads = deck.goalStages.map((goalStage) => {
       const preload = new Image();
@@ -208,7 +237,7 @@ const selectDeckItem = (deck, index, shouldPlay = true) => {
   stage.classList.toggle('is-failure', button.dataset.tone === 'failure');
   kicker.textContent = button.dataset.kicker;
   title.textContent = button.dataset.title;
-  description.textContent = button.dataset.description;
+  if (description) description.textContent = button.dataset.description || '';
   video.setAttribute('aria-label', button.dataset.title);
   deck.style.setProperty('--media-scale', button.dataset.mediaScale || '1');
 
