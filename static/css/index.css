@@ -487,6 +487,8 @@ pre { font-size: 13px; }
 .deck-caption .object-rate-note { font-size: var(--type-label); }
 .object-success-rate { font-size: var(--type-support); }
 .results-strip dt { min-height: 0; }
+.experiment-results:is(.results-strip--two, .results-strip--transfer) dt { font-size: var(--type-body); font-weight: 700; color: var(--ink); }
+.experiment-results:is(.results-strip--two, .results-strip--transfer) small { font-size: var(--type-support); font-weight: 400; color: var(--muted); }
 .deck-tabs button { white-space: normal; text-overflow: clip; overflow-wrap: normal; text-wrap: pretty; }
 .method-steps p { max-width: none; }
 .publication-affiliations { font-size: var(--type-support); }

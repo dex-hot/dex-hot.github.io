@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8faf9">
   <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
-  <link rel="stylesheet" href="./static/css/index.css?v=content-width-1">
+  <link rel="stylesheet" href="./static/css/index.css?v=result-type-2">
   <script defer src="./static/js/index.js?v=object-success-1"></script>
 </head>
 <body>
@@ -80,8 +80,8 @@
         <section class="video-group" aria-labelledby="video-simulation-title">
           <div class="video-group-heading"><div><span>01</span><h3 id="video-simulation-title">Simulation Any2Any transfer</h3></div></div>
           <dl class="results-strip experiment-results results-strip--two" aria-label="Simulation Any2Any results">
-            <div><dt>Seen-object Any2Any</dt><dd><span class="result-value">80.5<em>%</em></span><small><strong>40 training objects</strong></small></dd></div>
-            <div><dt>Zero-shot unseen-object Any2Any</dt><dd><span class="result-value">69.4<em>%</em></span><small><strong>80 held-out objects</strong></small></dd></div>
+            <div><dt>Seen-object Any2Any</dt><dd><span class="result-value">80.5<em>%</em></span><small>40 training objects</small></dd></div>
+            <div><dt>Zero-shot unseen-object Any2Any</dt><dd><span class="result-value">69.4<em>%</em></span><small>80 held-out objects</small></dd></div>
           </dl>
           <!-- Target numbering follows visible reference changes in the original 30 fps clips. -->
           <div class="video-deck" data-deck="simulation">
@@ -110,8 +110,8 @@
 
         <section class="video-group" aria-labelledby="video-real-transfer-title">
           <div class="video-group-heading"><div><span>02</span><h3 id="video-real-transfer-title">Real-world ANY2ANY configuration transfer</h3></div></div>
-          <dl class="results-strip experiment-results results-strip--single" aria-label="Real-robot Any2Any result">
-            <div><dt>Real-robot Any2Any</dt><dd><span class="result-value">61.5<em>%</em></span><small>10 objects · 20 <strong>uniformly sampled transfers</strong> per object</small></dd></div>
+          <dl class="results-strip experiment-results results-strip--single results-strip--transfer" aria-label="Real-robot Any2Any result">
+            <div><dt>Real-robot Any2Any</dt><dd><span class="result-value">61.5<em>%</em></span><small>10 objects · 20 uniformly sampled transfers per object</small></dd></div>
           </dl>
           <p class="video-group-copy">Source and target grasps are uniformly sampled from each object’s validated pool, excluding near-duplicate pairs. The fingers drive the transfer with a <strong>fixed, palm-down wrist.</strong></p>
           <div class="video-deck" data-deck="real-transfer">
