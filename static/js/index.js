@@ -634,6 +634,15 @@ const buildGoalStream = (deck) => {
     return;
   }
   markers?.setAttribute('aria-label', `${deck.goalStages.length} sampled configuration snapshots`);
+  const addEllipsis = (time) => {
+    const ellipsis = document.createElement('span');
+    ellipsis.className = 'goal-stream-ellipsis';
+    ellipsis.setAttribute('aria-hidden', 'true');
+    ellipsis.textContent = '···';
+    ellipsis.style.left = `${time / video.duration * 100}%`;
+    markers?.append(ellipsis);
+  };
+  addEllipsis(deck.goalStages[0].time / 2);
   if (cadence) {
     const speed = Number.isFinite(deck.goalSpeed) && deck.goalSpeed > 0 ? deck.goalSpeed : 1;
     const start = Math.max(0, deck.goalPolicyStartTime || 0);
@@ -682,14 +691,7 @@ const buildGoalStream = (deck) => {
     marker.append(viewport, label);
     markers?.append(marker);
     const nextStage = deck.goalStages[index + 1];
-    if (nextStage) {
-      const ellipsis = document.createElement('span');
-      ellipsis.className = 'goal-stream-ellipsis';
-      ellipsis.setAttribute('aria-hidden', 'true');
-      ellipsis.textContent = '···';
-      ellipsis.style.left = `${(stage.time + nextStage.time) / 2 / video.duration * 100}%`;
-      markers?.append(ellipsis);
-    }
+    addEllipsis((stage.time + (nextStage?.time ?? video.duration)) / 2);
   });
   updateGoalStream(deck, true);
 };

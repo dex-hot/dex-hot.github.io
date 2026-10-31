@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8faf9">
   <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
-  <link rel="stylesheet" href="./static/css/index.css?v=target-border-1">
+  <link rel="stylesheet" href="./static/css/index.css?v=sample-cadence-1">
   <link rel="stylesheet" href="./static/css/distance-gallery.css?v=1">
-  <script defer src="./static/js/index.js?v=target-code-1"></script>
+  <script defer src="./static/js/index.js?v=sample-cadence-1"></script>
   <script defer src="./static/js/distance-gallery.js?v=1"></script>
 </head>
 <body>
@@ -156,15 +156,13 @@
                   </figure>
                 </div>
                 <div class="task-player-controls" role="group" aria-label="Video playback and sampled targets" hidden>
+                  <div class="goal-stream" aria-label="Configuration targets updated at 1 Hz"><strong>1 Hz</strong><span>Configuration targets</span></div>
                   <button class="task-play-toggle" type="button" aria-label="Play video" data-state="paused"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="icon-play" d="m8 5 11 7-11 7Z"/><path class="icon-pause" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button>
                   <div class="task-seek-track"><input class="task-seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Video progress"><div class="goal-cadence-dots" aria-hidden="true"></div><div class="goal-stream-markers" role="group" aria-label="Four representative target samples"></div></div>
                   <output class="task-time" aria-label="Playback time" aria-live="off">0:00 / 0:00</output>
                   <button class="task-mute-toggle" type="button" aria-label="Unmute video" data-state="muted"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path class="icon-muted" d="m17 9 5 6m0-6-5 6"/><path class="icon-audible" d="M17 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg></button>
                   <button class="task-fullscreen-toggle" type="button" aria-label="Enter fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg></button>
                 </div>
-              </div>
-              <div class="goal-stream" aria-label="Sampled configuration targets along the video timeline">
-                <div class="goal-stream-head"><span class="goal-stream-rate"><b>1</b> Hz</span><div><h4>Configuration targets, updated every second.</h4><p>Small dots indicate the continuous target stream. Four representative samples expand beside the robot for comparison.</p></div></div>
               </div>
               <div class="deck-caption"><div class="deck-caption-heading"><div class="deck-title"><h4>Barcode scanning</h4><span class="deck-kicker">Demonstration-guided task</span></div></div><p>Rotate the bottle by 180° to present its barcode to the scanner with an unobstructed hand arrangement.</p></div>
             </div>
