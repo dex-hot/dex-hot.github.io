@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8faf9">
   <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
-  <link rel="stylesheet" href="./static/css/index.css?v=full-video-type-2">
+  <link rel="stylesheet" href="./static/css/index.css?v=target-border-1">
   <link rel="stylesheet" href="./static/css/distance-gallery.css?v=1">
-  <script defer src="./static/js/index.js?v=full-video-type-2"></script>
+  <script defer src="./static/js/index.js?v=target-code-1"></script>
   <script defer src="./static/js/distance-gallery.js?v=1"></script>
 </head>
 <body>
@@ -133,7 +133,6 @@
             <div><dt>Long-horizon task execution</dt><dd><span class="result-value">90<em>%</em></span><small>27 / 30 successful trials</small></dd></div>
           </dl>
           <div class="control-split" aria-label="Separate hand and arm control">
-            <div class="control-source"><span>One demonstration per task</span><p>Two complementary references</p></div>
             <div><span class="control-label">DexHOT · hand policy</span><h4>Configuration targets</h4><p>From pickup onward: closed-loop finger control at <strong>30 Hz</strong>, with target updates at <strong>1 Hz</strong>.</p></div>
             <div><span class="control-label">Separate arm controller</span><h4>Wrist trajectory</h4><p>The arm follows the demonstration-derived wrist motion; DexHOT controls the hand.</p></div>
           </div>
@@ -150,7 +149,7 @@
                 <div class="video-frame">
                   <span class="deck-status">2× speed</span>
                   <video controls muted autoplay playsinline preload="metadata" poster="./static/video-posters/media27.jpg" aria-label="Barcode scanning task"><source type="video/mp4"></video>
-                  <svg class="task-code-overlay" viewBox="0 0 960 720" preserveAspectRatio="xMidYMid meet" aria-label="Approximate code-facing bottle side" hidden></svg>
+                  <svg class="task-code-overlay" viewBox="0 0 960 720" preserveAspectRatio="xMidYMid meet" aria-label="Code" hidden></svg>
                   <figure class="task-target-inset" aria-hidden="true" hidden>
                     <div class="task-target-viewport"><img alt="Current sampled hand–object configuration target"><svg class="task-target-code" viewBox="0 0 640 480" width="640" height="480" aria-hidden="true" hidden></svg></div>
                     <figcaption><span>Target</span><strong class="task-target-sample">Sample 01</strong></figcaption>

@@ -504,7 +504,7 @@ const updateTaskCodeOverlay = (deck, activeIndex) => {
   if (!deck.taskCodeElements) {
     const dot = add(videoOverlay, 'circle', {class: 'task-code-dot', r: 6});
     const line = add(videoOverlay, 'line', {x1: 650, y1: 550, stroke: '#b4ffda', 'stroke-width': 1, 'stroke-dasharray': '4 3', 'vector-effect': 'non-scaling-stroke'});
-    add(videoOverlay, 'text', {x: 580, y: 565, 'font-size': 14}, 'Code-facing side');
+    add(videoOverlay, 'text', {x: 580, y: 565, 'font-size': 14}, 'Code');
     deck.taskCodeElements = {dot, line};
   }
   const currentTime = deck.querySelector('video').currentTime;
