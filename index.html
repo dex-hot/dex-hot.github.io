@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8faf9">
   <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
-  <link rel="stylesheet" href="./static/css/index.css?v=sample-cadence-1">
+  <link rel="stylesheet" href="./static/css/index.css?v=transfer-sections-1">
   <link rel="stylesheet" href="./static/css/distance-gallery.css?v=1">
   <script defer src="./static/js/index.js?v=sample-cadence-1"></script>
   <script defer src="./static/js/distance-gallery.js?v=1"></script>
@@ -50,22 +50,24 @@
           Your browser does not support embedded video. <a href="./static/ppt-media/dexhot-paper-video-title-start.mp4">Watch the full paper video</a>.
         </video>
       </div>
-      <div class="paper-video-heading"><h2>One policy. Any hand–object configuration transfer.</h2><p>From in-hand transfer to demonstration-guided tasks.</p></div>
     </section>
     <section class="section-tinted video-section" id="videos" aria-labelledby="videos-title">
       <div class="page-width section-content">
-        <div class="configuration-intro">
-          <div class="configuration-intro-topline"><span>Hand–object configuration transfer</span><span class="configuration-name">Any2Any</span></div>
-          <h2 id="videos-title" class="configuration-transfer-title" aria-label="Any hand–object configuration to any hand–object configuration">
-            <span class="configuration-node"><span class="configuration-role">Source</span><span class="configuration-any">Any</span><span class="configuration-phrase"><span class="configuration-term">hand–object</span><br>configuration</span></span>
-            <span class="transfer-arrow" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" focusable="false"><path d="M7 16h18M18 9l7 7-7 7"/></svg></span>
-            <span class="configuration-node configuration-node--target"><span class="configuration-role">Target</span><span class="configuration-any">Any</span><span class="configuration-phrase"><span class="configuration-term">hand–object</span><br>configuration</span></span>
-          </h2>
-          <div class="configuration-definition"><p class="formulation-copy">Transfer between feasible hand–object arrangements, with each configuration jointly specifying:</p><div class="configuration-components"><span>Finger articulation</span><span class="configuration-plus" aria-hidden="true">+</span><span>Object pose <small>relative to the wrist</small></span></div></div>
-        </div>
+        <header class="transfer-section-heading"><h2 id="videos-title">One policy. Any <span class="configuration-term">hand–object</span> configuration transfer.</h2><p>From in-hand transfer to demonstration-guided tasks.</p></header>
+        <section class="video-group configuration-group" aria-labelledby="configuration-transfer-title">
+          <div class="video-group-heading"><div><span>01</span><h3 id="configuration-transfer-title">Hand–object configuration transfer</h3></div><p class="configuration-name">Any2Any</p></div>
+          <div class="configuration-intro">
+            <div class="configuration-transfer-title" role="group" aria-label="Any hand–object configuration to any hand–object configuration">
+              <span class="configuration-node"><span class="configuration-role">Source</span><span class="configuration-any">Any</span><span class="configuration-phrase"><span class="configuration-term">hand–object</span><br>configuration</span></span>
+              <span class="transfer-arrow" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" focusable="false"><path d="M7 16h18M18 9l7 7-7 7"/></svg></span>
+              <span class="configuration-node configuration-node--target"><span class="configuration-role">Target</span><span class="configuration-any">Any</span><span class="configuration-phrase"><span class="configuration-term">hand–object</span><br>configuration</span></span>
+            </div>
+            <div class="configuration-definition"><p class="formulation-copy">Transfer between feasible hand–object arrangements, with each configuration jointly specifying:</p><div class="configuration-components"><span>Finger articulation</span><span class="configuration-plus" aria-hidden="true">+</span><span>Object pose <small>relative to the wrist</small></span></div></div>
+          </div>
+        </section>
 
         <section class="video-group" aria-labelledby="video-simulation-title">
-          <div class="video-group-heading"><div><span>01</span><h3 id="video-simulation-title">Simulation configuration transfer</h3></div></div>
+          <div class="video-group-heading"><div><span>02</span><h3 id="video-simulation-title">Simulation configuration transfer</h3></div></div>
           <dl class="results-strip experiment-results results-strip--two" aria-label="Simulation Any2Any results">
             <div><dt>Seen-object Any2Any</dt><dd><span class="result-value">80.5<em>%</em></span><small>40 training objects</small></dd></div>
             <div><dt>Zero-shot unseen-object Any2Any</dt><dd><span class="result-value">69.4<em>%</em></span><small>80 held-out objects</small></dd></div>
@@ -97,7 +99,7 @@
         </section>
 
         <section class="video-group" aria-labelledby="video-real-transfer-title">
-          <div class="video-group-heading"><div><span>02</span><h3 id="video-real-transfer-title">Real-world configuration transfer</h3></div></div>
+          <div class="video-group-heading"><div><span>03</span><h3 id="video-real-transfer-title">Real-world configuration transfer</h3></div></div>
           <dl class="results-strip experiment-results results-strip--single results-strip--transfer" aria-label="Real-robot Any2Any result">
             <div><dt>Real-robot Any2Any</dt><dd><span class="result-value">61.5<em>%</em></span><small>10 objects · 20 uniformly sampled transfers per object</small></dd></div>
           </dl>
@@ -128,7 +130,7 @@
         </section>
 
         <section class="video-group" aria-labelledby="video-tasks-title">
-          <div class="video-group-heading"><div><span>03</span><h3 id="video-tasks-title">Long-horizon tasks from human demonstrations</h3></div></div>
+          <div class="video-group-heading"><div><span>04</span><h3 id="video-tasks-title">Long-horizon tasks from human demonstrations</h3></div></div>
           <dl class="results-strip experiment-results results-strip--single" aria-label="Long-horizon task result">
             <div><dt>Long-horizon task execution</dt><dd><span class="result-value">90<em>%</em></span><small>27 / 30 successful trials</small></dd></div>
           </dl>
