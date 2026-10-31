@@ -330,18 +330,24 @@
       "asset": "medicine-bottle-s1.png",
       "render": "Sharpa URDF triangle mesh + original run-path OBJ/MTL UV texture (no vertex-colour approximation)",
       "wrist_orientation": "fixed palm-down in the real robot wrist frame",
-      "camera_semantics": "exact native Open3D camera shared across all ten targets",
+      "camera_semantics": "medicine-only camera orbit 20 degrees toward the fingertip-side view; elevation and hand-object target pose unchanged",
+      "camera_adjustment": {
+        "camera_orbit_degrees": -20,
+        "axis": "canonical +Z, toward +X wrist-to-fingertip direction",
+        "pivot": [0.0931239032875408, -0.001105953680758675, -0.030083970097092398],
+        "target_pose_unchanged": true
+      },
       "paper_renderer_commit": "4a59f44c72294c94faa06fc87b490ba0fc495cc4",
       "paper_renderer_source": "paper_renderer/scripts/select_palmdown_views.py",
       "camera_from_center": [
-        0.5803192628358375,
-        0.36019816313948533,
-        0.730401830810623
+        0.7076019864253642,
+        0.6513299509496966,
+        0.27398672194605433
       ],
       "camera_up": [
-        0.0,
-        0.0,
-        1.0
+        -0.2979210178322353,
+        -0.07660049915639533,
+        0.9515121810375292
       ],
       "camera_zoom": 0.72,
       "camera_width": 960,
@@ -365,22 +371,22 @@
       ],
       "camera_extrinsic": [
         [
-          -0.8602920682917727,
-          0.49024658254780773,
-          -0.13984221656731372,
-          0.06517094877254755
+          -0.6407359018665051,
+          0.7549183124847726,
+          -0.1398422165673137,
+          0.045017736238094255
         ],
         [
-          0.25375526833369044,
-          0.17387591302449212,
-          -0.9515121810375293,
-          -0.048391151409568706
+          0.2979210178322353,
+          0.07660049915639533,
+          -0.9515121810375292,
+          -0.05261162049650769
         ],
         [
-          -0.4421604019212493,
-          -0.8540640814190086,
-          -0.2739867219460544,
-          0.249187299158937
+          -0.7076019864253642,
+          -0.6513299509496966,
+          -0.27398672194605433,
+          0.2741304701605977
         ],
         [
           0.0,
