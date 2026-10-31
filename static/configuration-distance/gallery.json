@@ -1,0 +1,288 @@
+{
+  "reference": {
+    "gid": 977,
+    "d_mm": 0,
+    "src": "static/configuration-distance/reference_g977.webp"
+  },
+  "groups": [
+    {
+      "id": "0to20mm",
+      "label": "0 < d ≤ 20 mm",
+      "name": "Near-reference",
+      "samples": [
+        {
+          "gid": 947,
+          "index": 1,
+          "d_mm": 6.039757789857421,
+          "src": "static/configuration-distance/0to20mm_01_g947.webp"
+        },
+        {
+          "gid": 1548,
+          "index": 2,
+          "d_mm": 10.116067862662707,
+          "src": "static/configuration-distance/0to20mm_02_g1548.webp"
+        },
+        {
+          "gid": 170,
+          "index": 3,
+          "d_mm": 10.256715447170079,
+          "src": "static/configuration-distance/0to20mm_03_g170.webp"
+        },
+        {
+          "gid": 7147,
+          "index": 4,
+          "d_mm": 16.281183633258944,
+          "src": "static/configuration-distance/0to20mm_04_g7147.webp"
+        },
+        {
+          "gid": 524,
+          "index": 5,
+          "d_mm": 18.33625058014589,
+          "src": "static/configuration-distance/0to20mm_05_g524.webp"
+        },
+        {
+          "gid": 3440,
+          "index": 6,
+          "d_mm": 18.78849835917193,
+          "src": "static/configuration-distance/0to20mm_06_g3440.webp"
+        },
+        {
+          "gid": 8155,
+          "index": 7,
+          "d_mm": 18.86718550233233,
+          "src": "static/configuration-distance/0to20mm_07_g8155.webp"
+        },
+        {
+          "gid": 6796,
+          "index": 8,
+          "d_mm": 19.591326282777906,
+          "src": "static/configuration-distance/0to20mm_08_g6796.webp"
+        },
+        {
+          "gid": 3160,
+          "index": 9,
+          "d_mm": 19.950860156801713,
+          "src": "static/configuration-distance/0to20mm_09_g3160.webp"
+        },
+        {
+          "gid": 936,
+          "index": 10,
+          "d_mm": 19.95622167551239,
+          "src": "static/configuration-distance/0to20mm_10_g936.webp"
+        }
+      ]
+    },
+    {
+      "id": "20to40mm",
+      "label": "20 < d ≤ 40 mm",
+      "name": "Neighbor",
+      "samples": [
+        {
+          "gid": 907,
+          "index": 1,
+          "d_mm": 20.235516364244404,
+          "src": "static/configuration-distance/20to40mm_01_g907.webp"
+        },
+        {
+          "gid": 5925,
+          "index": 2,
+          "d_mm": 24.317956866838337,
+          "src": "static/configuration-distance/20to40mm_02_g5925.webp"
+        },
+        {
+          "gid": 5924,
+          "index": 3,
+          "d_mm": 26.245623793063668,
+          "src": "static/configuration-distance/20to40mm_03_g5924.webp"
+        },
+        {
+          "gid": 7324,
+          "index": 4,
+          "d_mm": 29.49833294245149,
+          "src": "static/configuration-distance/20to40mm_04_g7324.webp"
+        },
+        {
+          "gid": 3819,
+          "index": 5,
+          "d_mm": 31.93786021147166,
+          "src": "static/configuration-distance/20to40mm_05_g3819.webp"
+        },
+        {
+          "gid": 5195,
+          "index": 6,
+          "d_mm": 33.56439856484748,
+          "src": "static/configuration-distance/20to40mm_06_g5195.webp"
+        },
+        {
+          "gid": 2675,
+          "index": 7,
+          "d_mm": 35.567888643998785,
+          "src": "static/configuration-distance/20to40mm_07_g2675.webp"
+        },
+        {
+          "gid": 2114,
+          "index": 8,
+          "d_mm": 36.71791137314311,
+          "src": "static/configuration-distance/20to40mm_08_g2114.webp"
+        },
+        {
+          "gid": 3766,
+          "index": 9,
+          "d_mm": 38.2723951451115,
+          "src": "static/configuration-distance/20to40mm_09_g3766.webp"
+        },
+        {
+          "gid": 4693,
+          "index": 10,
+          "d_mm": 39.945654637098684,
+          "src": "static/configuration-distance/20to40mm_10_g4693.webp"
+        }
+      ]
+    },
+    {
+      "id": "20to70mm",
+      "label": "20 < d ≤ 70 mm",
+      "name": "Close",
+      "samples": [
+        {
+          "gid": 2212,
+          "index": 1,
+          "d_mm": 20.331597970118004,
+          "src": "static/configuration-distance/20to70mm_01_g2212.webp"
+        },
+        {
+          "gid": 2946,
+          "index": 2,
+          "d_mm": 33.36853588820676,
+          "src": "static/configuration-distance/20to70mm_02_g2946.webp"
+        },
+        {
+          "gid": 4613,
+          "index": 3,
+          "d_mm": 41.22599258542571,
+          "src": "static/configuration-distance/20to70mm_03_g4613.webp"
+        },
+        {
+          "gid": 6871,
+          "index": 4,
+          "d_mm": 46.96806524200409,
+          "src": "static/configuration-distance/20to70mm_04_g6871.webp"
+        },
+        {
+          "gid": 3432,
+          "index": 5,
+          "d_mm": 51.982926278261466,
+          "src": "static/configuration-distance/20to70mm_05_g3432.webp"
+        },
+        {
+          "gid": 5983,
+          "index": 6,
+          "d_mm": 56.5419122700605,
+          "src": "static/configuration-distance/20to70mm_06_g5983.webp"
+        },
+        {
+          "gid": 901,
+          "index": 7,
+          "d_mm": 60.90312347601032,
+          "src": "static/configuration-distance/20to70mm_07_g901.webp"
+        },
+        {
+          "gid": 1314,
+          "index": 8,
+          "d_mm": 64.44495058186475,
+          "src": "static/configuration-distance/20to70mm_08_g1314.webp"
+        },
+        {
+          "gid": 5342,
+          "index": 9,
+          "d_mm": 67.12944487980003,
+          "src": "static/configuration-distance/20to70mm_09_g5342.webp"
+        },
+        {
+          "gid": 1000,
+          "index": 10,
+          "d_mm": 69.9955246831516,
+          "src": "static/configuration-distance/20to70mm_10_g1000.webp"
+        }
+      ]
+    },
+    {
+      "id": "over70mm",
+      "label": "d > 70 mm",
+      "name": "Far",
+      "samples": [
+        {
+          "gid": 6029,
+          "index": 1,
+          "d_mm": 70.00923843778664,
+          "src": "static/configuration-distance/over70mm_01_g6029.webp"
+        },
+        {
+          "gid": 495,
+          "index": 2,
+          "d_mm": 82.40676156735783,
+          "src": "static/configuration-distance/over70mm_02_g495.webp"
+        },
+        {
+          "gid": 6391,
+          "index": 3,
+          "d_mm": 89.58726895944362,
+          "src": "static/configuration-distance/over70mm_03_g6391.webp"
+        },
+        {
+          "gid": 2245,
+          "index": 4,
+          "d_mm": 95.30310901314273,
+          "src": "static/configuration-distance/over70mm_04_g2245.webp"
+        },
+        {
+          "gid": 9447,
+          "index": 5,
+          "d_mm": 100.16385495671541,
+          "src": "static/configuration-distance/over70mm_05_g9447.webp"
+        },
+        {
+          "gid": 5656,
+          "index": 6,
+          "d_mm": 104.56920473624325,
+          "src": "static/configuration-distance/over70mm_06_g5656.webp"
+        },
+        {
+          "gid": 3188,
+          "index": 7,
+          "d_mm": 107.98211944889775,
+          "src": "static/configuration-distance/over70mm_07_g3188.webp"
+        },
+        {
+          "gid": 1480,
+          "index": 8,
+          "d_mm": 111.85684778833811,
+          "src": "static/configuration-distance/over70mm_08_g1480.webp"
+        },
+        {
+          "gid": 6055,
+          "index": 9,
+          "d_mm": 116.50855258367591,
+          "src": "static/configuration-distance/over70mm_09_g6055.webp"
+        },
+        {
+          "gid": 9419,
+          "index": 10,
+          "d_mm": 146.04298503131932,
+          "src": "static/configuration-distance/over70mm_10_g9419.webp"
+        }
+      ]
+    }
+  ],
+  "image_width": 640,
+  "image_height": 640,
+  "metric": {
+    "keypoints": 28,
+    "frame": "object",
+    "units": "mm"
+  },
+  "sampling": "Illustrative examples selected across distance quantiles; not frequency or success-rate estimates.",
+  "fixed_object_pose": true,
+  "fixed_camera": true,
+  "fixed_scale": true
+}
