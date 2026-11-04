@@ -1,0 +1,3125 @@
+{
+  "version": 1,
+  "images": {
+    "static/any2any-final-grasps/banana-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        325.51484,
+        217.56526
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            394.1213,
+            306.15256
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            374.12269,
+            191.80572
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            398.58415,
+            148.59382
+          ]
+        }
+      ],
+      "object": "banana_011",
+      "pose": "target",
+      "axisLengthMetres": 0.05532608
+    },
+    "static/optimized-media/any2any-final-grasps/banana-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        325.51484,
+        217.56526
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            394.1213,
+            306.15256
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            374.12269,
+            191.80572
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            398.58415,
+            148.59382
+          ]
+        }
+      ],
+      "object": "banana_011",
+      "pose": "target",
+      "axisLengthMetres": 0.05532608
+    },
+    "static/any2any-final-grasps/hammer-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        271.47919,
+        254.01223
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            320.77113,
+            132.51561
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            173.77077,
+            215.61555
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            199.11366,
+            220.96278
+          ]
+        }
+      ],
+      "object": "hammer_002",
+      "pose": "target",
+      "axisLengthMetres": 0.065
+    },
+    "static/optimized-media/any2any-final-grasps/hammer-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        271.47919,
+        254.01223
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            320.77113,
+            132.51561
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            173.77077,
+            215.61555
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            199.11366,
+            220.96278
+          ]
+        }
+      ],
+      "object": "hammer_002",
+      "pose": "target",
+      "axisLengthMetres": 0.065
+    },
+    "static/any2any-final-grasps/shampoo-bottle-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        264.36501,
+        283.42807
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            342.46906,
+            296.88581
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            183.41161,
+            279.47357
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            283.58986,
+            158.58967
+          ]
+        }
+      ],
+      "object": "shampoo_037",
+      "pose": "target",
+      "axisLengthMetres": 0.0548882816
+    },
+    "static/optimized-media/any2any-final-grasps/shampoo-bottle-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        264.36501,
+        283.42807
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            342.46906,
+            296.88581
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            183.41161,
+            279.47357
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            283.58986,
+            158.58967
+          ]
+        }
+      ],
+      "object": "shampoo_037",
+      "pose": "target",
+      "axisLengthMetres": 0.0548882816
+    },
+    "static/any2any-final-grasps/tape-measure-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        270.47744,
+        288.38887
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            319.44085,
+            290.41827
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            257.76751,
+            359.8768
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            318.31518,
+            300.32427
+          ]
+        }
+      ],
+      "object": "tape_measure_009",
+      "pose": "target",
+      "axisLengthMetres": 0.025
+    },
+    "static/optimized-media/any2any-final-grasps/tape-measure-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        270.47744,
+        288.38887
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            319.44085,
+            290.41827
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            257.76751,
+            359.8768
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            318.31518,
+            300.32427
+          ]
+        }
+      ],
+      "object": "tape_measure_009",
+      "pose": "target",
+      "axisLengthMetres": 0.025
+    },
+    "static/any2any-final-grasps/medicine-bottle-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        306.07233,
+        273.27572
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            325.34994,
+            200.13426
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            322.59817,
+            241.6705
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            228.75355,
+            249.36731
+          ]
+        }
+      ],
+      "object": "medicine_bottle_034",
+      "pose": "target",
+      "axisLengthMetres": 0.03077504
+    },
+    "static/optimized-media/any2any-final-grasps/medicine-bottle-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        306.07233,
+        273.27572
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            325.34994,
+            200.13426
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            322.59817,
+            241.6705
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            228.75355,
+            249.36731
+          ]
+        }
+      ],
+      "object": "medicine_bottle_034",
+      "pose": "target",
+      "axisLengthMetres": 0.03077504
+    },
+    "static/any2any-final-grasps/mouse-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        294.6352,
+        299.01098
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            366.08139,
+            257.90165
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            327.3631,
+            352.21876
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            322.09622,
+            352.37246
+          ]
+        }
+      ],
+      "object": "mouse",
+      "pose": "target",
+      "axisLengthMetres": 0.030716800000000002
+    },
+    "static/optimized-media/any2any-final-grasps/mouse-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        294.6352,
+        299.01098
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            366.08139,
+            257.90165
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            327.3631,
+            352.21876
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            322.09622,
+            352.37246
+          ]
+        }
+      ],
+      "object": "mouse",
+      "pose": "target",
+      "axisLengthMetres": 0.030716800000000002
+    },
+    "static/any2any-final-grasps/tennis-ball-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        226.91586,
+        305.5092
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            215.70282,
+            336.87619
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            170.05574,
+            289.11459
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            210.86702,
+            353.54114
+          ]
+        }
+      ],
+      "object": "tennis_ball",
+      "pose": "target",
+      "axisLengthMetres": 0.025
+    },
+    "static/optimized-media/any2any-final-grasps/tennis-ball-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        226.91586,
+        305.5092
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            215.70282,
+            336.87619
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            170.05574,
+            289.11459
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            210.86702,
+            353.54114
+          ]
+        }
+      ],
+      "object": "tennis_ball",
+      "pose": "target",
+      "axisLengthMetres": 0.025
+    },
+    "static/any2any-final-grasps/flashlight-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        282.99482,
+        252.23838
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            193.40285,
+            219.49549
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            194.77126,
+            310.20609
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            290.49646,
+            140.48654
+          ]
+        }
+      ],
+      "object": "flashlight",
+      "pose": "target",
+      "axisLengthMetres": 0.046341952
+    },
+    "static/optimized-media/any2any-final-grasps/flashlight-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        282.99482,
+        252.23838
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            193.40285,
+            219.49549
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            194.77126,
+            310.20609
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            290.49646,
+            140.48654
+          ]
+        }
+      ],
+      "object": "flashlight",
+      "pose": "target",
+      "axisLengthMetres": 0.046341952
+    },
+    "static/any2any-final-grasps/facial-cream-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        274.86954,
+        267.04746
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            318.62609,
+            346.45906
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            345.32663,
+            232.28539
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            304.51894,
+            239.5798
+          ]
+        }
+      ],
+      "object": "facial_cream_000",
+      "pose": "target",
+      "axisLengthMetres": 0.03415936
+    },
+    "static/optimized-media/any2any-final-grasps/facial-cream-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        274.86954,
+        267.04746
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            318.62609,
+            346.45906
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            345.32663,
+            232.28539
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            304.51894,
+            239.5798
+          ]
+        }
+      ],
+      "object": "facial_cream_000",
+      "pose": "target",
+      "axisLengthMetres": 0.03415936
+    },
+    "static/any2any-final-grasps/screwdriver-s1.png": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        234.12466,
+        284.13916
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            261.79061,
+            387.8476
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            193.01474,
+            247.10099
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            132.8353,
+            321.69201
+          ]
+        }
+      ],
+      "object": "screwdriver",
+      "pose": "target",
+      "axisLengthMetres": 0.03930688
+    },
+    "static/optimized-media/any2any-final-grasps/screwdriver-s1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        234.12466,
+        284.13916
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            261.79061,
+            387.8476
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            193.01474,
+            247.10099
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            132.8353,
+            321.69201
+          ]
+        }
+      ],
+      "object": "screwdriver",
+      "pose": "target",
+      "axisLengthMetres": 0.03930688
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/camera_003-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        265.02938,
+        287.41822
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            337.63396,
+            218.95497
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            200.67346,
+            209.06657
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            304.45739,
+            294.45771
+          ]
+        }
+      ],
+      "object": "sim:camera_003",
+      "pose": "target-1",
+      "axisLengthMetres": 0.0475578304
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/camera_003-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        234.70461,
+        280.42863
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            307.15385,
+            284.55238
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            223.01658,
+            232.90868
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            251.43436,
+            220.60038
+          ]
+        }
+      ],
+      "object": "sim:camera_003",
+      "pose": "target-2",
+      "axisLengthMetres": 0.0475578304
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/camera_003-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        251.66575,
+        306.35782
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            301.3782,
+            345.50232
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            300.9797,
+            317.9754
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            288.28386,
+            237.5787
+          ]
+        }
+      ],
+      "object": "sim:camera_003",
+      "pose": "target-3",
+      "axisLengthMetres": 0.0475578304
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/tape_measure_009-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        274.54206,
+        293.14021
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            310.15158,
+            330.11721
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            333.7556,
+            269.2603
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            270.92355,
+            238.09947
+          ]
+        }
+      ],
+      "object": "sim:tape_measure_009",
+      "pose": "target-1",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/tape_measure_009-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        273.74829,
+        288.0576
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            303.23632,
+            312.91812
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            327.36472,
+            253.06203
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            249.07649,
+            237.30836
+          ]
+        }
+      ],
+      "object": "sim:tape_measure_009",
+      "pose": "target-2",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/tape_measure_009-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        169.43796,
+        320.59731
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            193.56603,
+            278.86284
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            121.64877,
+            335.17398
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            205.52032,
+            366.71991
+          ]
+        }
+      ],
+      "object": "sim:tape_measure_009",
+      "pose": "target-3",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/shampoo_037-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        251.72361,
+        275.99421
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            179.15778,
+            212.81206
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            188.55166,
+            353.75488
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            285.62372,
+            289.2824
+          ]
+        }
+      ],
+      "object": "sim:shampoo_037",
+      "pose": "target-1",
+      "axisLengthMetres": 0.0548882816
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/shampoo_037-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        275.64648,
+        277.12487
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            192.4642,
+            178.52958
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            364.04118,
+            235.81083
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            223.70548,
+            355.54049
+          ]
+        }
+      ],
+      "object": "sim:shampoo_037",
+      "pose": "target-2",
+      "axisLengthMetres": 0.0548882816
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/shampoo_037-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        254.62045,
+        283.77707
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            316.12789,
+            320.10219
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            243.00595,
+            360.67341
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            315.96748,
+            266.62069
+          ]
+        }
+      ],
+      "object": "sim:shampoo_037",
+      "pose": "target-3",
+      "axisLengthMetres": 0.0548882816
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/mouse-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        208.51779,
+        297.44
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            172.27362,
+            311.8157
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            134.37909,
+            341.4597
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            162.70879,
+            215.52956
+          ]
+        }
+      ],
+      "object": "sim:mouse",
+      "pose": "target-1",
+      "axisLengthMetres": 0.03071696
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/mouse-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        229.24895,
+        248.53933
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            281.62007,
+            222.74434
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            168.93235,
+            231.337
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            224.40251,
+            172.10063
+          ]
+        }
+      ],
+      "object": "sim:mouse",
+      "pose": "target-2",
+      "axisLengthMetres": 0.03071696
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/mouse-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        192.28011,
+        316.19664
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            175.81512,
+            313.69339
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            166.67632,
+            374.72388
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            135.52693,
+            290.48949
+          ]
+        }
+      ],
+      "object": "sim:mouse",
+      "pose": "target-3",
+      "axisLengthMetres": 0.03071696
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/tennis_ball-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        258.36684,
+        263.74811
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            273.15675,
+            275.85456
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            238.02651,
+            323.30269
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            316.27886,
+            281.61107
+          ]
+        }
+      ],
+      "object": "sim:tennis_ball",
+      "pose": "target-1",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/tennis_ball-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        197.65009,
+        330.65616
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            230.87127,
+            284.23281
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            226.31653,
+            368.4
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            238.66384,
+            341.52498
+          ]
+        }
+      ],
+      "object": "sim:tennis_ball",
+      "pose": "target-2",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/tennis_ball-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        193.33122,
+        325.23684
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            152.57093,
+            276.33891
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            241.54015,
+            284.21549
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            183.17227,
+            322.8655
+          ]
+        }
+      ],
+      "object": "sim:tennis_ball",
+      "pose": "target-3",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/flashlight-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        345.52325,
+        311.0013
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            431.75774,
+            275.91382
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            403.60098,
+            359.02721
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            346.89963,
+            229.83837
+          ]
+        }
+      ],
+      "object": "sim:flashlight",
+      "pose": "target-1",
+      "axisLengthMetres": 0.04634176
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/flashlight-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        293.38769,
+        311.58676
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            174.54112,
+            247.42785
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            340.55534,
+            332.92237
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            358.99811,
+            187.41045
+          ]
+        }
+      ],
+      "object": "sim:flashlight",
+      "pose": "target-2",
+      "axisLengthMetres": 0.04634176
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/flashlight-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        305.19104,
+        261.63259
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            408.33468,
+            227.34401
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            367.35843,
+            248.38964
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            269.49981,
+            142.37807
+          ]
+        }
+      ],
+      "object": "sim:flashlight",
+      "pose": "target-3",
+      "axisLengthMetres": 0.04634176
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/screwdriver-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        256.96089,
+        301.52616
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            185.55927,
+            311.67026
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            217.3922,
+            264.9786
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            245.05562,
+            371.64637
+          ]
+        }
+      ],
+      "object": "sim:screwdriver",
+      "pose": "target-1",
+      "axisLengthMetres": 0.0393068544
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/screwdriver-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        231.11636,
+        293.05984
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            261.28325,
+            312.95237
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            156.90844,
+            279.61457
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            211.53366,
+            369.61426
+          ]
+        }
+      ],
+      "object": "sim:screwdriver",
+      "pose": "target-2",
+      "axisLengthMetres": 0.0393068544
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/screwdriver-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        209.75994,
+        286.69323
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            252.26786,
+            381.64606
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            197.40104,
+            281.80315
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            115.01794,
+            329.5295
+          ]
+        }
+      ],
+      "object": "sim:screwdriver",
+      "pose": "target-3",
+      "axisLengthMetres": 0.0393068544
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/facial_cream_000-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        233.13243,
+        285.06432
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            216.83094,
+            266.99451
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            206.37953,
+            356.17313
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            303.70104,
+            308.11571
+          ]
+        }
+      ],
+      "object": "sim:facial_cream_000",
+      "pose": "target-1",
+      "axisLengthMetres": 0.0341594048
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/facial_cream_000-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        228.40293,
+        288.1144
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            193.7156,
+            247.00202
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            162.4164,
+            339.92637
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            269.03872,
+            341.96745
+          ]
+        }
+      ],
+      "object": "sim:facial_cream_000",
+      "pose": "target-2",
+      "axisLengthMetres": 0.0341594048
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/facial_cream_000-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        228.6015,
+        288.34598
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            206.69046,
+            246.71456
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            156.41871,
+            335.10933
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            271.47597,
+            349.07816
+          ]
+        }
+      ],
+      "object": "sim:facial_cream_000",
+      "pose": "target-3",
+      "axisLengthMetres": 0.0341594048
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/banana_000-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        334.84137,
+        266.83787
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            253.94758,
+            327.68807
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            277.60776,
+            204.40793
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            354.04576,
+            314.33032
+          ]
+        }
+      ],
+      "object": "sim:banana_000",
+      "pose": "target-1",
+      "axisLengthMetres": 0.048253952
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/banana_000-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        248.79918,
+        294.10487
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            189.25507,
+            351.61409
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            348.09021,
+            335.68053
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            259.06701,
+            201.10232
+          ]
+        }
+      ],
+      "object": "sim:banana_000",
+      "pose": "target-2",
+      "axisLengthMetres": 0.048253952
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/banana_000-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        193.45705,
+        301.97666
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            223.58089,
+            306.14491
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            292.56007,
+            274.70029
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            218.42335,
+            403.94809
+          ]
+        }
+      ],
+      "object": "sim:banana_000",
+      "pose": "target-3",
+      "axisLengthMetres": 0.048253952
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/banana_011-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        225.889,
+        250.50702
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            225.06778,
+            331.10512
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            196.80881,
+            332.95037
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            112.61089,
+            230.71001
+          ]
+        }
+      ],
+      "object": "sim:banana_011",
+      "pose": "target-1",
+      "axisLengthMetres": 0.0553258112
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/banana_011-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        235.57235,
+        297.72262
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            224.40175,
+            367.81331
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            348.99771,
+            330.18311
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            201.12424,
+            387.94716
+          ]
+        }
+      ],
+      "object": "sim:banana_011",
+      "pose": "target-2",
+      "axisLengthMetres": 0.0553258112
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/banana_011-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        273.05871,
+        277.99675
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            368.7137,
+            304.05621
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            206.72355,
+            352.26776
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            297.77115,
+            361.21558
+          ]
+        }
+      ],
+      "object": "sim:banana_011",
+      "pose": "target-3",
+      "axisLengthMetres": 0.0553258112
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/donut_000-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        252.41636,
+        269.97229
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            286.3477,
+            293.25393
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            268.4893,
+            324.66904
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            307.70648,
+            240.66715
+          ]
+        }
+      ],
+      "object": "sim:donut_000",
+      "pose": "target-1",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/donut_000-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        238.92708,
+        282.08324
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            280.66138,
+            235.54178
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            193.13743,
+            248.75065
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            223.91109,
+            253.46137
+          ]
+        }
+      ],
+      "object": "sim:donut_000",
+      "pose": "target-2",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/donut_000-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        172.55399,
+        323.55831
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            110.2042,
+            322.37257
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            166.47605,
+            317.05339
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            170.59883,
+            384.8862
+          ]
+        }
+      ],
+      "object": "sim:donut_000",
+      "pose": "target-3",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/lemon_009-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        247.94152,
+        266.38403
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            259.33159,
+            282.72973
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            194.17328,
+            303.04249
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            282.62354,
+            317.11061
+          ]
+        }
+      ],
+      "object": "sim:lemon_009",
+      "pose": "target-1",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/lemon_009-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        165.63984,
+        317.1202
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            131.03994,
+            368.85003
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            129.61134,
+            320.18734
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            120.17361,
+            275.52846
+          ]
+        }
+      ],
+      "object": "sim:lemon_009",
+      "pose": "target-2",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/lemon_009-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        200.48382,
+        333.66182
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            179.62781,
+            320.31197
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            226.83267,
+            382.22701
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            150.10961,
+            366.20719
+          ]
+        }
+      ],
+      "object": "sim:lemon_009",
+      "pose": "target-3",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/medicine_bottle_001-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        242.92141,
+        294.85753
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            225.41601,
+            244.92361
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            162.41428,
+            339.95809
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            198.36955,
+            230.48118
+          ]
+        }
+      ],
+      "object": "sim:medicine_bottle_001",
+      "pose": "target-1",
+      "axisLengthMetres": 0.0432096256
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/medicine_bottle_001-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        227.12152,
+        320.92234
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            301.53481,
+            356.38953
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            245.26604,
+            349.50341
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            269.4659,
+            248.45447
+          ]
+        }
+      ],
+      "object": "sim:medicine_bottle_001",
+      "pose": "target-2",
+      "axisLengthMetres": 0.0432096256
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/medicine_bottle_001-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        243.26943,
+        325.22694
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            231.5066,
+            230.83557
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            197.9506,
+            323.97872
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            330.07115,
+            310.95427
+          ]
+        }
+      ],
+      "object": "sim:medicine_bottle_001",
+      "pose": "target-3",
+      "axisLengthMetres": 0.0432096256
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/medicine_bottle_034-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        243.72052,
+        271.97941
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            184.10328,
+            226.92373
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            218.07978,
+            256.82521
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            196.71923,
+            336.26235
+          ]
+        }
+      ],
+      "object": "sim:medicine_bottle_034",
+      "pose": "target-1",
+      "axisLengthMetres": 0.030775321600000002
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/medicine_bottle_034-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        241.24747,
+        319.77897
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            207.24598,
+            336.72111
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            189.33111,
+            288.11374
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            259.45058,
+            267.18827
+          ]
+        }
+      ],
+      "object": "sim:medicine_bottle_034",
+      "pose": "target-2",
+      "axisLengthMetres": 0.030775321600000002
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/medicine_bottle_034-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        182.20536,
+        312.98657
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            259.06522,
+            307.82484
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            188.29937,
+            295.36412
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            175.34369,
+            237.64012
+          ]
+        }
+      ],
+      "object": "sim:medicine_bottle_034",
+      "pose": "target-3",
+      "axisLengthMetres": 0.030775321600000002
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/remote_control_030-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        261.40305,
+        292.05262
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            162.65204,
+            228.2025
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            185.66532,
+            344.21245
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            292.37629,
+            191.13258
+          ]
+        }
+      ],
+      "object": "sim:remote_control_030",
+      "pose": "target-1",
+      "axisLengthMetres": 0.047624947200000003
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/remote_control_030-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        245.35578,
+        312.11152
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            253.40624,
+            212.67296
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            330.78515,
+            269.83008
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            166.62778,
+            256.75704
+          ]
+        }
+      ],
+      "object": "sim:remote_control_030",
+      "pose": "target-2",
+      "axisLengthMetres": 0.047624947200000003
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/remote_control_030-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        235.00514,
+        294.6519
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            152.3183,
+            223.39469
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            310.59217,
+            240.31039
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            212.86358,
+            363.83423
+          ]
+        }
+      ],
+      "object": "sim:remote_control_030",
+      "pose": "target-3",
+      "axisLengthMetres": 0.047624947200000003
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/rubik_cube_000-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        261.62799,
+        286.97676
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            261.11331,
+            310.54803
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            243.27152,
+            235.23465
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            318.42389,
+            270.29394
+          ]
+        }
+      ],
+      "object": "sim:rubik_cube_000",
+      "pose": "target-1",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/rubik_cube_000-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        211.73018,
+        303.59386
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            217.62245,
+            275.05974
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            171.43467,
+            266.95838
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            171.08732,
+            337.5835
+          ]
+        }
+      ],
+      "object": "sim:rubik_cube_000",
+      "pose": "target-2",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/rubik_cube_000-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        210.72845,
+        311.91798
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            186.70798,
+            347.97912
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            180.12089,
+            270.26847
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            250.94487,
+            302.13971
+          ]
+        }
+      ],
+      "object": "sim:rubik_cube_000",
+      "pose": "target-3",
+      "axisLengthMetres": 0.025
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/teapot_045-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        259.80924,
+        272.79996
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            344.97471,
+            332.75672
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            236.6422,
+            302.98826
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            313.29851,
+            196.05611
+          ]
+        }
+      ],
+      "object": "sim:teapot_045",
+      "pose": "target-1",
+      "axisLengthMetres": 0.0608232064
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/teapot_045-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        303.29182,
+        260.6744
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            393.17891,
+            262.73075
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            339.61312,
+            283.2242
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            315.1404,
+            169.34567
+          ]
+        }
+      ],
+      "object": "sim:teapot_045",
+      "pose": "target-2",
+      "axisLengthMetres": 0.0608232064
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/teapot_045-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        270.9097,
+        263.53832
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            366.48595,
+            295.27696
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            257.35473,
+            310.38635
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            298.59415,
+            184.96191
+          ]
+        }
+      ],
+      "object": "sim:teapot_045",
+      "pose": "target-3",
+      "axisLengthMetres": 0.0608232064
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/timer_000-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        254.99726,
+        279.15171
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            260.79918,
+            239.70977
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            216.44581,
+            322.11782
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            309.54877,
+            312.95187
+          ]
+        }
+      ],
+      "object": "sim:timer_000",
+      "pose": "target-1",
+      "axisLengthMetres": 0.027641747200000004
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/timer_000-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        239.54695,
+        299.92873
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            285.66179,
+            354.2587
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            199.85743,
+            340.1383
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            275.62753,
+            278.03103
+          ]
+        }
+      ],
+      "object": "sim:timer_000",
+      "pose": "target-2",
+      "axisLengthMetres": 0.027641747200000004
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/standard/timer_000-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        200.93194,
+        330.28968
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            192.99216,
+            289.546
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            233.74448,
+            366.98445
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            147.39013,
+            360.04607
+          ]
+        }
+      ],
+      "object": "sim:timer_000",
+      "pose": "target-3",
+      "axisLengthMetres": 0.027641747200000004
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/long-wide/hammer_002-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        288.31983,
+        259.13113
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            247.6651,
+            229.48387
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            228.35684,
+            322.63793
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            240.61382,
+            207.47882
+          ]
+        }
+      ],
+      "object": "sim:hammer_002",
+      "pose": "target-1",
+      "axisLengthMetres": 0.065
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/long-wide/hammer_002-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        262.23718,
+        240.75286
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            295.32999,
+            291.00015
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            171.90438,
+            285.63014
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            293.27986,
+            310.62764
+          ]
+        }
+      ],
+      "object": "sim:hammer_002",
+      "pose": "target-2",
+      "axisLengthMetres": 0.065
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/long-wide/hammer_002-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        309.19025,
+        259.31669
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            248.49455,
+            201.48573
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            252.64677,
+            321.28795
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            331.48645,
+            248.01975
+          ]
+        }
+      ],
+      "object": "sim:hammer_002",
+      "pose": "target-3",
+      "axisLengthMetres": 0.065
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/long-wide/spanner_000-target-1.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        250.21636,
+        278.07427
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            88.83437,
+            193.79839
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            243.90155,
+            243.71768
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            165.24258,
+            432.15472
+          ]
+        }
+      ],
+      "object": "sim:spanner_000",
+      "pose": "target-1",
+      "axisLengthMetres": 0.065
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/long-wide/spanner_000-target-2.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        278.84796,
+        267.81704
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            369.11509,
+            346.95086
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            372.25011,
+            210.71191
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            289.28472,
+            174.67773
+          ]
+        }
+      ],
+      "object": "sim:spanner_000",
+      "pose": "target-2",
+      "axisLengthMetres": 0.065
+    },
+    "static/simulation-transfers/real-camera-xyz-20261102/final-targets/long-wide/spanner_000-target-3.webp": {
+      "imageSize": [
+        640,
+        480
+      ],
+      "origin": [
+        282.85074,
+        271.51577
+      ],
+      "axes": [
+        {
+          "label": "X",
+          "color": "#ff6675",
+          "end": [
+            196.92091,
+            257.4773
+          ]
+        },
+        {
+          "label": "Y",
+          "color": "#56df9b",
+          "end": [
+            374.6826,
+            226.56721
+          ]
+        },
+        {
+          "label": "Z",
+          "color": "#65adff",
+          "end": [
+            308.02899,
+            393.50011
+          ]
+        }
+      ],
+      "object": "sim:spanner_000",
+      "pose": "target-3",
+      "axisLengthMetres": 0.065
+    }
+  }
+}

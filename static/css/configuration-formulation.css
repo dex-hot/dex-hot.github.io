@@ -1,0 +1,55 @@
+
+.configuration-intro .configuration-transfer-title { gap: 24px; }
+.configuration-intro .configuration-node { display: flex; flex-direction: column; align-items: stretch; gap: 6px; padding: 22px 24px 0; overflow: hidden; }
+.configuration-node-label { color: var(--ink); font-size: clamp(22px, 2.2vw, 34px); line-height: 1.25; font-weight: 600; text-align: left; text-wrap: balance; }
+.configuration-node-label .configuration-term { white-space: normal; }
+.configuration-pose { display: block; width: min(100%, 540px); margin: 0 auto; aspect-ratio: 680 / 500; object-fit: contain; }
+.configuration-visual { position: relative; min-width: 0; aspect-ratio: 680 / 500; }
+.configuration-node > .configuration-visual { width: min(100%, 540px); margin: 0 auto; }
+.configuration-visual > .configuration-pose { width: 100%; }
+.configuration-visual > img.configuration-object-axes,
+.configuration-visual > img.configuration-hand-skeleton { position: absolute; inset: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
+.configuration-hand-skeleton { z-index: 1; }
+.configuration-object-axes { z-index: 2; }
+.configuration-node .configuration-hand-skeleton,
+.configuration-component--combined .configuration-hand-skeleton { opacity: .85; }
+.configuration-components.configuration-components--visual { display: grid; grid-template-columns: minmax(0, 1fr) 34px minmax(0, 1fr) 34px minmax(0, 1fr); gap: 12px; align-items: center; }
+.configuration-component { min-width: 0; align-self: stretch; border-radius: 12px; background: #f6f8fa; }
+.configuration-component:nth-of-type(2) { background: #fbf5ed; }
+.configuration-component--combined { background: #edf5f0; }
+.configuration-component img { display: block; width: 100%; aspect-ratio: 680 / 500; object-fit: contain; }
+.configuration-component figcaption { border: 0; padding: 0 18px 20px; line-height: 1.35; text-align: left; }
+.configuration-component figcaption strong { display: block; color: #244f72; font-size: clamp(18px, 1.45vw, 24px); font-weight: 650; }
+.configuration-component:nth-of-type(2) figcaption strong { color: #8f531d; }
+.configuration-component--combined figcaption strong { color: #205c44; }
+.configuration-component figcaption span { display: block; margin-top: 7px; color: var(--muted); font-size: clamp(14px, 1.1vw, 18px); font-weight: 400; }
+.configuration-components--visual .configuration-plus,
+.configuration-components--visual .configuration-equals { color: #658575; font-size: 34px; text-align: center; line-height: 1; font-weight: 400; }
+@media (max-width: 800px) {
+  .configuration-intro .configuration-transfer-title { gap: 12px; grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1fr); }
+  .configuration-intro .configuration-node { padding: 16px 12px 0; }
+  .configuration-intro .transfer-arrow { width: 32px; height: 32px; }
+  .configuration-intro .transfer-arrow svg { width: 24px; height: 24px; }
+  .configuration-components.configuration-components--visual { gap: 7px; grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr); }
+  .configuration-component figcaption { padding: 0 10px 14px; }
+  .configuration-components--visual .configuration-plus, .configuration-components--visual .configuration-equals { font-size: 24px; }
+}
+@media (max-width: 540px) {
+  .configuration-intro { padding: 18px 12px; }
+  .configuration-intro .configuration-node { padding: 12px 8px 0; }
+  .configuration-node-label { font-size: 16px; }
+  .configuration-node-label .configuration-term { white-space: nowrap; }
+  .configuration-role { font-size: 14px; }
+  .configuration-components.configuration-components--visual { grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr); gap: 10px 5px; }
+  .configuration-component figcaption strong { font-size: 16px; }
+  .configuration-component figcaption span { font-size: 13px; }
+  .configuration-components--visual .configuration-equals { grid-column: 2; }
+  .configuration-component--combined { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+  .configuration-component--combined figcaption { padding: 12px; }
+}
+@media (max-width: 360px) {
+  .configuration-intro .configuration-transfer-title { grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr); gap: 6px; }
+  .configuration-intro .configuration-node { padding-inline: 6px; }
+  .configuration-intro .transfer-arrow { width: 20px; height: 20px; }
+  .configuration-intro .transfer-arrow svg { width: 18px; height: 18px; }
+}

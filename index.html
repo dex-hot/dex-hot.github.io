@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DexHOT learns hand–object configuration transfer with a single policy and composes long-horizon dexterous manipulation through closed-loop subgoals.">
+  <meta name="keywords" content="DexHOT, Dexterous Manipulation, Hand-Object Configuration, Sim-to-Real, Reinforcement Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8faff">
+  <title>DexHOT: Learning Hand–Object Configuration Transfer for Dexterous Manipulation</title>
+  <link rel="stylesheet" href="./static/css/index.css?v=navy-any2any-1">
+  <link rel="stylesheet" href="./static/css/distance-gallery.css?v=1">
+  <link rel="stylesheet" href="./static/css/grasp-viewer.css?v=object-xyz-1">
+  <link rel="stylesheet" href="./static/css/object-frame-overlay.css?v=object-xyz-1">
+  <link rel="stylesheet" href="./static/css/transfer-explorer.css?v=mobile-real-camera-1">
+  <link rel="stylesheet" href="./static/css/configuration-formulation.css?v=drill-functional-skeleton-1">
+  <link rel="stylesheet" href="./static/css/mobile-video-controls.css?v=paper-link-1">
+  <link rel="stylesheet" href="./static/css/research-theme.css?v=green-video-interiors-4">
+  <script defer src="./static/js/optimized-media.js?v=1"></script>
+  <script defer src="./static/js/index.js?v=navy-any2any-1"></script>
+  <script defer src="./static/js/distance-gallery.js?v=1"></script>
+  <script defer src="./static/js/transfer-explorer.js?v=mobile-real-camera-1"></script>
+  <script defer src="./static/js/grasp-viewer.js?v=mobile-real-camera-1"></script>
+  <script defer src="./static/js/object-frame-overlay.js?v=mobile-real-camera-1"></script>
+  <script defer src="./static/js/mobile-video-controls.js?v=mobile-real-camera-1"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="wordmark brand-name" href="#top" aria-label="DexHOT home">Dex<span class="brand-h">H</span><span class="brand-o">O</span><span class="brand-t">T</span></a>
+      <div class="nav-links"><a href="#paper-video">Video</a><a href="#videos">Experiments</a><a href="#method">Method</a><a href="#benchmark">Benchmark</a><a href="#BibTeX">Citation</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="publication-title">
+      <div class="hero-backdrop" id="hero-video-wall" aria-hidden="true">
+        <div class="hero-tile"><video class="hero-background-video" muted loop playsinline preload="none" poster="./static/hero-videos/barcode-scanning-full-30fps.jpg" data-src="./static/hero-videos/barcode-scanning-full-30fps.mp4" tabindex="-1"></video></div>
+        <div class="hero-tile"><video class="hero-background-video" muted loop playsinline preload="none" poster="./static/hero-videos/shelf-placement-full-30fps.jpg" data-src="./static/hero-videos/shelf-placement-full-30fps.mp4" tabindex="-1"></video></div>
+        <div class="hero-tile"><video class="hero-background-video" muted loop playsinline preload="none" poster="./static/hero-videos/block-assembly-full-30fps.jpg" data-src="./static/hero-videos/block-assembly-full-30fps.mp4" tabindex="-1"></video></div>
+        <div class="hero-tile"><video class="hero-background-video" muted loop playsinline preload="none" poster="./static/hero-videos/salt-shaking-full-60fps.jpg" data-src="./static/hero-videos/salt-shaking-full-60fps.mp4" tabindex="-1"></video></div>
+        <div class="hero-tile"><video class="hero-background-video" muted loop playsinline preload="none" poster="./static/hero-videos/water-pouring-start318-30fps.jpg" data-src="./static/hero-videos/water-pouring-start318-30fps.mp4" tabindex="-1"></video></div>
+        <div class="hero-tile"><video class="hero-background-video" muted loop playsinline preload="none" poster="./static/hero-videos/screw-driving-full-30fps.jpg" data-src="./static/hero-videos/screw-driving-full-30fps.mp4" tabindex="-1"></video></div>
+      </div>
+      <div class="publication-heading page-width">
+        <h1 id="publication-title"><span class="publication-name brand-name">Dex<span class="brand-h">H</span><span class="brand-o">O</span><span class="brand-t">T</span></span><span class="publication-title">Learning Hand–Object Configuration Transfer<br class="desktop-break"> for Dexterous Manipulation</span></h1>
+        <div class="publication-authors" aria-label="Authors in publication order">
+          <div class="author-row">
+            <span><a href="https://zheweigui.github.io/">Zhewei Gui</a><sup>1,3</sup><sup class="contribution-marker" aria-label="Co-first author" title="Co-first author">*</sup></span>
+            <span><a href="https://anthebol2.github.io/">Anthony Bolton</a><sup>1,3</sup><sup class="contribution-marker" aria-label="Co-first author" title="Co-first author">*</sup></span>
+            <span><a href="https://jiyao06.github.io/">Jiyao Zhang</a><sup>1,2,3</sup><sup class="contribution-marker" aria-label="Project lead" title="Project lead">‡</sup></span>
+          </div>
+          <div class="author-row">
+            <span><a href="https://chenzyn.github.io/">Zeyuan Chen</a><sup>1,4</sup></span>
+            <span><a href="https://qiyangyan.github.io/">Qiyang Yan</a><sup>1</sup></span>
+            <span><a href="https://tianyuwang01.github.io/">Tianyu Wang</a><sup>1,4</sup></span>
+            <span><a href="https://zsdonghao.github.io/">Hao Dong</a><sup>1,2,3</sup><sup class="contribution-marker" aria-label="Corresponding Author" title="Corresponding Author">†</sup></span>
+          </div>
+        </div>
+        <div class="publication-affiliations" aria-label="Author affiliations">
+          <p class="affiliation-row"><span><sup>1</sup> CFCS, School of CS, PKU, China</span><span><sup>2</sup> National Key Laboratory for Multimedia Information Processing, School of CS, PKU, China</span></p>
+          <p class="affiliation-row"><span><sup>3</sup> PrimeBot</span><span><sup>4</sup> State Key Laboratory of General Artificial Intelligence, BIGAI</span></p>
+        </div>
+        <p class="author-note" aria-label="Author contributions"><span><span class="contribution-marker" aria-hidden="true">*</span> Co-first Authors</span><span><span class="contribution-marker" aria-hidden="true">†</span> Corresponding Author</span><span><span class="contribution-marker" aria-hidden="true">‡</span> Project lead</span></p>
+        <div class="publication-links" aria-label="Research resources"><a class="resource-button" href="https://arxiv.org/abs/2611.05119">Paper <span aria-hidden="true">↗</span></a><a class="resource-button resource-primary" href="#paper-video"><span aria-hidden="true">▶</span> Video</a><a class="resource-button" href="https://github.com/dex-hot/DexHOT-Code">Code <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="hero-background-note"><span aria-hidden="true"></span>Real-robot demonstrations <strong>2× speed</strong></div>
+      <button class="hero-motion-toggle" id="hero-motion-toggle" type="button" aria-controls="hero-video-wall">Pause background</button>
+    </section>
+    <section class="page-width paper-video-section" id="overview" aria-label="Research video">
+      <div class="paper-video" id="paper-video">
+        <video id="paper-video-player" controls playsinline preload="none" width="2560" height="1440" poster="./static/optimized-media/video-posters/paper-video-v1102.webp" aria-label="DexHOT full paper video with audio">
+          <source src="./static/optimized-media/ppt-media/dexhot-paper-video-v1102.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="./static/optimized-media/ppt-media/dexhot-paper-video-v1102.mp4">Watch the full paper video</a>.
+        </video>
+      </div>
+    </section>
+    <section class="section-tinted video-section" id="videos" aria-labelledby="videos-title">
+      <div class="page-width section-content">
+        <header class="transfer-section-heading">
+          <h2 id="videos-title"><span class="transfer-heading-line"><span class="transfer-emphasis transfer-emphasis--one">One</span> policy. <span class="transfer-emphasis transfer-emphasis--no-human">No human data</span> for training.</span><span class="transfer-heading-line"><span class="transfer-emphasis transfer-emphasis--any">Any</span> <span class="configuration-term">hand–object</span> configuration transfer.</span></h2>
+        </header>
+        <section class="video-group configuration-group" aria-labelledby="configuration-transfer-title">
+          <div class="video-group-heading"><div><span>01</span><h3 id="configuration-transfer-title">What is hand–object configuration transfer?</h3></div></div>
+          <div class="configuration-intro">
+            <header class="configuration-intro-heading"><h4 class="configuration-name">Any<span class="configuration-name-link">2</span>Any</h4><p>Any source. Any target.<span class="configuration-wrist-note">Illustrated with the wrist held fixed.</span></p></header>
+            <div class="configuration-transfer-title" role="group" aria-label="Any hand–object configuration to any hand–object configuration">
+              <div class="configuration-node"><span class="configuration-role">Source</span><p class="configuration-node-label">Any <span class="configuration-term">hand–object</span> configuration</p><div class="configuration-visual"><img class="configuration-pose" src="./static/configuration-formulation/drill/source.webp?v=wrist-aligned-1" width="680" height="500" loading="lazy" alt="Recorded source configuration: a Sharpa hand holding the scanned drill, with colored finger chains and object-local axes."><img class="configuration-hand-skeleton" src="./static/configuration-formulation/drill/source-skeleton.svg?v=wrist-aligned-1" width="680" height="500" loading="lazy" alt="" aria-hidden="true"><img class="configuration-object-axes" src="./static/configuration-formulation/drill/source-axes.svg?v=wrist-aligned-1" width="680" height="500" loading="lazy" alt="" aria-hidden="true"></div></div>
+              <span class="transfer-arrow" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" focusable="false"><path d="M7 16h18M18 9l7 7-7 7"/></svg></span>
+              <div class="configuration-node configuration-node--target"><span class="configuration-role">Target</span><p class="configuration-node-label">Any <span class="configuration-term">hand–object</span> configuration</p><div class="configuration-visual"><img class="configuration-pose" src="./static/configuration-formulation/drill/target.webp?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="Target configuration: a Sharpa hand holding the scanned drill, with an extended finger alongside neighboring bent fingers, colored finger chains, and object-local axes."><img class="configuration-hand-skeleton" src="./static/configuration-formulation/drill/target-skeleton.svg?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="" aria-hidden="true"><img class="configuration-object-axes" src="./static/configuration-formulation/drill/target-axes.svg?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="" aria-hidden="true"></div></div>
+            </div>
+            <div class="configuration-definition">
+              <p class="formulation-copy">Transfer between feasible hand–object arrangements, with each configuration jointly specifying:</p>
+              <div class="configuration-components configuration-components--visual">
+                <figure class="configuration-component"><div class="configuration-visual"><img src="./static/configuration-formulation/drill/hand.webp?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="Opaque colored finger skeleton over a translucent Sharpa hand and faint drill, emphasizing finger articulation."><img class="configuration-hand-skeleton" src="./static/configuration-formulation/drill/target-skeleton.svg?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="" aria-hidden="true"></div><figcaption><strong>Finger articulation</strong><span>The hand arrangement</span></figcaption></figure>
+                <span class="configuration-plus" aria-hidden="true">+</span>
+                <figure class="configuration-component"><div class="configuration-visual"><img src="./static/configuration-formulation/drill/object.webp?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="Opaque scanned drill with three colored object-local axes and a faint hand reference, emphasizing pose relative to the wrist."><img class="configuration-object-axes" src="./static/configuration-formulation/drill/target-axes.svg?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="" aria-hidden="true"></div><figcaption><strong>Object pose</strong><span>Position and orientation relative to the wrist</span></figcaption></figure>
+                <span class="configuration-equals" aria-hidden="true">=</span>
+                <figure class="configuration-component configuration-component--combined"><div class="configuration-visual"><img src="./static/configuration-formulation/drill/target.webp?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="The recorded drill hand–object configuration combines the finger arrangement and wrist-relative object pose."><img class="configuration-hand-skeleton" src="./static/configuration-formulation/drill/target-skeleton.svg?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="" aria-hidden="true"><img class="configuration-object-axes" src="./static/configuration-formulation/drill/target-axes.svg?v=handle-horizontal-1" width="680" height="500" loading="lazy" alt="" aria-hidden="true"></div><figcaption><strong>Hand–object configuration</strong><span>A joint goal for the hand and object</span></figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-group" aria-labelledby="video-simulation-title">
+          <div class="video-group-heading"><div><span>02</span><h3 id="video-simulation-title">Simulation configuration transfer</h3></div></div>
+          <dl class="results-strip experiment-results results-strip--two" aria-label="Simulation Any2Any results">
+            <div><dt>Seen-object Any2Any</dt><dd><span class="result-value">80.5<em>%</em></span><small>40 training objects</small></dd></div>
+            <div><dt>Zero-shot unseen-object Any2Any</dt><dd><span class="result-value">69.4<em>%</em></span><small>80 held-out objects</small></dd></div>
+          </dl>
+          <p class="experiment-protocol-link">Any2Any success averages close and far transfers. <a href="#benchmark-protocol">See how pairs are sampled and evaluated <span aria-hidden="true">↗</span></a></p>
+
+          <div class="video-deck" id="simulation-transfer-player" data-deck="simulation" data-recorded-pairs="true">
+            <div class="deck-stage">
+              <div class="recorded-pair-picker" role="group" aria-label="Choose a recorded source-to-target transfer">
+                <label for="simulation-source">Source<select id="simulation-source" disabled><option value="0">Source 1</option><option value="1">Source 2</option><option value="2">Source 3</option></select></label>
+                <span class="pair-direction" aria-hidden="true">→</span>
+                <label for="simulation-target">Target<select id="simulation-target" disabled><option value="0">Target 1</option><option value="1">Target 2</option><option value="2">Target 3</option></select></label>
+                <span class="transfer-range" data-range="far" aria-live="polite">Far transfer</span>
+              </div>
+              <div class="video-frame"><span class="deck-status">Policy execution</span><span class="simulation-target-note" aria-label="Planner target configuration shown on the left">Planner target · left</span><video controls muted playsinline preload="metadata" poster="./static/simulation-transfers/real-camera-xyz-20261102/camera_003/g4445-to-5305.webp" aria-label="Camera simulation configuration transfer"><source type="video/mp4"></video></div>
+              <div class="deck-caption deck-caption--compact"><div class="deck-caption-heading"><div class="deck-title"><h4>Camera</h4><span class="deck-kicker">Simulation rollout</span></div></div></div>
+              <div class="simulation-guide">
+                <div class="simulation-legend"><span><b>Left</b> Planner target</span><span><b>Right</b> Policy execution</span></div>
+                <p class="recording-note" aria-live="polite">Selected successful transfers · choose a source and target to play.</p>
+                <div class="simulation-target-navigation" role="group" aria-label="Inspect targets in this simulation video" hidden><span>Targets</span><div class="simulation-target-buttons"></div></div>
+              </div>
+            </div>
+            <div class="deck-tabs deck-tabs-dense" role="group" aria-label="Simulation transfer examples, seen then unseen">
+              <p class="deck-selector-label">Seen-object examples</p>
+              <button class="is-active" type="button" aria-pressed="true" data-object-id="camera_003" data-source="./static/simulation-transfers/real-camera-xyz-20261102/camera_003/g4445-to-5305.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/camera_003/g4445-to-5305.webp" data-title="Camera" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Camera</button>
+              <button type="button" aria-pressed="false" data-object-id="tape_measure_009" data-source="./static/simulation-transfers/real-camera-xyz-20261102/tape_measure_009/g4024-to-5423.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/tape_measure_009/g4024-to-5423.webp" data-title="Tape measure" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Tape measure</button>
+              <button type="button" aria-pressed="false" data-object-id="shampoo_037" data-source="./static/simulation-transfers/real-camera-xyz-20261102/shampoo_037/g796-to-6904.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/shampoo_037/g796-to-6904.webp" data-title="Shampoo bottle" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Shampoo bottle</button>
+              <button type="button" aria-pressed="false" data-object-id="hammer_002" data-source="./static/simulation-transfers/real-camera-xyz-20261102/long-wide/hammer_002/g9299-to-5877.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/long-wide/hammer_002/g9299-to-5877.webp" data-title="Hammer" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Hammer</button>
+              <button type="button" aria-pressed="false" data-object-id="spanner_000" data-source="./static/simulation-transfers/real-camera-xyz-20261102/long-wide/spanner_000/g319-to-2302.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/long-wide/spanner_000/g319-to-2302.webp" data-title="Spanner" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Spanner</button>
+              <button type="button" aria-pressed="false" aria-label="Banana — seen object" data-object-id="banana_011" data-source="./static/simulation-transfers/real-camera-xyz-20261102/banana_011/g15371-to-15559.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/banana_011/g15371-to-15559.webp" data-title="Banana" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Banana</button>
+              <button type="button" aria-pressed="false" data-object-id="lemon_009" data-source="./static/simulation-transfers/real-camera-xyz-20261102/lemon_009/g4457-to-15663.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/lemon_009/g4457-to-15663.webp" data-title="Lemon" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Lemon</button>
+              <button type="button" aria-pressed="false" aria-label="Medicine bottle — seen object" data-object-id="medicine_bottle_034" data-source="./static/simulation-transfers/real-camera-xyz-20261102/medicine_bottle_034/g2460-to-8316.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/medicine_bottle_034/g2460-to-8316.webp" data-title="Medicine bottle" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Medicine bottle</button>
+              <button type="button" aria-pressed="false" data-object-id="remote_control_030" data-source="./static/simulation-transfers/real-camera-xyz-20261102/remote_control_030/g44-to-6186.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/remote_control_030/g44-to-6186.webp" data-title="Remote control" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Remote control</button>
+              <button type="button" aria-pressed="false" data-object-id="teapot_045" data-source="./static/simulation-transfers/real-camera-xyz-20261102/teapot_045/g3316-to-3654.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/teapot_045/g3316-to-3654.webp" data-title="Teapot" data-kicker="Seen object" data-status="Policy execution" data-tone="neutral">Teapot</button>
+              <p class="deck-selector-label">Unseen-object examples</p>
+              <button type="button" aria-pressed="false" data-object-id="mouse" data-source="./static/simulation-transfers/real-camera-xyz-20261102/mouse/g485-to-1704.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/mouse/g485-to-1704.webp" data-title="Mouse" data-kicker="Unseen instance" data-status="Policy execution" data-tone="neutral">Mouse</button>
+              <button type="button" aria-pressed="false" data-object-id="tennis_ball" data-source="./static/simulation-transfers/real-camera-xyz-20261102/tennis_ball/g636-to-3015.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/tennis_ball/g636-to-3015.webp" data-title="Tennis ball" data-kicker="Unseen instance" data-status="Policy execution" data-tone="neutral">Tennis ball</button>
+              <button type="button" aria-pressed="false" data-object-id="flashlight" data-source="./static/simulation-transfers/real-camera-xyz-20261102/flashlight/g384-to-5713.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/flashlight/g384-to-5713.webp" data-title="Flashlight" data-kicker="Unseen category" data-status="Policy execution" data-tone="neutral">Flashlight</button>
+              <button type="button" aria-pressed="false" data-object-id="screwdriver" data-source="./static/simulation-transfers/real-camera-xyz-20261102/screwdriver/g17-to-83.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/screwdriver/g17-to-83.webp" data-title="Screwdriver" data-kicker="Unseen category" data-status="Policy execution" data-tone="neutral">Screwdriver</button>
+              <button type="button" aria-pressed="false" data-object-id="facial_cream_000" data-source="./static/simulation-transfers/real-camera-xyz-20261102/facial_cream_000/g2437-to-44.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/facial_cream_000/g2437-to-44.webp" data-title="Facial cream" data-kicker="Unseen category" data-status="Policy execution" data-tone="neutral">Facial cream</button>
+              <button type="button" aria-pressed="false" aria-label="Banana — unseen instance" data-object-id="banana_000" data-source="./static/simulation-transfers/real-camera-xyz-20261102/banana_000/g2648-to-2230.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/banana_000/g2648-to-2230.webp" data-title="Banana" data-kicker="Unseen instance" data-status="Policy execution" data-tone="neutral">Banana</button>
+              <button type="button" aria-pressed="false" aria-label="Medicine bottle — unseen instance" data-object-id="medicine_bottle_001" data-source="./static/simulation-transfers/real-camera-xyz-20261102/medicine_bottle_001/g505-to-150.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/medicine_bottle_001/g505-to-150.webp" data-title="Medicine bottle" data-kicker="Unseen instance" data-status="Policy execution" data-tone="neutral">Medicine bottle</button>
+              <button type="button" aria-pressed="false" data-object-id="donut_000" data-source="./static/simulation-transfers/real-camera-xyz-20261102/donut_000/g132-to-484.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/donut_000/g132-to-484.webp" data-title="Donut" data-kicker="Unseen category" data-status="Policy execution" data-tone="neutral">Donut</button>
+              <button type="button" aria-pressed="false" data-object-id="rubik_cube_000" data-source="./static/simulation-transfers/real-camera-xyz-20261102/rubik_cube_000/g2117-to-59.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/rubik_cube_000/g2117-to-59.webp" data-title="Rubik’s cube" data-kicker="Unseen category" data-status="Policy execution" data-tone="neutral">Rubik’s cube</button>
+              <button type="button" aria-pressed="false" data-object-id="timer_000" data-source="./static/simulation-transfers/real-camera-xyz-20261102/timer_000/g25-to-1143.mp4" data-poster="./static/simulation-transfers/real-camera-xyz-20261102/timer_000/g25-to-1143.webp" data-title="Timer" data-kicker="Unseen category" data-status="Policy execution" data-tone="neutral">Timer</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-group" aria-labelledby="video-real-transfer-title">
+          <div class="video-group-heading"><div><span>03</span><h3 id="video-real-transfer-title">Real-world configuration transfer</h3></div></div>
+          <dl class="results-strip experiment-results results-strip--single results-strip--transfer" aria-label="Real-robot Any2Any result">
+            <div><dt>Real-robot Any2Any</dt><dd><span class="result-value">61.5<em>%</em></span><small>10 objects · 20 uniformly sampled transfers per object</small></dd></div>
+          </dl>
+          <p class="video-group-copy">Source and target hand–object configurations are uniformly sampled from each object’s validated pool, excluding near-duplicate pairs. The fingers drive the transfer with a <strong>fixed, palm-down wrist.</strong></p>
+          <div class="video-deck" id="real-transfer-player" data-deck="real-transfer">
+            <div class="deck-stage">
+              <div class="video-frame">
+                <span class="deck-status">Seen object</span><video controls muted autoplay playsinline preload="metadata" poster="./static/video-posters/media18.jpg?v=uniform-2" aria-label="Medicine bottle configuration transfer"><source type="video/mp4"></video>
+                <figure class="stage-goal-ghost any2any-goal-ghost" aria-label="Final hand–object configuration target"><img src="./static/optimized-media/any2any-final-grasps/medicine-bottle-s1.webp?v=medicine-front-20deg-1" alt="Palm-down Sharpa target hand–object configuration with the scanned medicine bottle"><figcaption><span>TARGET</span><strong>Palm down · fingers forward</strong><small>Sharpa + scan · traj19</small></figcaption></figure>
+              </div>
+              <div class="deck-caption deck-caption--compact"><div class="deck-caption-heading"><div class="deck-title"><h4>Medicine bottle</h4><span class="deck-kicker">Seen object</span><span class="object-success-rate">Success rate: 90% (18/20)</span></div></div></div>
+            </div>
+            <div class="deck-tabs deck-tabs-dense" role="group" aria-label="Real-world transfer examples, seen then unseen, descending success rate within each group">
+              <p class="deck-selector-label">Seen objects</p>
+              <button class="is-active" type="button" aria-pressed="true" data-source="./static/optimized-media/ppt-media/media18-final-frame-318.mp4?v=medicine-end-318-1" data-poster="./static/video-posters/media18.jpg?v=uniform-2" data-title="Medicine bottle" data-success-count="18" data-trial-count="20" data-kicker="Seen object" data-description="The policy transfers across two feasible configurations on the bottle." data-status="Seen object" data-tone="neutral" data-media-scale="1.055" data-goal-prefix="./static/any2any-final-grasps/medicine-bottle" data-goal-times="10.83" data-goal-labels="Target configuration" data-goal-frames="325" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj19" data-goal-kind="Final configuration" data-goal-persistent="true">Medicine bottle</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media20-final-frame-351.mp4?v=banana-end-351-1" data-poster="./static/video-posters/media20.jpg?v=uniform-2" data-title="Banana" data-success-count="16" data-trial-count="20" data-kicker="Seen object" data-description="The hand changes contact and articulation while the wrist remains fixed." data-status="Seen object" data-tone="neutral" data-media-scale="1.16" data-goal-prefix="./static/any2any-final-grasps/banana" data-goal-times="11.7" data-goal-labels="Target configuration" data-goal-frames="351" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj17" data-goal-kind="Final configuration" data-goal-persistent="true">Banana</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media17.mp4?v=uniform-2" data-poster="./static/video-posters/media17.jpg?v=uniform-2" data-title="Tape measure" data-success-count="16" data-trial-count="20" data-kicker="Seen object" data-description="A compact object requires coordinated finger repositioning without wrist motion." data-status="Seen object" data-tone="neutral" data-media-scale="1.21" data-goal-prefix="./static/any2any-final-grasps/tape-measure" data-goal-times="16.40" data-goal-labels="Target configuration" data-goal-frames="492" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj11" data-goal-kind="Final configuration" data-goal-persistent="true">Tape measure</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media16.mp4?v=uniform-2" data-poster="./static/video-posters/media16.jpg?v=uniform-2" data-title="Shampoo bottle" data-success-count="9" data-trial-count="20" data-kicker="Seen object" data-description="The hand reorganizes its contacts around a cylindrical household object." data-status="Seen object" data-tone="neutral" data-goal-prefix="./static/any2any-final-grasps/shampoo-bottle" data-goal-times="10.60" data-goal-labels="Target configuration" data-goal-frames="318" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj11" data-goal-kind="Final configuration" data-goal-persistent="true">Shampoo</button>
+              <button type="button" aria-pressed="false" data-source="./static/ppt-media/media19-13s.mp4?v=hammer-trim-13s-1" data-poster="./static/video-posters/media19.jpg?v=uniform-2" data-title="Hammer" data-success-count="4" data-trial-count="20" data-kicker="Seen object" data-description="The controller transfers between stable hand–object configurations around the hammer handle." data-status="Seen object" data-tone="neutral" data-goal-prefix="./static/any2any-final-grasps/hammer" data-goal-times="25.67" data-goal-labels="Target configuration" data-goal-frames="770" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj2" data-goal-kind="Final configuration" data-goal-persistent="true">Hammer</button>
+              <p class="deck-selector-label">Unseen objects</p>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media22.mp4?v=uniform-2" data-poster="./static/video-posters/media22.jpg?v=uniform-2" data-title="Tennis ball" data-success-count="19" data-trial-count="20" data-kicker="Unseen object" data-description="The hand adapts its articulation around an unseen spherical geometry." data-status="Unseen object" data-tone="neutral" data-media-scale="1.045" data-goal-prefix="./static/any2any-final-grasps/tennis-ball" data-goal-times="4.93" data-goal-labels="Target configuration" data-goal-frames="148" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj17" data-goal-kind="Final configuration" data-goal-persistent="true">Tennis ball</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media23.mp4?v=uniform-2" data-poster="./static/video-posters/media23.jpg?v=uniform-2" data-title="Mouse" data-success-count="14" data-trial-count="20" data-kicker="Unseen object" data-description="A held-out object tests geometric transfer without policy fine-tuning." data-status="Unseen object" data-tone="neutral" data-media-scale="1.035" data-goal-prefix="./static/any2any-final-grasps/mouse" data-goal-times="4.63" data-goal-labels="Target configuration" data-goal-frames="139" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj17" data-goal-kind="Final configuration" data-goal-persistent="true">Mouse</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media14.mp4?v=uniform-2" data-poster="./static/video-posters/media14.jpg?v=uniform-2" data-title="Flashlight" data-success-count="14" data-trial-count="20" data-kicker="Unseen object" data-description="The policy transfers around a held-out elongated object at the original speed." data-status="Unseen object" data-tone="neutral" data-goal-prefix="./static/any2any-final-grasps/flashlight" data-goal-times="11.73" data-goal-labels="Target configuration" data-goal-frames="352" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj13" data-goal-kind="Final configuration" data-goal-persistent="true">Flashlight</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media21.mp4?v=uniform-2" data-poster="./static/video-posters/media21.jpg?v=uniform-2" data-title="Facial cream" data-success-count="9" data-trial-count="20" data-kicker="Unseen object" data-description="The compact container requires small but coordinated changes in contact." data-status="Unseen object" data-tone="neutral" data-goal-prefix="./static/any2any-final-grasps/facial-cream" data-goal-times="5.13" data-goal-labels="Target configuration" data-goal-frames="154" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj17" data-goal-kind="Final configuration" data-goal-persistent="true">Facial cream</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media15.mp4?v=uniform-2" data-poster="./static/video-posters/media15.jpg?v=uniform-2" data-title="Screwdriver" data-success-count="4" data-trial-count="20" data-kicker="Unseen object" data-description="The hand transfers around the tool while preserving a stable hand–object configuration." data-status="Unseen object" data-tone="neutral" data-media-scale="1.01" data-goal-prefix="./static/any2any-final-grasps/screwdriver" data-goal-times="7.73" data-goal-labels="Target configuration" data-goal-frames="232" data-goal-layouts="50,50,100,0" data-goal-metas="Sharpa + scan · traj7" data-goal-kind="Final configuration" data-goal-persistent="true">Screwdriver</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-group" aria-labelledby="video-tasks-title">
+          <div class="video-group-heading"><div><span>04</span><h3 id="video-tasks-title">Long-horizon tasks from human demonstrations</h3></div></div>
+          <dl class="results-strip experiment-results results-strip--single" aria-label="Long-horizon task result">
+            <div><dt>Long-horizon task execution</dt><dd><span class="result-value">90<em>%</em></span><small>27 / 30 successful trials</small></dd></div>
+          </dl>
+          <div class="control-split" aria-label="Separate hand and arm control">
+            <div><span class="control-label">DexHOT · hand policy</span><h4>Configuration targets</h4><p>From pickup onward: closed-loop finger control at <strong>30 Hz</strong>, with target updates at <strong>1 Hz</strong>.</p></div>
+            <div><span class="control-label">Separate arm controller</span><h4>Wrist trajectory</h4><p>The arm follows the demonstration-derived wrist motion; DexHOT controls the hand.</p></div>
+          </div>
+          <figure class="research-figure task-description-figure">
+            <a class="figure-image" href="./static/optimized-media/images/task-description.svg?v=final-1" data-figure="Demonstration-guided tasks" aria-label="Enlarge: Demonstration-guided tasks">
+              <img src="./static/optimized-media/images/task-description.svg?v=final-1" width="5876" height="1595" loading="lazy" decoding="async" alt="Six demonstration-guided robot tasks shown as four chronological frames and a final close-up of the Sharpa hand–object relationship.">
+              <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
+            </a>
+            <figcaption><div class="caption-heading"><h3>Six tasks, one hand policy.</h3></div><p>Frames progress from left to right. Cyan callouts enlarge the final visible Sharpa hand–object relationship for barcode scanning, shelf placement, block assembly, salt shaking, water pouring, and screw driving.</p></figcaption>
+          </figure>
+          <div class="video-deck" data-deck="tasks">
+            <div class="deck-stage">
+              <div class="task-player" id="task-video-player">
+                <div class="video-frame">
+                  <span class="deck-status">2× speed</span>
+                  <video controls muted autoplay playsinline preload="metadata" poster="./static/video-posters/media27.jpg" aria-label="Barcode scanning task"><source type="video/mp4"></video>
+                  <svg class="task-code-overlay" viewBox="0 0 960 720" preserveAspectRatio="xMidYMid meet" aria-label="Code" hidden></svg>
+                  <figure class="task-target-inset" aria-hidden="true" hidden>
+                    <div class="task-target-viewport"><img alt="Current sampled hand–object configuration target"><svg class="task-target-code" viewBox="0 0 640 480" width="640" height="480" aria-hidden="true" hidden></svg></div>
+                    <figcaption><span>Target</span><strong class="task-target-sample">Sample 01</strong></figcaption>
+                  </figure>
+                </div>
+                <div class="task-player-controls" role="group" aria-label="Video playback and sampled targets" hidden>
+                  <div class="goal-stream" aria-label="Configuration targets updated at 1 Hz"><strong>1 Hz</strong><span>Configuration targets</span></div>
+                  <button class="task-play-toggle" type="button" aria-label="Play video" data-state="paused"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="icon-play" d="m8 5 11 7-11 7Z"/><path class="icon-pause" d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg></button>
+                  <div class="task-seek-track"><input class="task-seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Video progress"><div class="goal-cadence-dots" aria-hidden="true"></div><div class="goal-stream-markers" role="group" aria-label="Four representative target samples"></div></div>
+                  <output class="task-time" aria-label="Playback time" aria-live="off">0:00 / 0:00</output>
+                  <button class="task-mute-toggle" type="button" aria-label="Unmute video" data-state="muted"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path class="icon-muted" d="m17 9 5 6m0-6-5 6"/><path class="icon-audible" d="M17 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg></button>
+                  <button class="task-fullscreen-toggle" type="button" aria-label="Enter fullscreen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg></button>
+                </div>
+              </div>
+              <div class="deck-caption"><div class="deck-caption-heading"><div class="deck-title"><h4>Barcode scanning</h4><span class="deck-kicker">Demonstration-guided task</span></div></div><p>Rotate the bottle by 180° to present its barcode to the scanner with an unobstructed hand arrangement.</p></div>
+            </div>
+            <div class="deck-tabs" role="group" aria-label="Demonstration-guided task examples">
+              <p class="deck-selector-label">Tasks</p>
+              <button class="is-active" type="button" aria-pressed="true" data-source="./static/optimized-media/ppt-media/media27-2x-30fps-source.mp4?v=source-rebuild-20261025" data-poster="./static/video-posters/media27.jpg" data-title="Barcode scanning" data-kicker="Demonstration-guided task" data-description="Rotate the bottle by 180° to present its barcode to the scanner with an unobstructed hand arrangement." data-status="2× speed" data-tone="neutral" data-goal-prefix="./static/stage-goals/barcode-scanning" data-goal-speed="2" data-goal-times="6.6,13.266666,19.866666,26.533334" data-goal-labels="20%|40%|60%|80%" data-goal-frames="459,629,955,1145" data-goal-layouts="84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0" data-goal-fractions="0.2,0.4,0.6,0.8" data-goal-inset="true" data-policy-start-frame="0" data-policy-start-time="0">Barcode scanning</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media26-2x-30fps-source.mp4?v=source-rebuild-20261025" data-poster="./static/video-posters/media26.jpg" data-title="Shelf placement" data-kicker="Demonstration-guided task" data-description="Rotate the bottle and transition from a pinch to a power grasp for shelf placement." data-status="2× speed" data-tone="neutral" data-goal-prefix="./static/stage-goals/shelf-placement" data-goal-speed="2" data-goal-times="4.8,9.6,14.333334,19.133334" data-goal-labels="20%|40%|60%|80%" data-goal-frames="255,414,571,730" data-goal-layouts="84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0" data-goal-fractions="0.2,0.4,0.6,0.8" data-goal-inset="true" data-policy-start-frame="0" data-policy-start-time="0">Shelf placement</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media29-2x-30fps-source.mp4?v=source-rebuild-20261025" data-poster="./static/video-posters/media29.jpg" data-title="Block assembly" data-kicker="Demonstration-guided task" data-description="Reorient a half-round block to align it with a slot." data-status="2× speed" data-tone="neutral" data-goal-prefix="./static/stage-goals/block-assembly" data-goal-speed="2" data-goal-times="5.333334,10.666666,16.066666,21.4" data-goal-labels="20%|40%|60%|80%" data-goal-frames="298,464,632,738" data-goal-layouts="84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0" data-goal-fractions="0.2,0.4,0.6,0.8" data-goal-inset="true" data-policy-start-frame="0" data-policy-start-time="0">Block assembly</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/salt-shaking-2x-60fps-source.mp4?v=source-rebuild-20261025" data-poster="./static/video-posters/salt-shaking-2x.jpg" data-title="Salt shaking" data-kicker="Demonstration-guided task" data-description="Turn the shaker dispensing-face down and back up." data-status="2× speed" data-tone="neutral" data-goal-prefix="./static/stage-goals/salt-shaking" data-goal-speed="2" data-goal-times="7.3,14.6,21.866667,29.166667" data-goal-labels="20%|40%|60%|80%" data-goal-frames="460,703,915,1279" data-goal-layouts="84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0" data-goal-fractions="0.2,0.4,0.6,0.8" data-goal-inset="true" data-policy-start-frame="0" data-policy-start-time="0">Salt shaking</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media28-2x-30fps-source.mp4?v=source-rebuild-20261025" data-poster="./static/video-posters/media28.jpg?v=uniform-2" data-title="Water pouring" data-kicker="Demonstration-guided task" data-description="Turn an inverted cup upright to receive water." data-status="2× speed" data-tone="neutral" data-media-scale="1.24" data-goal-prefix="./static/stage-goals/water-pouring" data-goal-speed="2" data-goal-times="6.066666,12.133334,18.2,24.266666" data-goal-labels="20%|40%|60%|80%" data-goal-frames="218,446,705,1064" data-goal-layouts="84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0" data-goal-fractions="0.2,0.4,0.6,0.8" data-goal-inset="true" data-policy-start-frame="0" data-policy-start-time="0">Water pouring</button>
+              <button type="button" aria-pressed="false" data-source="./static/optimized-media/ppt-media/media25-2x-30fps-source.mp4?v=source-rebuild-20261025" data-poster="./static/optimized-media/video-posters/media25.webp?v=full-hand-20261025" data-title="Screw driving" data-kicker="Demonstration-guided task" data-description="Reorient the drill with its bit pointing downward while maintaining the required hand arrangement." data-status="2× speed" data-tone="neutral" data-goal-prefix="./static/stage-goals/screw-driving" data-goal-speed="2" data-goal-times="6.333334,12.6,18.933334,25.2" data-goal-labels="20%|40%|60%|80%" data-goal-frames="576,767,941,1191" data-goal-layouts="84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0|84.000,23.300,70.000,0" data-goal-fractions="0.2,0.4,0.6,0.8" data-goal-inset="true" data-policy-start-frame="0" data-policy-start-time="0">Screw driving</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section class="page-width section-content motivation-section" id="motivation" aria-labelledby="video-overview-title">
+      <div class="section-heading"><div><h2 id="video-overview-title">Why object pose is not enough</h2></div></div>
+      <div class="comparison-grid">
+        <article class="comparison-panel comparison-panel--failure">
+          <div class="comparison-heading"><h3>Object-pose goal only</h3><span>2× speed</span></div>
+          <video data-comparison="failure" controls muted playsinline preload="metadata" poster="./static/video-posters/object-pose-failure-single-shot.jpg?v=ppt-hq-2" aria-label="Object-pose-only baseline: the hand occludes the barcode"><source src="./static/optimized-media/ppt-media/object-pose-failure-single-shot.mp4?v=ppt-hq-2" type="video/mp4"></video>
+          <div class="comparison-outcome"><span>✕ Failed example</span><h4>Correct object pose. Barcode hidden.</h4><p>The hand covers the code, so object orientation alone does not provide a scanner-compatible configuration.</p></div>
+        </article>
+        <article class="comparison-panel comparison-panel--success">
+          <div class="comparison-heading"><h3>Hand–object configuration goal</h3><span>4× speed</span></div>
+          <video data-comparison="success" controls muted playsinline preload="metadata" poster="./static/video-posters/media3.jpg" aria-label="DexHOT: the hand exposes the barcode toward the scanner"><source src="./static/ppt-media/media3.mp4?v=trim-1" type="video/mp4"></video>
+          <div class="comparison-outcome"><span>✓ Successful example</span><h4>Object oriented. Barcode exposed.</h4><p>The goal also specifies the finger arrangement, keeping the barcode visible to the scanner.</p></div>
+        </article>
+      </div>
+      <div class="comparison-controls"><button id="comparison-play" type="button">Play both</button><button id="comparison-restart" type="button">Restart both</button><p id="comparison-playback-status" role="status">Original playback speeds retained; the two trials are not time-synchronized.</p></div>
+
+      <div class="barcode-evidence" aria-labelledby="barcode-evidence-title">
+        <div class="barcode-evidence-copy"><span class="detail-label">Barcode scanning · task detail</span><h3 id="barcode-evidence-title">Expose the code, not just rotate the bottle.</h3><p>A 180° bottle rotation must be paired with a hand arrangement that leaves the barcode uncovered and facing the scanner.</p></div>
+        <figure class="barcode-relationship"><a href="./static/optimized-media/images/barcode-scan-relationship.svg?v=barcode-only-3" data-figure="Scanned code and scanner-facing bottle side" aria-label="Enlarge barcode and scanner correspondence"><img src="./static/optimized-media/images/barcode-scan-relationship.svg?v=barcode-only-3" loading="lazy" width="1280" height="760" alt="Only the linear barcode in the original scan is boxed, with a schematic line to the scanner-facing bottle side in the real video frame; an arrow indicates the reader direction."></a><figcaption>The scan reveals the code; the real frame shows its orientation toward the reader. The correspondence is schematic, not a scanner decode result. <span aria-hidden="true">↗ Enlarge</span></figcaption></figure>
+      </div>
+    </section>
+    <section class="section-tinted" id="method" aria-labelledby="method-title">
+      <div class="page-width section-content">
+        <div class="section-heading"><div><p class="eyebrow">Method</p><h2 id="method-title">Learn local transfers.<br>Chain configuration subgoals.</h2></div><p>A shared hand policy learns local transfers and reaches distant configurations through hierarchical chaining.</p></div>
+        <ol class="method-steps">
+          <li><span class="step-number">01</span><h3>Synthesize</h3><p>Build feasible hand–object configurations across diverse objects.</p></li>
+          <li><span class="step-number">02</span><h3>Learn to transfer</h3><p>Train a shared policy with synthetic local-goal configuration pairs.</p></li>
+          <li><span class="step-number">03</span><h3>Chain subgoals</h3><p>Compose long-horizon behavior using a planner or demonstrations.</p></li>
+        </ol>
+        <figure class="research-figure">
+          <a class="figure-image" href="./static/images/pipeline-v2.svg" data-figure="Learning and deployment pipeline" aria-label="Enlarge: Learning and deployment pipeline">
+            <img src="./static/optimized-media/images/pipeline-v2.webp" width="3200" height="1800" loading="lazy" decoding="async" alt="DexHOT pipeline: grasp synthesis and local-goal transfer training above; demonstration- or planner-guided hierarchical chaining below.">
+            <span class="expand-hint" aria-hidden="true">↗ View full figure</span>
+          </a>
+        </figure>
+      </div>
+    </section>
+    <section class="page-width section-content" id="benchmark" aria-labelledby="benchmark-title">
+      <div class="section-heading"><div><p class="eyebrow">Benchmark</p><h2 id="benchmark-title">DexHOTBench</h2></div><p>120 objects. 1.2 million feasible configurations. A benchmark for hand–object configuration transfer.</p></div>
+      <figure class="benchmark-figure">
+        <div class="benchmark-slide">
+          <h3>DexHOTBench</h3>
+          <div class="benchmark-hero-row">
+            <div class="benchmark-stat"><strong>120</strong><span>Objects</span></div>
+            <img class="benchmark-diversity" src="./static/optimized-media/ppt-media/benchmark-diversity.webp" width="4239" height="2850" decoding="async" alt="Mollweide density map of object z-axis directions surrounded by diverse hand–object configurations.">
+            <div class="benchmark-stat"><strong>1.2M</strong><span>Configurations</span></div>
+          </div>
+          <div class="benchmark-splits">
+            <article><img src="./static/optimized-media/ppt-media/image66.webp" width="385" height="240" decoding="async" alt="The 40 training objects."><h4>Training objects</h4><p>40 objects from 40 categories</p></article>
+            <article><img src="./static/optimized-media/ppt-media/image63.webp" width="768" height="480" decoding="async" alt="The 40 unseen instances from training categories."><h4>Unseen instances</h4><p>40 held-out objects from training categories</p></article>
+            <article><img src="./static/optimized-media/ppt-media/image65.webp" width="385" height="240" decoding="async" alt="The 40 objects from unseen categories."><h4>Unseen categories</h4><p>40 objects from 40 held-out categories</p></article>
+          </div>
+        </div>
+        <figcaption>
+          <div class="caption-heading"><span class="figure-number">DexHOTBench</span><h3>Diverse configurations across three object splits.</h3></div>
+          <p>The central Mollweide map shows object z-axis directions relative to the hand across all configuration pools; rotation about the object z-axis is omitted. Colors encode density percentile.</p>
+          <div class="density-scale" aria-label="Density percentile color scale"><span>Lower density percentile</span><span class="density-gradient"></span><span>Higher density percentile</span></div>
+        </figcaption>
+      </figure>
+      <section class="benchmark-protocol" id="benchmark-protocol" aria-labelledby="benchmark-protocol-title">
+        <div class="benchmark-protocol-heading"><h3 id="benchmark-protocol-title">Sample configurations. Evaluate transfer range.</h3></div>
+        <div class="configuration-distance" aria-labelledby="configuration-distance-title">
+          <div class="distance-symbol" aria-hidden="true">d</div>
+          <div class="distance-definition">
+            <h4 id="configuration-distance-title">One distance for the full hand–object configuration.</h4>
+            <p><em>d</em> is the <strong>mean Euclidean distance between 28 corresponding hand keypoints</strong>, measured in the <strong>object frame</strong>.</p>
+            <p class="distance-joint-caption">One metric jointly captures differences in:</p>
+            <ul class="distance-components" aria-label="Configuration differences captured jointly by d"><li>Object position</li><li>Object orientation</li><li>Hand joint arrangement</li></ul>
+            <p class="distance-reference">Object position and orientation are relative to the wrist.</p>
+          </div>
+        </div>
+        <section class="distance-gallery" id="distance-gallery" aria-labelledby="distance-gallery-title" data-manifest="static/configuration-distance/gallery.json">
+          <div class="dg-heading">
+            <div><h4 id="distance-gallery-title">Hand–object configuration distance <em>d</em> visualization</h4></div>
+            <p>One drill. One fixed reference.<br>Explore how configurations differ.</p>
+          </div>
+          <div class="dg-tabs" role="tablist" aria-label="Configuration distance range">
+            <button id="distance-range-0to20mm" type="button" role="tab" aria-selected="true" aria-controls="distance-gallery-panel" tabindex="0" data-group="0to20mm" disabled><span>Near-reference</span><strong>0 &lt; d ≤ 20 <small>mm</small></strong></button>
+            <button id="distance-range-20to40mm" type="button" role="tab" aria-selected="false" aria-controls="distance-gallery-panel" tabindex="-1" data-group="20to40mm" disabled><span>Neighbor</span><strong>20 &lt; d ≤ 40 <small>mm</small></strong></button>
+            <button id="distance-range-20to70mm" type="button" role="tab" aria-selected="false" aria-controls="distance-gallery-panel" tabindex="-1" data-group="20to70mm" disabled><span>Close</span><strong>20 &lt; d ≤ 70 <small>mm</small></strong></button>
+            <button id="distance-range-over70mm" type="button" role="tab" aria-selected="false" aria-controls="distance-gallery-panel" tabindex="-1" data-group="over70mm" disabled><span>Far</span><strong>d &gt; 70 <small>mm</small></strong></button>
+          </div>
+          <p class="dg-status" role="status">Examples load when this section comes into view.</p>
+          <button class="dg-retry" type="button" hidden>Try loading again</button>
+          <div class="dg-panel" id="distance-gallery-panel" role="tabpanel" aria-labelledby="distance-range-0to20mm" tabindex="0" hidden>
+            <div class="dg-comparison">
+              <figure class="dg-pane dg-reference">
+                <figcaption><div><span class="dg-pane-label">Fixed reference</span><small class="dg-reference-id">gid 977</small></div><strong class="dg-distance">d = 0.00 <small>mm</small></strong></figcaption>
+                <div class="dg-image-stage" data-state="pending"><p class="dg-image-message" role="status">Loading reference image…</p></div>
+              </figure>
+              <figure class="dg-pane dg-sample">
+                <figcaption><div><span class="dg-pane-label">Selected configuration</span><small class="dg-sample-id"></small></div><strong class="dg-distance"><span class="dg-sample-distance"></span> <small>mm</small></strong></figcaption>
+                <div class="dg-image-stage" data-state="pending"><p class="dg-image-message" role="status">Loading sample image…</p></div>
+              </figure>
+            </div>
+            <div class="dg-sample-toolbar"><p><strong class="dg-group-name">Near-reference</strong><span class="dg-sample-position"></span></p><div class="dg-step-controls"><button class="dg-previous" type="button" aria-label="Previous configuration sample"><span aria-hidden="true">←</span></button><button class="dg-next" type="button" aria-label="Next configuration sample"><span aria-hidden="true">→</span></button></div></div>
+            <div class="dg-thumbnails" role="group" aria-label="Ten configuration samples"></div>
+            <p class="dg-footnote">Object pose, camera and image scale stay fixed. Distance-selected examples—not transfer outcomes, including those within 20 mm.</p>
+            <p class="dg-announcement" aria-live="polite" aria-atomic="true"></p>
+          </div>
+          <noscript><p class="dg-status">Enable JavaScript to browse these static configuration examples.</p></noscript>
+        </section>
+        <ol class="sampling-flow">
+          <li><span>01</span><div><h4>Validated configuration pool</h4><p>Feasible hand articulation and wrist-relative object poses, generated for each object.</p></div></li>
+          <li><span>02</span><div><h4>Sample source → target pairs</h4><p>1,000 fixed pairs per object and distance range; each pair is attempted once.</p></div></li>
+          <li><span>03</span><div><h4>Measure configuration distance</h4><p>Compare corresponding hand keypoints in the object frame using the same metric across all 120 objects.</p></div></li>
+        </ol>
+        <div class="distance-ranges" aria-label="Independently sampled evaluation distance ranges">
+          <article><span>Local evaluation</span><h4>Neighbor</h4><strong>20 &lt; d ≤ 40 mm</strong><p>Within the local-goal training band.</p></article>
+          <article><span>Any2Any · close</span><h4>Close transfer</h4><strong>20 &lt; d ≤ 70 mm</strong><p>Extends beyond the training band.</p></article>
+          <article><span>Any2Any · far</span><h4>Far transfer</h4><strong>d &gt; 70 mm</strong><p>Evaluates longer-range configuration changes.</p></article>
+        </div>
+        <p class="sampling-note">Neighbor and close ranges overlap; their pair sets are sampled independently. Any2Any averages close and far only.</p>
+        <div class="benchmark-table-wrap"><table class="benchmark-results-table"><caption>Transfer success rate (%)</caption><thead><tr><th scope="col">Object split</th><th scope="col">Neighbor</th><th scope="col">Close</th><th scope="col">Far</th><th scope="col">Any2Any average</th></tr></thead><tbody><tr><th scope="row">Seen objects</th><td>90.9</td><td>85.5</td><td>75.6</td><td>80.5</td></tr><tr><th scope="row">Unseen instances</th><td>88.3</td><td>81.4</td><td>67.3</td><td>74.4</td></tr><tr><th scope="row">Unseen categories</th><td>81.5</td><td>72.2</td><td>56.7</td><td>64.4</td></tr></tbody></table></div>
+        <div class="benchmark-success"><span class="success-threshold">d ≤ 20 mm</span><div><h4>Mean keypoint distance within 20 mm.</h4><p>Maintain this distance to the final target for 10 consecutive control steps.</p></div></div>
+      </section>
+    </section>
+
+    <section class="page-width citation-section" id="BibTeX" aria-labelledby="citation-title">
+      <div class="section-heading"><div><p class="eyebrow">Citation</p><h2 id="citation-title">BibTeX</h2></div><button class="copy-button" id="copy-citation" type="button" hidden>Copy citation <span aria-hidden="true">↗</span></button></div>
+      <div class="citation-box"><pre tabindex="0" aria-label="BibTeX citation"><code id="citation-code">@article{gui2026dexhot,
+  author    = {Gui, Zhewei and Bolton, Anthony and Zhang, Jiyao and Chen, Zeyuan
+               and Yan, Qiyang and Wang, Tianyu and Dong, Hao},
+  title     = {{DexHOT}: Learning Hand-Object Configuration Transfer for Dexterous Manipulation},
+  journal   = {arXiv preprint arXiv:2611.05119},
+  year      = {2026},
+  doi       = {10.48550/arXiv.2611.05119},
+  url       = {https://arxiv.org/abs/2611.05119},
+}</code></pre></div>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+    </section>
+    <section class="page-width acknowledgements-section" id="acknowledgements" aria-labelledby="acknowledgements-title">
+      <h2 id="acknowledgements-title">Acknowledgements</h2>
+      <p>We thank Hangqi Zhou and Zihao Zhao for their assistance with the hardware, and Junhan Wang, Zimu Han and Yiming Zeng for their insightful discussions. This research was supported by the Beijing Natural Science Foundation (26L080330) and the National Natural Science Foundation of China (62376006).</p>
+    </section>
+  </main>
+  <footer class="site-footer page-width"><a class="wordmark brand-name" href="#top" aria-label="DexHOT home">Dex<span class="brand-h">H</span><span class="brand-o">O</span><span class="brand-t">T</span></a><p>Licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.<br>Adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page template.</p><a class="back-to-top" href="#top">Back to top ↑</a></footer>
+  <dialog class="figure-dialog" id="figure-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><h2 id="dialog-title">Figure</h2><button id="close-figure" type="button" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button></div><div class="dialog-image-area"><img id="dialog-image" alt=""></div></dialog>
+</body>
+</html>
