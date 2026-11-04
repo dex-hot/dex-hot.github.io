@@ -43,7 +43,7 @@ video.mobile-media-enhanced::-webkit-media-controls-start-playback-button { disp
 
 @media (max-width: 640px) {
 
-  .hero { --hero-author-size: 17px; --hero-note-size: 13px; display: grid; }
+  .hero { --hero-author-size: 20px; --hero-note-size: 13px; display: grid; }
   .hero .publication-heading { grid-area: 1 / 1; order: 0; align-self: center; width: calc(100% - 32px); padding-block: 30px 94px; }
   .hero-backdrop { position: absolute; inset: 0; grid-area: auto; align-self: stretch; width: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); }
   .hero-tile { aspect-ratio: auto; }
