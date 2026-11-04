@@ -54,7 +54,7 @@ video.mobile-media-enhanced::-webkit-media-controls-start-playback-button { disp
   .hero .publication-authors { margin-top: 24px; font-size: var(--hero-author-size); }
   .hero .publication-authors .author-row { gap: 6px 12px; }
   .hero .publication-affiliations { margin-top: 16px; font-size: var(--hero-note-size); }
-  .hero .author-note { gap: 6px 12px; margin-top: 15px; font-size: calc(var(--hero-note-size) + 2px); }
+  .hero .author-note { gap: 6px 12px; margin-top: 15px; font-size: calc(var(--hero-note-size) + 3px); }
   .hero .publication-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 22px; }
   .hero .publication-links .resource-button { min-width: 0; padding-inline: 10px; font-size: clamp(14px, 4vw, 18px); }
   .hero-background-note { left: 16px; bottom: 65px; right: 16px; justify-content: center; font-size: 11px; }
